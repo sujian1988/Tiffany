@@ -1,0 +1,26 @@
+{
+    "sqltools.connections": [
+        {
+            "askForPassword": true,
+            "connectionTimeout": 30,
+            "database": "APP",
+            "dialect": "MySQL",
+            "name": "xb",
+            "password": "Sj86624932.",
+            "port": 3306,
+            "server": "39.96.18.249",
+            "username": "root"
+        },
+        {
+            "askForPassword": false,
+            "connectionTimeout": 30,
+            "database": "dev_xwplay",
+            "dialect": "MySQL",
+            "name": "dev",
+            "password": "Sj86624932.",
+            "port": 3306,
+            "server": "39.96.18.249",
+            "username": "xb2"
+        }
+    ]
+}
