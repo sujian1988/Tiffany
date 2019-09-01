@@ -16,6 +16,16 @@ module.exports = app => {
         res.send(items)//将items发送给前端
     })
 
+    //----------------------------------------------app api---------------------------------------------------
+
+    router.post('/categoriesapp', async(req, res) => {
+        const items = await categroy.find().limit(10) // 限制10条数据
+        res.status(200).json({
+            items
+        });
+    })
+   
+
     // 挂在子路由
     app.use('/admin/api', router)
 
