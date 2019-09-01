@@ -1,0 +1,199 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:2:1-35:12
+MERGED from [androidx.appcompat:appcompat:1.0.2] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\f2659ada1c554ae71439fda70a119195\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\86ed6e54b7ffcc2bb8aa7ae63b6fd544\AndroidManifest.xml:2:1-11:12
+MERGED from [org.webrtc:google-webrtc:1.0.28513] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\7f852cc0130c890a063a33b51eacaa60\AndroidManifest.xml:11:1-14:12
+MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\65298330d1cf1350ac5cabf99b1c12ea\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\485b9491b3bccfaa3599a9d4ef2052f3\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\ce80ccd185408e70821f07c4157c144b\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\e814421a86ef1cd076e6dc09e177ec5f\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\3f4cd817a5a3d333623df25d9f4e2bd0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\ead7f7ed83facb54a66e738cd00f07d6\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\f577782cbbe12456ead8e71e1771af84\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\3b578e8f01defcf30ea1ecd390800140\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\71af9e38e4aad104f61ea4a103d75498\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\012cc4a5d85d4c7e19fc9f53aa96d09e\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\a0d771f05885d61e64a7469f5ca6234c\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\7bb8157b20352c4321d9c79f9d3728d4\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\ee0088cffdc9981dd31ea32c569098e4\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\11c61db806b9cb1cbc3a7f8a31f62a5f\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\1065eb055790316c1be2593ca2aa8497\AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\f32a5e85374cd0813fb4be936d6c1704\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\331d892b3582649e75e02c39fd74b264\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\da81a7673c8dee31ce589feea5b68ebc\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\0e173c514adc4ab44fb8f4d900e80658\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\bbafd1e8b4983e9912e398e30e4e8ca9\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\55e293feb4195d400fc15ee98af18c0c\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\7d274d477132f58feb74760c5c137f11\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\dd86a9f4fa80d549601850a1aad6c37f\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\a4a6ee4727768200206122ec81109737\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\860cf6b69cd0f09a687f54f7c97bde28\AndroidManifest.xml:17:1-22:12
+INJECTED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:2:1-35:12
+	package
+		ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:3:5-36
+		INJECTED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml
+		INJECTED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml
+		ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:2:1-35:12
+		INJECTED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml
+		ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:2:1-35:12
+		INJECTED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:2:11-69
+uses-feature#android.hardware.camera
+ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:5:5-60
+	android:name
+		ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:5:19-57
+uses-feature#android.hardware.camera.autofocus
+ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:6:5-70
+	android:name
+		ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:6:19-67
+uses-feature#0x00020000
+ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:7:5-9:35
+	android:glEsVersion
+		ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:8:9-41
+	android:required
+		ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:9:9-32
+uses-permission#android.permission.CAMERA
+ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:11:5-65
+	android:name
+		ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:11:22-62
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:12:5-71
+	android:name
+		ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:12:22-68
+uses-permission#android.permission.INTERNET
+ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:13:5-67
+	android:name
+		ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:13:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:14:5-79
+	android:name
+		ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:14:22-76
+uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
+ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:15:5-80
+	android:name
+		ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:15:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:16:5-81
+	android:name
+		ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:16:22-78
+application
+ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:18:5-33:19
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\86ed6e54b7ffcc2bb8aa7ae63b6fd544\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\86ed6e54b7ffcc2bb8aa7ae63b6fd544\AndroidManifest.xml:9:5-20
+MERGED from [androidx.core:core:1.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\11c61db806b9cb1cbc3a7f8a31f62a5f\AndroidManifest.xml:22:5-89
+MERGED from [androidx.core:core:1.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\11c61db806b9cb1cbc3a7f8a31f62a5f\AndroidManifest.xml:22:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\1065eb055790316c1be2593ca2aa8497\AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\1065eb055790316c1be2593ca2aa8497\AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\11c61db806b9cb1cbc3a7f8a31f62a5f\AndroidManifest.xml:22:18-86
+	android:supportsRtl
+		ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:23:9-35
+	android:label
+		ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:21:9-41
+	android:roundIcon
+		ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:22:9-54
+	android:icon
+		ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:20:9-43
+	android:allowBackup
+		ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:19:9-35
+	android:theme
+		ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:24:9-40
+activity#com.wangyi.wangyiroom.MainActivity
+ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:25:9-31:20
+	android:name
+		ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:25:19-47
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:26:13-30:29
+action#android.intent.action.MAIN
+ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:27:17-69
+	android:name
+		ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:27:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:29:17-77
+	android:name
+		ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:29:27-74
+activity#com.wangyi.wangyiroom.ChatRoomActivity
+ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:32:9-53
+	android:name
+		ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml:32:19-51
+uses-sdk
+INJECTED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml
+INJECTED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml
+MERGED from [androidx.appcompat:appcompat:1.0.2] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\f2659ada1c554ae71439fda70a119195\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.2] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\f2659ada1c554ae71439fda70a119195\AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\86ed6e54b7ffcc2bb8aa7ae63b6fd544\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\86ed6e54b7ffcc2bb8aa7ae63b6fd544\AndroidManifest.xml:5:5-7:41
+MERGED from [org.webrtc:google-webrtc:1.0.28513] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\7f852cc0130c890a063a33b51eacaa60\AndroidManifest.xml:13:3-72
+MERGED from [org.webrtc:google-webrtc:1.0.28513] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\7f852cc0130c890a063a33b51eacaa60\AndroidManifest.xml:13:3-72
+MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\65298330d1cf1350ac5cabf99b1c12ea\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\65298330d1cf1350ac5cabf99b1c12ea\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\485b9491b3bccfaa3599a9d4ef2052f3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\485b9491b3bccfaa3599a9d4ef2052f3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\ce80ccd185408e70821f07c4157c144b\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\ce80ccd185408e70821f07c4157c144b\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\e814421a86ef1cd076e6dc09e177ec5f\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\e814421a86ef1cd076e6dc09e177ec5f\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\3f4cd817a5a3d333623df25d9f4e2bd0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\3f4cd817a5a3d333623df25d9f4e2bd0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\ead7f7ed83facb54a66e738cd00f07d6\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\ead7f7ed83facb54a66e738cd00f07d6\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\f577782cbbe12456ead8e71e1771af84\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\f577782cbbe12456ead8e71e1771af84\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\3b578e8f01defcf30ea1ecd390800140\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\3b578e8f01defcf30ea1ecd390800140\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\71af9e38e4aad104f61ea4a103d75498\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\71af9e38e4aad104f61ea4a103d75498\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\012cc4a5d85d4c7e19fc9f53aa96d09e\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\012cc4a5d85d4c7e19fc9f53aa96d09e\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\a0d771f05885d61e64a7469f5ca6234c\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\a0d771f05885d61e64a7469f5ca6234c\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\7bb8157b20352c4321d9c79f9d3728d4\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\7bb8157b20352c4321d9c79f9d3728d4\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\ee0088cffdc9981dd31ea32c569098e4\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\ee0088cffdc9981dd31ea32c569098e4\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\11c61db806b9cb1cbc3a7f8a31f62a5f\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\11c61db806b9cb1cbc3a7f8a31f62a5f\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\1065eb055790316c1be2593ca2aa8497\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\1065eb055790316c1be2593ca2aa8497\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\f32a5e85374cd0813fb4be936d6c1704\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\f32a5e85374cd0813fb4be936d6c1704\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\331d892b3582649e75e02c39fd74b264\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\331d892b3582649e75e02c39fd74b264\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\da81a7673c8dee31ce589feea5b68ebc\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\da81a7673c8dee31ce589feea5b68ebc\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\0e173c514adc4ab44fb8f4d900e80658\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\0e173c514adc4ab44fb8f4d900e80658\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\bbafd1e8b4983e9912e398e30e4e8ca9\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\bbafd1e8b4983e9912e398e30e4e8ca9\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\55e293feb4195d400fc15ee98af18c0c\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\55e293feb4195d400fc15ee98af18c0c\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\7d274d477132f58feb74760c5c137f11\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\7d274d477132f58feb74760c5c137f11\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\dd86a9f4fa80d549601850a1aad6c37f\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\dd86a9f4fa80d549601850a1aad6c37f\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\a4a6ee4727768200206122ec81109737\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\a4a6ee4727768200206122ec81109737\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\860cf6b69cd0f09a687f54f7c97bde28\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\860cf6b69cd0f09a687f54f7c97bde28\AndroidManifest.xml:20:5-44
+INJECTED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml
+INJECTED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml
+		ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml
+		INJECTED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml
+		ADDED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml
+		INJECTED from E:\android_app\wangyi_cpp\webRrcICEcandidate10\app\src\main\AndroidManifest.xml
