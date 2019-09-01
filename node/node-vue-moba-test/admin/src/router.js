@@ -15,7 +15,7 @@ export default new Router({
       component: Main ,
       children: [
         {path: '/categories/create', component: CategoriesEdit},
-        {path: '/categories/list', component: CategoriesList}
+        {path: '/categories/list', component: CategoriesList},
 
       ]
     },
