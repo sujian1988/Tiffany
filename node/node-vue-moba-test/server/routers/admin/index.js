@@ -81,10 +81,16 @@ module.exports = app => {
         res.send(model)//将items发送给前端
     })
 
+
+
+
+
+
+
 //---------------------------------------武器--------------------------------------------
 
 
-    //----------------------------------------------app api---------------------------------------------------
+ //----------------------------------------------app api---------------------------------------------------
 
     router.post('/categoriesapp', async(req, res) => {
         const items = await categroy.find().limit(10) // 限制10条数据
@@ -100,8 +106,22 @@ module.exports = app => {
         });
     })
    
+ //----------------------------------------------app api---------------------------------------------------
+
 
     // 挂在子路由
     app.use('/admin/api', router)
 
+
+    const multer = require('multer')
+    //当前文件夹退到上一级在退到上一级，在进入uploads
+    const upload = multer({ dest: __dirname + '/../../uploads' })
+    app.post('/admin/api/upload', upload.single('file'), async(req, res)=> {
+
+        const file = req.file
+        //生成图片url 下一步在前端显示出来itemlist.vue
+        file.url = `http://localhost:3000/uploads/${file.filename}`
+        res.send(file)
+
+    })
 }

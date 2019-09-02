@@ -13,9 +13,21 @@
 
 
             <el-form-item label="图标">
-                <el-input v-model="model.icon"></el-input>
-            </el-form-item>
+                
+               <el-upload
+                    class="avatar-uploader"
+                    :action="$http.defaults.baseURL + '/upload'"
+                    :show-file-list="false"
+                    :on-success="afterUpload"
+                    :before-upload="beforeAvatarUpload">
 
+                    <img v-if="model.icon" :src="model.icon" class="avatar">
+                    
+                    <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+                
+                </el-upload>
+
+            </el-form-item>
 
             <el-form-item>
                 <el-button type="primary" native-type="submit">保存</el-button>
@@ -27,6 +39,35 @@
 
 </template>
 
+<style>
+
+    .avatar-uploader .el-upload {
+        border: 1px dashed #d9d9d9;
+        border-radius: 6px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+    .avatar-uploader .el-upload:hover {
+        border-color: #409EFF;
+    }
+    .avatar-uploader-icon {
+        font-size: 28px;
+        color: #8c939d;
+        width: 178px;
+        height: 178px;
+        line-height: 178px;
+        text-align: center;
+    }
+    .avatar {
+        width: 178px;
+        height: 178px;
+        display: block;
+    }
+
+</style>
+
+
 <script>
 export default {
     //接收id参数
@@ -37,11 +78,21 @@ export default {
 
     data(){
         return{
-            model: {},
+            model: {},  //*** */之后再添加字段是会添加不上***
         }
     },
 
     methods: {
+
+        async afterUpload(res){
+            //****显示创建赋值 就是在model上添加属性 */  
+            //        赋值的主体   字段      要赋的值
+            this.$set(this.model, 'icon',  res.url)
+            //this.model.icon = res.url
+          
+        },
+
+
        async save(){
 
           let res
@@ -78,3 +129,5 @@ export default {
 
 }
 </script>
+
+
