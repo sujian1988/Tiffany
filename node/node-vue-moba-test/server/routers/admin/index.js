@@ -29,7 +29,8 @@ module.exports = app => {
 
     // 获取分类列表
     router.post('/categorielist', async(req, res) => {
-        const items = await categroy.find().limit(10) // 限制10条数据
+        //加populate是获取将parent变成对象 方便使用里面的属性
+        const items = await categroy.find().populate('parent').limit(10) // 限制10条数据
         res.send(items)//将items发送给前端
     })
 
