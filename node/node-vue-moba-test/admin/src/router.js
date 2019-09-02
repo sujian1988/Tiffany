@@ -5,6 +5,9 @@ import Main from './views/Main.vue'
 import CategoriesEdit from './views/CategoriesEdit.vue'
 import CategoriesList from './views/CategoriesList.vue'
 
+import ItemsEdit from './views/ItemsEdit.vue'
+import ItemsList from './views/ItemsList.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -17,6 +20,10 @@ export default new Router({
         {path: '/categories/create', component: CategoriesEdit},
         {path: '/categories/edit/:id', component: CategoriesEdit, props: true},
         {path: '/categories/list', component: CategoriesList},
+
+        {path: '/items/create', component: ItemsEdit},
+        {path: '/items/edit/:id', component: ItemsEdit, props: true},
+        {path: '/items/list', component: ItemsList},
 
       ]
     },

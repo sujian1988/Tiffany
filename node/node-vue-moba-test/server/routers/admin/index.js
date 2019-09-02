@@ -5,7 +5,9 @@ module.exports = app => {
     const router = express.Router();
 
     const categroy = require('../../modles/Category')
+    const item = require('../../modles/Item')
 
+//-------------------------------------分类------------------------------------------
     // 创建
     router.post('/categories', async(req, res) => {
         const model = await categroy.create(req.body)
@@ -40,12 +42,59 @@ module.exports = app => {
         res.send(model)//将items发送给前端
     })
 
+//----------------------------------------分类--------------------------------------------
+
+//---------------------------------------武器--------------------------------------------
+
+
+    // 创建
+    router.post('/items', async(req, res) => {
+        const model = await item.create(req.body)
+        res.send(model)
+    })
+
+    //修改
+    router.put('/items/:id', async(req, res) => {
+        //接收两个参数，根据id查找，然后更新body内容
+        const model = await item.findByIdAndUpdate(req.params.id, req.body)
+        res.send(model)
+    })
+ 
+    //删除
+    router.delete('/items/:id', async(req, res) => {
+        await item.findByIdAndDelete(req.params.id, req.body)
+        res.send({
+            success: true
+        })
+    })
+
+    // 获取分类列表
+    router.post('/itemslist', async(req, res) => {
+        //加populate是获取将parent变成对象 方便使用里面的属性
+        const items = await item.find().populate('parent').limit(10) // 限制10条数据
+        res.send(items)//将items发送给前端
+    })
+
+    //获取id
+    router.get('/itemsedit/:id', async(req, res) => {
+        const model = await item.findById(req.params.id) 
+        res.send(model)//将items发送给前端
+    })
+
+//---------------------------------------武器--------------------------------------------
 
 
     //----------------------------------------------app api---------------------------------------------------
 
     router.post('/categoriesapp', async(req, res) => {
         const items = await categroy.find().limit(10) // 限制10条数据
+        res.status(200).json({
+            items
+        });
+    })
+
+    router.post('/itemsapp', async(req, res) => {
+        const items = await item.find().limit(10) // 限制10条数据
         res.status(200).json({
             items
         });
