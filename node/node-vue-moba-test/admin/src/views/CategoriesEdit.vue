@@ -2,7 +2,7 @@
     
     <div class="about">
 
-        <h1> 创建分类 </h1>
+        <h1>  {{id ? '编辑' : '创建'}} 分类</h1>
 
         <el-form label-width="120px" @submit.native.prevent="save">
 
@@ -21,6 +21,12 @@
 
 <script>
 export default {
+    //接收id参数
+    props:{
+        id: {}
+    },
+    
+
     data(){
         return{
             model: {}
@@ -29,16 +35,46 @@ export default {
 
     methods: {
        async save(){
-          // console.log("save")
-          const res = await this.$http.post('categories', this.model);   
-          this.$router.push('/categories')
+
+          let res
+          //判读是否有id，有id就是编辑，没有就是创建
+          if(this.id){ //编辑
+            res = await this.$http.put(`categories/${this.id}`, this.model);   
+          }else{ // 新建
+            res = await this.$http.post('categories', this.model);   
+          }
+
+           
+          this.$router.push('/categories/list')
           this.$message({
 
             type: 'success',
             message: '保存成功了'
 
           })
-        }
+        },
+
+       async fetch(){           
+            const res = await this.$http.get(`categoriesedit/${this.id}`)
+            this.model = res.data;
+
+            this.$message({
+
+                        type: 'success',
+                        message: '获取数据成功'
+
+                    })
+
+         },
+    },
+
+
+
+    //相当于java的构造方法默认执行
+    created(){
+        //如果有id就获取分类名字
+        this.id && this.fetch()
     }
+
 }
 </script>
