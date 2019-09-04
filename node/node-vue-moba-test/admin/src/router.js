@@ -8,6 +8,9 @@ import CategoriesList from './views/CategoriesList.vue'
 import ItemsEdit from './views/ItemsEdit.vue'
 import ItemsList from './views/ItemsList.vue'
 
+import HeroEdit from './views/HeroEdit.vue'
+import HerosList from './views/HerosList.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -24,6 +27,10 @@ export default new Router({
         {path: '/items/create', component: ItemsEdit},
         {path: '/items/edit/:id', component: ItemsEdit, props: true},
         {path: '/items/list', component: ItemsList},
+
+        {path: '/hero/create', component: HeroEdit},
+        {path: '/heros/edit/:id', component: HeroEdit, props: true},
+        {path: '/heros/list', component: HerosList},
 
       ]
     },

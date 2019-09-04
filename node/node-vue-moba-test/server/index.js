@@ -9,6 +9,7 @@ app.use(express.json())
 
 //静态托管文件
 app.use("/uploads", express.static(__dirname + '/uploads'))
+app.use("/uploadshero", express.static(__dirname + '/uploads/heros'))
 
 //引入数据库
 require('./plugins/db')(app)

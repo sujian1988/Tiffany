@@ -2,7 +2,7 @@
     
     <div class="about">
 
-        <h1>  {{id ? '编辑' : '创建'}} 物品</h1>
+        <h1>  {{id ? '编辑' : '创建'}} 英雄</h1>
 
         <el-form label-width="120px" @submit.native.prevent="save">
 
@@ -12,11 +12,15 @@
             </el-form-item>
 
 
-            <el-form-item label="图标">
+            <el-form-item label="称号">
+                <el-input v-model="model.title"></el-input>
+            </el-form-item>
+
+            <el-form-item label="头像">
                 
                <el-upload
                     class="avatar-uploader"
-                    :action="$http.defaults.baseURL + '/upload'"
+                    :action="$http.defaults.baseURL + '/uploadhero'"
                     :show-file-list="false"
                     :on-success="afterUpload"
                     :before-upload="beforeAvatarUpload">
@@ -88,7 +92,6 @@ export default {
             //****显示创建赋值 就是在model上添加属性 */  
             //        赋值的主体   字段      要赋的值
             this.$set(this.model, 'avatar',  res.url)
-
           
         },
 
@@ -98,11 +101,11 @@ export default {
           let res
           //判读是否有id，有id就是编辑，没有就是创建
           if(this.id){ //编辑
-            res = await this.$http.put(`items/${this.id}`, this.model);   
+            res = await this.$http.put(`hero/${this.id}`, this.model);   
           }else{ // 新建
-            res = await this.$http.post('items', this.model);   
+            res = await this.$http.post('hero', this.model);   
           }
-          this.$router.push('/items/list')
+          this.$router.push('/heros/list')
           this.$message({
 
             type: 'success',
@@ -112,7 +115,7 @@ export default {
         },
 
        async fetch(){           
-            const res = await this.$http.get(`itemsedit/${this.id}`)
+            const res = await this.$http.get(`herosedit/${this.id}`)
             this.model = res.data;
          },
          
