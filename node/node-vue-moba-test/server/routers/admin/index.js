@@ -7,6 +7,7 @@ module.exports = app => {
     const categroy = require('../../modles/Category')
     const item = require('../../modles/Item')
     const hero = require('../../modles/Hero')
+    const article = require('../../modles/Article')
 
 //-------------------------------------分类------------------------------------------
     // 创建
@@ -125,6 +126,45 @@ module.exports = app => {
 
 //---------------------------------------英雄--------------------------------------------
 
+//---------------------------------------文章--------------------------------------------
+
+    // 创建
+    router.post('/articles', async(req, res) => {
+        const model = await article.create(req.body)
+        res.send(model)
+    })
+
+    //修改
+    router.put('/articles/:id', async(req, res) => {
+        //接收两个参数，根据id查找，然后更新body内容
+        const model = await article.findByIdAndUpdate(req.params.id, req.body)
+        res.send(model)
+    })
+ 
+    //删除
+    router.delete('/articles/:id', async(req, res) => {
+        await article.findByIdAndDelete(req.params.id, req.body)
+        res.send({
+            success: true
+        })
+    })
+
+    // 获取分类列表
+    router.post('/articleslist', async(req, res) => {
+        //加populate是获取将parent变成对象 方便使用里面的属性
+        const items = await article.find().populate('parent').limit(10) // 限制10条数据
+        res.send(items)//将items发送给前端
+    })
+
+    //获取id
+    router.get('/articlesedit/:id', async(req, res) => {
+        const model = await article.findById(req.params.id) 
+        res.send(model)//将items发送给前端
+    })
+
+
+//---------------------------------------文章--------------------------------------------
+
 
  //----------------------------------------------app api---------------------------------------------------
 
@@ -152,6 +192,7 @@ module.exports = app => {
     const multer = require('multer')
     //当前文件夹退到上一级在退到上一级，在进入uploads
     const upload = multer({ dest: __dirname + '/../../uploads' })
+    //后端接收文件                                file 字段 要和前端editview 中上传字段对应
     app.post('/admin/api/upload', upload.single('file'), async(req, res)=> {
 
         const file = req.file
@@ -173,4 +214,17 @@ module.exports = app => {
         res.send(file)
 
     })
+
+    const multernew = require('multer')
+    //当前文件夹退到上一级在退到上一级，在进入uploads
+    const uploadnew = multernew({ dest: __dirname + '/../../uploads/news' })
+    app.post('/admin/api/uploadnew', uploadnew.single('file'), async(req, res)=> {
+
+        const file = req.file
+        //生成图片url 下一步在前端显示出来itemlist.vue
+        file.url = `http://localhost:3000/uploads/news/${file.filename}`
+        res.send(file)
+
+    })
+
 }

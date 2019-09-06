@@ -29,11 +29,15 @@
           <el-menu-item index="/heros/list">英雄列表</el-menu-item>
 
         </el-menu-item-group>
+
+        <el-menu-item-group>
+
+          <template slot="title">文章</template>
+          <el-menu-item index="/articles/create">新建文章</el-menu-item>
+          <el-menu-item index="/articles/list">文章列表</el-menu-item>
+
+        </el-menu-item-group>
         
-        <el-submenu index="1-4">
-          <template slot="title">选项4</template>
-          <el-menu-item index="1-4-1">选项4-1</el-menu-item>
-        </el-submenu>
 
       </el-submenu>
     </el-menu>

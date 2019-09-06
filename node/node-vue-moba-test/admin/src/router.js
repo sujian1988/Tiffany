@@ -11,6 +11,9 @@ import ItemsList from './views/ItemsList.vue'
 import HeroEdit from './views/HeroEdit.vue'
 import HerosList from './views/HerosList.vue'
 
+import ArticleEdit from './views/ArticleEdit.vue'
+import ArticleList from './views/ArticleList.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -31,6 +34,10 @@ export default new Router({
         {path: '/hero/create', component: HeroEdit},
         {path: '/heros/edit/:id', component: HeroEdit, props: true},
         {path: '/heros/list', component: HerosList},
+
+        {path: '/articles/create', component: ArticleEdit},
+        {path: '/articles/edit/:id', component: ArticleEdit, props: true},
+        {path: '/articles/list', component: ArticleList},
 
       ]
     },

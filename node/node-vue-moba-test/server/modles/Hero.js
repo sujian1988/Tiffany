@@ -11,7 +11,7 @@ const schema = new mongoose.Schema({
         difficult: {type: Number},
         skills:  {type: Number},
         attack: {type: Number},
-        surviue: {type: Number},
+        survive: {type: Number},
 
     },
 
