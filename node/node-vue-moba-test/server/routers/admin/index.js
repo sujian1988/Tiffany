@@ -8,6 +8,8 @@ module.exports = app => {
     const item = require('../../modles/Item')
     const hero = require('../../modles/Hero')
     const article = require('../../modles/Article')
+    const ad = require('../../modles/Ad')
+    const admin_user = require('../../modles/AdminUser')
 
 //-------------------------------------分类------------------------------------------
     // 创建
@@ -165,6 +167,87 @@ module.exports = app => {
 
 //---------------------------------------文章--------------------------------------------
 
+//---------------------------------------广告位--------------------------------------------
+
+    // 创建
+    router.post('/ads', async(req, res) => {
+        const model = await ad.create(req.body)
+        res.send(model)
+    })
+
+    //修改
+    router.put('/ads/:id', async(req, res) => {
+        //接收两个参数，根据id查找，然后更新body内容
+        const model = await ad.findByIdAndUpdate(req.params.id, req.body)
+        res.send(model)
+    })
+
+    //删除
+    router.delete('/ads/:id', async(req, res) => {
+        await ad.findByIdAndDelete(req.params.id, req.body)
+        res.send({
+            success: true
+        })
+    })
+
+    // 获取分类列表
+    router.post('/adslist', async(req, res) => {
+        //加populate是获取将parent变成对象 方便使用里面的属性
+        const items = await ad.find().populate('parent').limit(10) // 限制10条数据
+        res.send(items)//将items发送给前端
+    })
+
+    //获取id
+    router.get('/adsedit/:id', async(req, res) => {
+        const model = await ad.findById(req.params.id) 
+        res.send(model)//将items发送给前端
+    })
+
+
+
+//----------------------------------------广告位-------------------------------------------
+
+//----------------------------------------管理员-------------------------------------------
+
+      // 创建
+      router.post('/admin_users', async(req, res) => {
+        const model = await admin_user.create(req.body)
+        res.send(model)
+    })
+
+    //修改
+    router.put('/admin_users/:id', async(req, res) => {
+        //接收两个参数，根据id查找，然后更新body内容
+        const model = await admin_user.findByIdAndUpdate(req.params.id, req.body)
+        res.send(model)
+    })
+
+    //删除
+    router.delete('/admin_users/:id', async(req, res) => {
+        await admin_user.findByIdAndDelete(req.params.id, req.body)
+        res.send({
+            success: true
+        })
+    })
+
+    // 获取分类列表
+    router.post('/admin_userslist', async(req, res) => {
+        //加populate是获取将parent变成对象 方便使用里面的属性
+        const items = await admin_user.find().populate('parent').limit(10) // 限制10条数据
+        res.send(items)//将items发送给前端
+    })
+
+    //获取id
+    router.get('/admin_usersedit/:id', async(req, res) => {
+        const model = await admin_user.findById(req.params.id) 
+        res.send(model)//将items发送给前端
+    })
+
+
+//----------------------------------------管理员-------------------------------------------
+
+
+
 
  //----------------------------------------------app api---------------------------------------------------
 
@@ -227,4 +310,15 @@ module.exports = app => {
 
     })
 
+    const multerad = require('multer')
+    //当前文件夹退到上一级在退到上一级，在进入uploads
+    const uploadad = multerad({ dest: __dirname + '/../../uploads/ads' })
+    app.post('/admin/api/uploadad', uploadad.single('file'), async(req, res)=> {
+
+        const file = req.file
+        //生成图片url 下一步在前端显示出来itemlist.vue
+        file.url = `http://localhost:3000/uploads/ads/${file.filename}`
+        res.send(file)
+
+    })
 }
