@@ -10,6 +10,7 @@ module.exports = app => {
     const article = require('../../modles/Article')
     const ad = require('../../modles/Ad')
     const admin_user = require('../../modles/AdminUser')
+    const jwt = require('jsonwebtoken')
 
 //-------------------------------------分类------------------------------------------
     // 创建
@@ -321,4 +322,57 @@ module.exports = app => {
         res.send(file)
 
     })
+
+
+    //登录路由
+    app.post('/admin/api/login', async (req, res) =>{
+
+        const {username, password} = req.body
+        //1 根据用户名找用户
+        const adminUser = require("../../modles/AdminUser")
+        const user = await adminUser.findOne({ 
+            username: username 
+        })//找到用户
+        if(!user){
+            return res.status(422).send({
+                message: "用户不存在"
+            })
+        }
+        // assert(user, 422, '用户不存在')
+
+        // //2 校验码
+        // //const isValid = require('bcrypt').compareSync(password, user.password)
+        
+        const user1 = await adminUser.findOne({ 
+            password: password 
+        })//找到用户
+        if(!user1){
+            return res.status(423).send({
+                message: "密码错误"
+            })
+        }
+    
+        // //3 返回token
+        //res.send("ok") //测试接口是通畅
+        const token = jwt.sign({ id: user._id }, app.get('secret'))
+        res.send({ token })
+
+    })
+
+ 
+
+    app.use(async (err, req, res, next) => {
+        // console.log(err)
+        res.status(err.statusCode || 500).send({
+          message: err.message
+        })
+      })
+
+
+
+
+
+
+
+
 }
