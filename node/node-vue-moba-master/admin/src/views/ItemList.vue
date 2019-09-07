@@ -4,10 +4,12 @@
     <el-table :data="items">
       <el-table-column prop="_id" label="ID" width="240"></el-table-column>
       <el-table-column prop="name" label="物品名称"></el-table-column>
-      <el-table-column prop="icon" label="图标">
+      <el-table-column prop="avatar" label="图标">
+
         <template slot-scope="scope">
-          <img :src="scope.row.icon" style="height:3rem;">
+          <img :src="scope.row.avatar" style="height:3rem;">
         </template>
+      
       </el-table-column>
       <el-table-column fixed="right" label="操作" width="180">
         <template slot-scope="scope">

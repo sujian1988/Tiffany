@@ -60,6 +60,8 @@ const router = new Router({
 
   ]
 })
+
+//每次切换路由是切换界面是，都要判断是否有token是否是需要登录的界面，否则就进入的登录页
 router.beforeEach((to, from ,next) => {
   if (!to.meta.isPublic && !localStorage.token) {
     return next('/login')

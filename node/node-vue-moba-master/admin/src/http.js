@@ -1,3 +1,4 @@
+
 import axios from 'axios'
 import Vue from 'vue'
 import router from './router'
@@ -6,6 +7,7 @@ const http = axios.create({
   baseURL: process.env.VUE_APP_API_URL || '/admin/api',
   // baseURL: 'http://localhost:3000/admin/api'
 })
+
 http.interceptors.request.use(function (config) {
   // Do something before request is sent
   if (localStorage.token) {
@@ -16,6 +18,7 @@ http.interceptors.request.use(function (config) {
   // Do something with request error
   return Promise.reject(error);
 });
+
 http.interceptors.response.use(res => {
   return res
 }, err => {
@@ -24,7 +27,7 @@ http.interceptors.response.use(res => {
       type: 'error',
       message: err.response.data.message
     })
-    
+    //需要从新登录 
     if (err.response.status === 401) {
       router.push('/login')
     }

@@ -34,35 +34,43 @@ module.exports = app => {
     const items = await req.Model.find().setOptions(queryOptions).limit(100)
     res.send(items)
   })
+  
   // 资源详情
   router.get('/:id', async (req, res) => {
     const model = await req.Model.findById(req.params.id)
     res.send(model)
   })
+
   // 登录校验中间件
   const authMiddleware = require('../../middleware/auth')
   const resourceMiddleware = require('../../middleware/resource')
+
   app.use('/admin/api/rest/:resource', authMiddleware(), resourceMiddleware(), router)
 
   const multer = require('multer')
   const MAO = require('multer-aliyun-oss');
   const upload = multer({
-    // dest: __dirname + '/../../uploads',
+    //本地存储
+    //dest: __dirname + '/../../uploads',
+    // 上传云服务
     storage: MAO({
       config: {
-        region: 'oss-cn-sj',
-        accessKeyId: 'id',
-        accessKeySecret: '123456',
-        bucket: 'node-vue-moba'
+        region: 'oss-cn-beijing',
+        accessKeyId: 'LTAI4FfRR6Xz2a47oEMLfC6q',
+        accessKeySecret: 'kwdRE9uyURBr2JmOTkt77WNYLLY1p6',
+        bucket: 'node-vue-moba-sj'
       }
     })
   })
+  
+  
   app.post('/admin/api/upload', authMiddleware(), upload.single('file'), async (req, res) => {
     const file = req.file
-    // file.url = `http://test.topfullstack.com/uploads/${file.filename}`
+    //file.url = `http://localhost:3000/uploads/${file.filename}`
     res.send(file)
   })
 
+  //用户登录，，密码没加密可以用注释掉的方法登录 用户名sujian 密码123456
   app.post('/admin/api/login', async (req, res) => {
     const { username, password } = req.body
     // 1.根据用户名找用户

@@ -1,4 +1,5 @@
 module.exports = options => {
+
   const assert = require('http-assert')
   const jwt = require('jsonwebtoken')
   const AdminUser = require('../modles/AdminUser')
@@ -11,5 +12,7 @@ module.exports = options => {
     req.user = await AdminUser.findById(id)
     assert(req.user, 401, '请先登录')
     await next()
+  
   }
+
 }
