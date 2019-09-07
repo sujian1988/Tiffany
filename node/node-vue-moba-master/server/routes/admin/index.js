@@ -1,8 +1,9 @@
 module.exports = app => {
+
   const express = require('express')
   const assert = require('http-assert')
   const jwt = require('jsonwebtoken')
-  const AdminUser = require('../../models/AdminUser')
+  const AdminUser = require('../../modles/AdminUser')
   const router = express.Router({
     mergeParams: true
   })
@@ -49,9 +50,9 @@ module.exports = app => {
     // dest: __dirname + '/../../uploads',
     storage: MAO({
       config: {
-        region: 'oss-cn-zhangjiakou',
-        accessKeyId: '替换为你的真实id',
-        accessKeySecret: '替换为你的真实secret',
+        region: 'oss-cn-sj',
+        accessKeyId: 'id',
+        accessKeySecret: '123456',
         bucket: 'node-vue-moba'
       }
     })
@@ -75,6 +76,36 @@ module.exports = app => {
     const token = jwt.sign({ id: user._id }, app.get('secret'))
     res.send({ token })
   })
+  app.post('/admin/api/login', async (req, res) =>{
+
+  //   const {username, password} = req.body
+  //   //1 根据用户名找用户
+  //   const adminUser = require("../../modles/AdminUser")
+  //   const user = await adminUser.findOne({  username: username })//找到用户
+  //   console.log("user : " + user);
+  //   if(!user){
+  //       return res.status(422).send({
+  //           message: "用户不存在"
+  //       })
+  //   }
+    
+  //   // const user1 = await adminUser.findOne({ 
+  //   //     password: password
+  //   // })//找到用户
+  //   // console.log("请求password: " + password )
+  //   // console.log("数据库password：" + user.findOne.password)
+  //   // if(!user1){
+  //   //     return res.status(423).send({
+  //   //         message: "密码错误"
+  //   //     })
+  //   // }
+
+  //   // //3 返回token
+  //   //res.send("ok") //测试接口是通畅
+  //   const token = jwt.sign({ id: user._id }, app.get('secret'))
+  //   res.send({ token })
+
+})
 
   // 错误处理函数
   app.use(async (err, req, res, next) => {
