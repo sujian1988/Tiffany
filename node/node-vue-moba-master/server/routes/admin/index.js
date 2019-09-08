@@ -52,7 +52,7 @@ module.exports = app => {
   const upload = multer({
     //本地存储
     //dest: __dirname + '/../../uploads',
-    // 上传云服务
+    // 上传云服务  
     storage: MAO({
       config: {
         region: 'oss-cn-beijing',
