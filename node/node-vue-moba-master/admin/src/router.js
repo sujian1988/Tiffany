@@ -21,6 +21,10 @@ import AdminUserEdit from './views/AdminUserEdit.vue'
 import AdminUserList from './views/AdminUserList.vue'
 
 
+import UserEdit from './views/UserEdit.vue'
+import UserList from './views/UserList.vue'
+
+
 Vue.use(Router)
 
 const router = new Router({
@@ -54,6 +58,10 @@ const router = new Router({
         { path: '/admin_users/create', component: AdminUserEdit },
         { path: '/admin_users/edit/:id', component: AdminUserEdit, props: true },
         { path: '/admin_users/list', component: AdminUserList },
+
+        { path: '/users/create', component: UserEdit },
+        { path: '/users/edit/:id', component: UserEdit, props: true },
+        { path: '/users/list', component: UserList },
 
       ]
     },
