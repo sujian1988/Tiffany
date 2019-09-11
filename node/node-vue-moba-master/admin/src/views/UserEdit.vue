@@ -6,6 +6,23 @@
       <el-form-item label="用户名">
         <el-input v-model="model.user_name"></el-input>
       </el-form-item>
+
+       <el-form-item label="称号">
+            <el-input v-model="model.buyer_name"></el-input>
+          </el-form-item>
+          <el-form-item label="头像">
+            <el-upload
+              class="avatar-uploader"
+              :action="uploadUrl"
+              :headers="getAuthHeaders()"
+              :show-file-list="false"
+              :on-success="res => $set(model, 'user_headimg', res.url)"
+            >
+              <img v-if="model.user_headimg" :src="model.user_headimg" class="user_headimg">
+              <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+            </el-upload>
+          </el-form-item>
+
       <el-form-item label="密码">
         <el-input type="text" v-model="model.user_password"></el-input>
       </el-form-item>

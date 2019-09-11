@@ -4,6 +4,15 @@
     <el-table :data="items">
       <el-table-column prop="_id" label="ID" width="240"></el-table-column>
       <el-table-column prop="user_name" label="用户名"></el-table-column>
+      <el-table-column prop="buyer_name" label="昵称"></el-table-column>
+      <el-table-column prop="user_headimg" label="头像">
+
+         <template slot-scope="scope">
+              <img :src="scope.row.user_headimg" style="height:3rem;">
+         </template>
+
+      </el-table-column>
+
       <el-table-column fixed="right" label="操作" width="180">
         <template slot-scope="scope">
           <el-button
