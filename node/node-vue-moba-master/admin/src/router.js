@@ -21,6 +21,10 @@ import AdminUserEdit from './views/AdminUserEdit.vue'
 import AdminUserList from './views/AdminUserList.vue'
 
 
+import UserEdit from './views/UserEdit.vue'
+import UserList from './views/UserList.vue'
+
+
 Vue.use(Router)
 
 const router = new Router({
@@ -55,11 +59,17 @@ const router = new Router({
         { path: '/admin_users/edit/:id', component: AdminUserEdit, props: true },
         { path: '/admin_users/list', component: AdminUserList },
 
+        { path: '/users/create', component: UserEdit },
+        { path: '/users/edit/:id', component: UserEdit, props: true },
+        { path: '/users/list', component: UserList },
+
       ]
     },
 
   ]
 })
+
+//每次切换路由是切换界面是，都要判断是否有token是否是需要登录的界面，否则就进入的登录页
 router.beforeEach((to, from ,next) => {
   if (!to.meta.isPublic && !localStorage.token) {
     return next('/login')

@@ -1,10 +1,12 @@
 module.exports = app => {
+
   const express = require('express')
   const assert = require('http-assert')
   const jwt = require('jsonwebtoken')
-  const AdminUser = require('../../models/AdminUser')
+  const AdminUser = require('../../modles/AdminUser')
+  
   const router = express.Router({
-    mergeParams: true
+    mergeParams: true //表示合并url参数
   })
 
   // 创建资源
@@ -33,35 +35,44 @@ module.exports = app => {
     const items = await req.Model.find().setOptions(queryOptions).limit(100)
     res.send(items)
   })
+  
   // 资源详情
   router.get('/:id', async (req, res) => {
     const model = await req.Model.findById(req.params.id)
     res.send(model)
   })
+
   // 登录校验中间件
   const authMiddleware = require('../../middleware/auth')
+  //接口名称转换成模型名例如categories转成Category（怎么转的不理解）
   const resourceMiddleware = require('../../middleware/resource')
+
+  //通用接口  rest/:resourcd 是动态参数，动态接口api                     
   app.use('/admin/api/rest/:resource', authMiddleware(), resourceMiddleware(), router)
 
   const multer = require('multer')
   const MAO = require('multer-aliyun-oss');
   const upload = multer({
-    // dest: __dirname + '/../../uploads',
+    //本地存储
+    //dest: __dirname + '/../../uploads',
+    // 上传云服务
     storage: MAO({
       config: {
-        region: 'oss-cn-zhangjiakou',
-        accessKeyId: '替换为你的真实id',
-        accessKeySecret: '替换为你的真实secret',
-        bucket: 'node-vue-moba'
+        region: 'oss-cn-beijing',
+        accessKeyId: 'LTAI4FfRR6Xz2a47oEMLfC6q',
+        accessKeySecret: 'kwdRE9uyURBr2JmOTkt77WNYLLY1p6',
+        bucket: 'node-vue-moba-sj'
       }
     })
   })
+  
+  
   app.post('/admin/api/upload', authMiddleware(), upload.single('file'), async (req, res) => {
     const file = req.file
-    // file.url = `http://test.topfullstack.com/uploads/${file.filename}`
     res.send(file)
   })
 
+  //用户登录，，密码没加密可以用注释掉的方法登录 用户名sujian 密码123456
   app.post('/admin/api/login', async (req, res) => {
     const { username, password } = req.body
     // 1.根据用户名找用户
@@ -75,6 +86,101 @@ module.exports = app => {
     const token = jwt.sign({ id: user._id }, app.get('secret'))
     res.send({ token })
   })
+
+
+//----------------------------------------------appApi--------------------------------------
+
+
+app.post('/admin/api/app_login', async (req, res) => {
+  
+  const{ user_name, user_password } = req.body
+  const User = require('../../modles/User')
+  const user = await User.findOne({user_name})
+   if(!user){
+     res.status(422).json("用户不存在");
+   }
+
+   const password = await User.findOne({ user_password})//找到密码
+    if(!password){
+      res.status(423).json("密码错误");
+        //return res.status(423).send({message: "密码错误" })
+    }
+  
+  //生成token
+  const user_token = jwt.sign({ id: user._id }, app.get('secret'))
+  //创建一个临时对象 设置token
+  var userapp = {user_token: user_token};
+  // 最后赋值给数据库对象 赋值好后再返回给前端
+  const userback = await User.findByIdAndUpdate(user._id, userapp)
+    
+  //res.send('ok')
+  //返回json数组要加大括号，返回对象不用加大括号
+  res.status(200).json(userback);
+
+})
+
+
+app.post('/admin/api/app_create_user', async (req, res) => {
+
+  const{ user_name, user_password } = req.body
+  const User = require('../../modles/User')
+  const user = await User.findOne({user_name})
+  if(user){
+    res.status(424).json("用户已存在");
+  }
+    
+  const newuser = await User.create(req.body)
+
+  //生成token
+  const user_token = jwt.sign({ id: newuser._id }, app.get('secret'))
+  //创建一个临时对象 设置token
+  var userapp = {user_token: user_token};
+  // 最后赋值给数据库对象 赋值好后再返回给前端
+  const userback = await User.findByIdAndUpdate(newuser._id, userapp)
+    
+  //res.send('ok')
+  //返回json数组要加大括号，返回对象不用加大括号
+  res.status(200).json(userback);
+
+})
+
+
+
+
+
+
+
+
+//  app.post('/admin/api/login', async (req, res) =>{
+
+  //   const {username, password} = req.body
+  //   //1 根据用户名找用户
+  //   const adminUser = require("../../modles/AdminUser")
+  //   const user = await adminUser.findOne({  username: username })//找到用户
+  //   console.log("user : " + user);
+  //   if(!user){
+  //       return res.status(422).send({
+  //           message: "用户不存在"
+  //       })
+  //   }
+    
+  //   // const user1 = await adminUser.findOne({ 
+  //   //     password: password
+  //   // })//找到用户
+  //   // console.log("请求password: " + password )
+  //   // console.log("数据库password：" + user.findOne.password)
+  //   // if(!user1){
+  //   //     return res.status(423).send({
+  //   //         message: "密码错误"
+  //   //     })
+  //   // }
+
+  //   // //3 返回token
+  //   //res.send("ok") //测试接口是通畅
+  //   const token = jwt.sign({ id: user._id }, app.get('secret'))
+  //   res.send({ token })
+
+//})
 
   // 错误处理函数
   app.use(async (err, req, res, next) => {

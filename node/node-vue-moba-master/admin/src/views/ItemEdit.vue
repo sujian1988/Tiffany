@@ -13,7 +13,7 @@
           :show-file-list="false"
           :on-success="afterUpload"
         >
-          <img v-if="model.icon" :src="model.icon" class="avatar">
+          <img v-if="model.avatar" :src="model.avatar" class="avatar">
           <i v-else class="el-icon-plus avatar-uploader-icon"></i>
         </el-upload>
       </el-form-item>
@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     afterUpload(res){
-      this.$set(this.model, 'icon', res.url)
+      this.$set(this.model, 'avatar', res.url)
       // this.model.icon = res.url
     },
     async save() {

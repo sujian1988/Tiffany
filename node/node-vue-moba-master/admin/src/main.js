@@ -10,6 +10,7 @@ Vue.config.productionTip = false
 import http from './http'
 Vue.prototype.$http = http
 
+//全局都可以使用 处理上传图片
 Vue.mixin({
   computed: {
     uploadUrl(){
@@ -17,8 +18,10 @@ Vue.mixin({
     }
   },
   methods: {
+    //获取token
     getAuthHeaders(){
       return {
+        // 如果没有就返回空
         Authorization: `Bearer ${localStorage.token || ''}`
       }
     }

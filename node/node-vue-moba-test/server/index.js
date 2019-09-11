@@ -2,10 +2,16 @@ const express = require("express")
 
 const app = express()
 
+app.set('secret', '123456')
+
 //跨域模块
 app.use(require('cors')())
 //添加中间件才可以用数据库
 app.use(express.json())
+
+//静态托管文件
+app.use("/uploads", express.static(__dirname + '/uploads'))
+app.use("/uploadshero", express.static(__dirname + '/uploads/heros'))
 
 //引入数据库
 require('./plugins/db')(app)

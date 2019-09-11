@@ -23,7 +23,7 @@
       </div>
     </div>
 
-    <router-view></router-view>
+    <router-view  :key="$router.path"></router-view>
   </div>
 </template>
 

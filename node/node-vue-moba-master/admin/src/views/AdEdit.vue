@@ -17,8 +17,8 @@
             <el-form-item label="图片" style="margin-top: 0.5rem;">
               <el-upload
                 class="avatar-uploader"
-                  :action="uploadUrl"
-                 :headers="getAuthHeaders()"
+                :action="uploadUrl"
+                :headers="getAuthHeaders()"
                 :show-file-list="false"
                 :on-success="res => $set(item, 'image', res.url)"
               >
@@ -54,7 +54,7 @@ export default {
   },
   methods: {
     async save() {
-      let res;
+      let res
       if (this.id) {
         res = await this.$http.put(`rest/ads/${this.id}`, this.model);
       } else {
