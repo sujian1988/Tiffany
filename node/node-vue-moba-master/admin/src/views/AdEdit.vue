@@ -6,6 +6,7 @@
         <el-input v-model="model.name"></el-input>
       </el-form-item>
       <el-form-item label="广告">
+        
         <el-button size="small" @click="model.items.push({})">
           <i class="el-icon-plus"></i> 添加广告
         </el-button>
