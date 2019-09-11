@@ -144,6 +144,13 @@ app.post('/admin/api/app_create_user', async (req, res) => {
 
 })
 
+const video = require('../../modles/Video')
+app.get('/admin/api/app_video_list', async(req, res) =>{
+  const videos = await video.find().limit(10) // 限制10条数据
+  res.status(200).json({
+      videos
+  });
+})
 
 
 

@@ -20,9 +20,11 @@ import AdList from './views/AdList.vue'
 import AdminUserEdit from './views/AdminUserEdit.vue'
 import AdminUserList from './views/AdminUserList.vue'
 
-
 import UserEdit from './views/UserEdit.vue'
 import UserList from './views/UserList.vue'
+
+import VideoEdit from './views/VideoEdit.vue'
+import VideoList from './views/VideoList.vue'
 
 
 Vue.use(Router)
@@ -62,6 +64,10 @@ const router = new Router({
         { path: '/users/create', component: UserEdit },
         { path: '/users/edit/:id', component: UserEdit, props: true },
         { path: '/users/list', component: UserList },
+
+        { path: '/videos/create', component: VideoEdit },
+        { path: '/videos/edit/:id', component: VideoEdit, props: true },
+        { path: '/videos/list', component: VideoList },
 
       ]
     },

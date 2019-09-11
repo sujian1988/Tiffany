@@ -73,6 +73,20 @@
             <el-menu-item index="/users/list">用户列表</el-menu-item>
           </el-menu-item-group>   
         </el-submenu>
+
+          
+        <el-submenu index="5">
+          <template slot="title">
+            <i class="el-icon-message"></i>视频管理
+          </template>
+          <el-menu-item-group>
+            <template slot="title">视频</template>
+            <el-menu-item index="/videos/create">新建视频</el-menu-item>
+            <el-menu-item index="/videos/list">视频列表</el-menu-item>
+          </el-menu-item-group>   
+        </el-submenu>
+
+
       
       </el-menu>
     </el-aside>
