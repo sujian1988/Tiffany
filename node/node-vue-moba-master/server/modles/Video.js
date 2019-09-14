@@ -19,6 +19,7 @@ const schema = new mongoose.Schema({
   thumbnail: {type: String},
   video: {type:String},
 
+  
 })
 
 module.exports = mongoose.model('Video', schema)
