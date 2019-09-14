@@ -172,6 +172,17 @@ app.post('/admin/api/app_find_userown_video/:id', async (req, res) => {
 
 })
 
+app.post("/admin/api/app_comments/:id", async(req, res)=>{
+  
+  const comment = require('../../modles/Comment')
+  //通过user_id查询
+ const comments = await comment.find({video_id: req.params.id}).limit(10)
+ res.status(200).json({
+    comments
+ });
+  //res.send(req.params.id)
+})
+
 //每次写接口，先测试接口是否通畅
 // app.post("/admin", async(req, res)=>{
 //   res.send('ok')

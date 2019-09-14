@@ -26,6 +26,9 @@ import UserList from './views/UserList.vue'
 import VideoEdit from './views/VideoEdit.vue'
 import VideoList from './views/VideoList.vue'
 
+import CommentEdit from './views/CommentEdit.vue'
+import CommentList from './views/CommentList.vue'
+
 
 Vue.use(Router)
 
@@ -68,6 +71,10 @@ const router = new Router({
         { path: '/videos/create', component: VideoEdit },
         { path: '/videos/edit/:id', component: VideoEdit, props: true },
         { path: '/videos/list', component: VideoList },
+
+        { path: '/comments/create', component: CommentEdit },
+        { path: '/comments/edit/:id', component: CommentEdit, props: true },
+        { path: '/comments/list', component: CommentList },
 
       ]
     },
