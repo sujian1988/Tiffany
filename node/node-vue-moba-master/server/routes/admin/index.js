@@ -157,11 +157,25 @@ app.get('/admin/api/app_video_list', async(req, res) =>{
  app.post('/admin/api/app_create_video', async (req, res) => {
   const video = require('../../modles/Video')
   const newVideo = await video.create(req.body)
-  res.status(200).json({newVideo});
+  res.status(200).json(newVideo);
 
 })
 
+//查找该用户下的视频
+app.post('/admin/api/app_find_userown_video/:id', async (req, res) => {
+   const video = require('../../modles/Video')
+    //通过user_id查询
+   const videos = await video.find({user_id: req.params.id}).limit(10)
+   res.status(200).json({
+      videos
+   });
 
+})
+
+//每次写接口，先测试接口是否通畅
+// app.post("/admin", async(req, res)=>{
+//   res.send('ok')
+// })
 
 
 //  app.post('/admin/api/login', async (req, res) =>{

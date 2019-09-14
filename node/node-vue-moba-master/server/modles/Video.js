@@ -4,11 +4,11 @@ const mongoose = require('mongoose')
 const schema = new mongoose.Schema({
   
   user_name: { type: String },
+  user_headimg:{type: String},
   user_id: {type: String},
   title:{type: String},
   comment: {type: Number},
   user_type: {type: String},
-  user_headimg: {type: String},
   top_commentsVoiceuri: {type: String},
   up: {type: Number},
   down: {type: Number},
