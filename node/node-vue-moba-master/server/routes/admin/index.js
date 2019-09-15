@@ -172,6 +172,7 @@ app.post('/admin/api/app_find_userown_video/:id', async (req, res) => {
 
 })
 
+//获取视频的评论列表
 app.post("/admin/api/app_comments/:id", async(req, res)=>{
   
   const comment = require('../../modles/Comment')
@@ -182,6 +183,16 @@ app.post("/admin/api/app_comments/:id", async(req, res)=>{
  });
   //res.send(req.params.id)
 })
+
+//发布评论
+app.post("/admin/api/api_relaese_comment", async(req, res)=> {
+  const comment = require('../../modles/Comment')
+  const newComment = await comment.create(req.body)
+  res.status(200).json(newComment);
+})
+
+
+
 
 //每次写接口，先测试接口是否通畅
 // app.post("/admin", async(req, res)=>{
