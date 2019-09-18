@@ -1,7 +1,11 @@
 const mongoose = require('mongoose')
 
-
+//	@AutoIncKey
 const schema = new mongoose.Schema({
+  user_id: {
+    type: String,
+    index: true,
+  },
   user_name: { type: String },
   user_password: {
     type: String,
@@ -10,7 +14,6 @@ const schema = new mongoose.Schema({
     //   return require('bcrypt').hashSync(val, 10)
     // }
   },
-  user_id: {type: String},
   user_mobile: {type: String},
   user_type: {type: String},
   user_headimg: {type: String},

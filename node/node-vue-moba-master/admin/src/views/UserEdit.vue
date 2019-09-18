@@ -7,6 +7,10 @@
         <el-input v-model="model.user_name"></el-input>
       </el-form-item>
 
+      <el-form-item label="用户id">
+        <el-input v-model="model.user_id"></el-input>
+      </el-form-item>
+
        <el-form-item label="称号">
             <el-input v-model="model.buyer_name"></el-input>
           </el-form-item>

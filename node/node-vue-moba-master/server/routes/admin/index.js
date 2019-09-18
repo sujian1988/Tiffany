@@ -135,9 +135,13 @@ app.post('/admin/api/app_create_user', async (req, res) => {
   const user_token = jwt.sign({ id: newuser._id }, app.get('secret'))
   //创建一个临时对象 设置token
   var userapp = {user_token: user_token};
-  // 最后赋值给数据库对象 赋值好后再返回给前端
+  var useridapp = {user_id: newuser._id} 
+  //将_id赋值给user_id
+  await User.findByIdAndUpdate(newuser._id, useridapp)
+  // 最后赋值给数据库对象 赋值好后再返回给前端 
   const userback = await User.findByIdAndUpdate(newuser._id, userapp)
     
+
   //res.send('ok')
   //返回json数组要加大括号，返回对象不用加大括号
   res.status(200).json(userback);
@@ -157,7 +161,10 @@ app.get('/admin/api/app_video_list', async(req, res) =>{
  app.post('/admin/api/app_create_video', async (req, res) => {
   const video = require('../../modles/Video')
   const newVideo = await video.create(req.body)
-  res.status(200).json(newVideo);
+  var videoidapp = {video_id: newVideo._id} 
+  //将_id赋值给video_id
+  const changeVideo = await video.findByIdAndUpdate(newVideo._id,videoidapp)
+  res.status(200).json(changeVideo);
 
 })
 
@@ -172,11 +179,11 @@ app.post('/admin/api/app_find_userown_video/:id', async (req, res) => {
 
 })
 
-//获取视频的评论列表
+//通过视频id获取视频的评论列表
 app.post("/admin/api/app_comments/:id", async(req, res)=>{
   
   const comment = require('../../modles/Comment')
-  //通过user_id查询
+  //通过video_id查询
  const comments = await comment.find({video_id: req.params.id}).limit(10)
  res.status(200).json({
     comments
@@ -184,14 +191,44 @@ app.post("/admin/api/app_comments/:id", async(req, res)=>{
   //res.send(req.params.id)
 })
 
+
+
+app.post("/admin/api/app_comment_reply/:id", async(req, res)=>{
+  
+  const comment = require('../../modles/Comment')
+  //通过user_id查询
+ const comments = await comment.find({reply_user_id: req.params.id}).limit(10)
+
+  res.status(200).json({
+    comments
+  });
+  // res.send(req.params.id)
+})
+
+
+
 //发布评论
 app.post("/admin/api/api_relaese_comment", async(req, res)=> {
   const comment = require('../../modles/Comment')
   const newComment = await comment.create(req.body)
-  res.status(200).json(newComment);
+  var commentidapp = {comment_id: newComment._id} 
+  //将_id赋值给video_id
+  const changeComment = await comment.findByIdAndUpdate(newComment._id, commentidapp)
+  res.status(200).json(changeComment);
 })
 
 
+//点赞
+app.post("/admin/api/app_comments_like/:id", async(req, res)=>{
+  
+  const comment = require('../../modles/Comment')
+  //通过video_id查询
+ const comments = await comment.find({video_id: req.params.id}).limit(10)
+ res.status(200).json({
+    comments
+ });
+  //res.send(req.params.id)
+})
 
 
 //每次写接口，先测试接口是否通畅

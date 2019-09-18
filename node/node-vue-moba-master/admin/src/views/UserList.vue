@@ -3,6 +3,7 @@
     <h1>用户列表</h1>
     <el-table :data="items">
       <el-table-column prop="_id" label="ID" width="240"></el-table-column>
+      <el-table-column prop="user_id" label="用户id"></el-table-column>
       <el-table-column prop="user_name" label="用户名"></el-table-column>
       <el-table-column prop="buyer_name" label="昵称"></el-table-column>
       <el-table-column prop="user_headimg" label="头像">

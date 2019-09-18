@@ -7,9 +7,9 @@
         <el-select v-model="model.parent">
           <el-option 
             v-for="item in parents" 
-            :key="item._id"
+            :key="item.user_id"
             :label="item.user_name" 
-            :value="item._id">
+            :value="item.user_id">
             </el-option>
         </el-select>
       
