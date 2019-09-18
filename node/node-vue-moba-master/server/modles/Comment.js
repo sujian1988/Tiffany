@@ -15,7 +15,10 @@ const schema = new mongoose.Schema({
   reply_user_id: {type: String},
   reply_user_name: { type: String },
   reply_comment: {type: String},
-  other_up: {type: Number},
+  other_up: {
+    type: Number,
+    default : 0
+  },
   comment_type: {type: Number}, //1是发表视频评论，2 是回复用户评论
 
   

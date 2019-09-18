@@ -219,14 +219,24 @@ app.post("/admin/api/api_relaese_comment", async(req, res)=> {
 
 
 //点赞
-app.post("/admin/api/app_comments_like/:id", async(req, res)=>{
+app.post("/admin/api/app_comments_like", async(req, res)=>{
   
+  const{comment_id, other_up, user_id } = req.body
   const comment = require('../../modles/Comment')
-  //通过video_id查询
- const comments = await comment.find({video_id: req.params.id}).limit(10)
- res.status(200).json({
-    comments
- });
+  var commentup = {other_up: other_up}
+  
+  const tmpComment = await comment.findOne({comment_id})
+   
+  if(tmpComment.other_up === other_up){
+    res.status(424).json("点赞失败")
+    return
+  }
+  //通过comment_id查询
+  const changeComment = await comment.findByIdAndUpdate(comment_id, commentup) 
+  res.status(200).json(
+    "点赞成功"
+  );
+ 
   //res.send(req.params.id)
 })
 
