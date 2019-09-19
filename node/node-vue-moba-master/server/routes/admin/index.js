@@ -151,11 +151,14 @@ app.post('/admin/api/app_create_user', async (req, res) => {
 
 app.get('/admin/api/app_video_list', async(req, res) =>{
   const video = require('../../modles/Video')
-  const videos = await video.find().limit(10) // 限制10条数据
+  //const videos = await video.find().limit(5) // 限制10条数据
+  const videos = await video.find().skip((parseInt(req.query.page)-1) * 5).limit(5) // 限制5条数据
   res.status(200).json({
       videos
   });
 })
+
+
 
 //创建视频
  app.post('/admin/api/app_create_video', async (req, res) => {
@@ -172,7 +175,7 @@ app.get('/admin/api/app_video_list', async(req, res) =>{
 app.post('/admin/api/app_find_userown_video/:id', async (req, res) => {
    const video = require('../../modles/Video')
     //通过user_id查询
-   const videos = await video.find({user_id: req.params.id}).limit(10)
+   const videos = await video.find({user_id: req.params.id}).skip((parseInt(req.query.page)-1) * 5).limit(5)
    res.status(200).json({
       videos
    });
@@ -184,7 +187,7 @@ app.post("/admin/api/app_comments/:id", async(req, res)=>{
   
   const comment = require('../../modles/Comment')
   //通过video_id查询
- const comments = await comment.find({video_id: req.params.id}).limit(10)
+ const comments = await comment.find({video_id: req.params.id}).skip((parseInt(req.query.page)-1) * 5).limit(5)
  res.status(200).json({
     comments
  });
