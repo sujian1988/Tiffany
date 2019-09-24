@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <input type="text" id="name">
+    <button id="nick" type="button">设置</button>
+    <input type="text" id="chat">
+    <button id="btn" type="button">发送</button>
+    <script>
+        var ws = new WebSocket('ws://192.168.3.10:2333');
+        
+        document.getElementById('nick').onclick = function(){
+            var name = document.getElementById('name').value;
+            if(name == '')return console.log('名字不能为空');
+
+            ws.onopen = function(){
+                ws.send(JSON.stringify({
+                    name: name, 
+                    type: 'nick'
+                }));
+            }
+            var chat = document.getElementById('chat').value;
+            document.getElementById('btn').onClick = function(){
+                ws.send(JSON.stringify({
+                    chat: chat, 
+                    type:'chat'
+                }));
+            }
+
+            ws.onmessage = function(e){
+            var p = document.createElement('p');
+                p.innerHTML = e.data;
+                document.body.appendChild(p);
+            }
+        }
+        
+      
+    </script>
+</body>
+</html>
