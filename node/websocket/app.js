@@ -18,7 +18,7 @@ var server = ws.createServer(function(conn){
                 boardcast(data.nick + "加入房间");
                 break;
             case 'chat':
-                boardcast(data.chat);
+                boardcast(data.nick + " : " + data.chat);
                 break;
             default:
 
