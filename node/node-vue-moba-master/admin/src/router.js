@@ -29,6 +29,10 @@ import VideoList from './views/VideoList.vue'
 import CommentEdit from './views/CommentEdit.vue'
 import CommentList from './views/CommentList.vue'
 
+import LiveEdit from './views/LiveEdit.vue'
+import LiveList from './views/LiveList.vue'
+
+
 
 Vue.use(Router)
 
@@ -76,6 +80,9 @@ const router = new Router({
         { path: '/comments/edit/:id', component: CommentEdit, props: true },
         { path: '/comments/list', component: CommentList },
 
+        { path: '/lives/create', component: LiveEdit },
+        { path: '/lives/edit/:id', component: LiveEdit, props: true },
+        { path: '/lives/list', component: LiveList },
       ]
     },
 
