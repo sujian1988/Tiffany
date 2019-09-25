@@ -93,7 +93,21 @@
 
         </el-submenu>
 
+        <el-submenu index="6">
+          <template slot="title">
+            <i class="el-icon-message"></i>直播live管理
+          </template>
+          <el-menu-item-group>
+            <template slot="title">直播live</template>
+            <el-menu-item index="/lives/create">新建直播live</el-menu-item>
+            <el-menu-item index="/lives/list">直播live列表</el-menu-item>
+          </el-menu-item-group>
+       
 
+        </el-submenu>
+
+
+      
       
       </el-menu>
     </el-aside>
