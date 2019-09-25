@@ -28,7 +28,7 @@ var server = ws.createServer(function(conn){
     });
 
     conn.on('close', function(){
-        boardcast(conn.nickname + '离开了房间');
+        boardcast(conn.nick + '离开了房间');
     })
 
     //处理错误
@@ -47,6 +47,7 @@ var server = ws.createServer(function(conn){
         server.connections.forEach(function(conn){
             conn.sendText(str);
         })
+    
     }
 
 
