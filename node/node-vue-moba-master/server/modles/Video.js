@@ -19,7 +19,6 @@ const schema = new mongoose.Schema({
   gif: {type: String},
   thumbnail: {type: String},
   video: {type:String},
-  duration_Time: {type: Number},
   create_time: { type: Date, default: Date.now },
 
 
