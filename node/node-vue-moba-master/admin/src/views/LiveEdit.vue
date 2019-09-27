@@ -25,10 +25,6 @@
      <el-form-item label="up主头像">
         <el-input v-model="model.headerUrl"></el-input>
       </el-form-item>
-           
-      <el-form-item label="直播封面图">
-       <el-input v-model="model.bgImageUrl"></el-input>
-      </el-form-item>
             
       
       <el-form-item>

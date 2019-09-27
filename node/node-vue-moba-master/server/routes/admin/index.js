@@ -244,6 +244,19 @@ app.post("/admin/api/app_comments_like", async(req, res)=>{
 })
 
 
+//获取直播列表
+app.get('/admin/api/app_live_list', async(req, res) =>{
+  const live = require('../../modles/Live')
+  const lives = await live.find().skip((parseInt(req.query.page)-1) * 5).limit(5) // 限制5条数据
+  res.status(200).json({
+      lives
+  });
+})
+
+
+
+
+
 //每次写接口，先测试接口是否通畅
 // app.post("/admin", async(req, res)=>{
 //   res.send('ok')
