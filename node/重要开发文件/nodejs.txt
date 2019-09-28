@@ -458,6 +458,9 @@ npm i nodejs-websocket -save (save 是添加到依赖库里)
 更新后台网页界面      
 D:\GitCode\Tiffany\node\node-vue-moba-master\admin> npm run build
 
+//安装heroku 线上部署websocket项目
+npm install -g heroku
+
 
 //实现多个聊天室
 https://www.itying.com/goods-877.html?from=rss

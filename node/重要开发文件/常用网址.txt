@@ -1,3 +1,14 @@
+线上直播服务器地址
+http://39.96.18.249:8081/stat
+线上后台
+http://39.96.18.249:3000/admin/#/lives/list
+
+websocket部署
+https://signup.heroku.com/
+sujian181@gmail.com
+sujian
+sj86624932*
+
 
 https://www.npmjs.com/signup
 sujiantiffany

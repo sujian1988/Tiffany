@@ -3,8 +3,8 @@ var ws = require("ws");
 
 //启动基于websocket的服务器,监听我们的客户端接入进来。
 var server = new ws.Server({
-	//host: "192.168.3.10",
-	host: "39.96.18.249",
+	host: "192.168.3.10",
+	//host: "39.96.18.249",
 	port: 2334,
 });
 
