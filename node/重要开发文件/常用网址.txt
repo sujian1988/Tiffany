@@ -1,0 +1,558 @@
+
+https://www.npmjs.com/signup
+sujiantiffany
+86624932
+
+项目vcs http://192.168.0.254:8080
+shike项目vcs网址 http://192.168.0.254:8080/dev/app/Shike_android_new
+用户名 guojianjie
+密  码 123456q
+
+ping++
+https://www.pingxx.com/guidance/client/sdk/android
+后台开发文档
+https://www.pingxx.com/docs/downloads
+后台继承好后app端只需要更换支付的url地址即可。
+用户名：597201889@qq.com
+密  码：86624932
+
+stuido ndk 下载地址
+https://developer.android.google.cn/ndk/downloads/index.html
+
+
+菜鸟商城
+http://www.cniao5.com/lesson/play/758.html
+菜鸟应用商店
+http://www.cniao5.com/course/10079
+用户名：13019336754
+密  码：sujian86624932
+
+mob
+http://www.mob.com/#/
+用户名：597201889@qq.com
+密  码：13019336754 
+sdk下载
+http://www.mob.com/#/downloadDetail/ShareSDK/android
+
+//微信开发平台
+http://open.weixin.qq.com
+用户名：597201889@qq.com
+密  码：sujian86624932 
+
+微信账号
+用户名 kelishidiyano
+密码   sujian86624932
+
+LeanCloud
+
+https://leancloud.cn/login.html#/signin
+账号和密码绑定的是QQ
+
+友盟推送
+http://push.umeng.com/57fa2298e0f55a672b000ded/msgList
+
+//小米审核平台
+https://dev.mi.com/console/
+小米ID：1477294751
+13052302493
+RQZ@123456R
+
+
+信鸽推送
+https://www.qcloud.com/product/XGPush.html?utm_source=pcsem1&utm_medium=bdgj287&utm_campaign=baidu
+信鸽 3284219109  RQF849cg
+推送开发文档
+http://developer.qq.com/wiki/xg/Android%E6%8E%A5%E5%85%A5/Android%20SDK%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5/Android%20SDK%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5.html
+
+友盟统计
+https://i.umeng.com/user/products
+mengmeng_0731@163.com   
+WSX789L
+
+tuoleishi
+sj86624932
+key
+5d611fa03fc19553c60006df
+
+您已获得【友盟+】Open API身份认证信息，请妥善保管。
+apiKey:4569855
+apiSecurity:BZXkOwvmYLur
+
+
+友盟开发文档
+http://dev.umeng.com/analytics/android-doc/integration
+
+postman
+
+绑定的google账号
+用户名：kelishidiyano
+
+
+
+人气服
+网  址：http://www.51renqifu.com
+用户名：sujian
+密  码：sujian86624932
+
+tomcat
+Apache Tomcat Version 6.0.26
+port    :  8080
+username: sujian
+password: 86624932
+
+
+网  址：http://www.iteye.com/login
+用户名：kelishidiyano
+密  码：sujian86624932
+
+极光消息推送
+
+网  址：https://www.jiguang.cn/accounts/login/form
+用户名：tuoleishi
+密  码：86624932
+
+postman
+sujian181@gmail.com
+sujian86624932
+
+docker
+tuoleishi
+sj86624932
+597201889@qq.com
+
+tuoleishione
+sj86624932
+sujian181@gmail.com
+
+https://cloud.docker.com/repository/registry-1.docker.io/tuoleishi/su
+
+window上成功运行docker命令
+http://mirrors.aliyun.com/docker-toolbox/windows/docker-toolbox/
+
+node项目成功运行在阿里云的docker上
+https://v.youku.com/v_show/id_XNDA4Mzk2MDQxMg==.html
+
+硅谷
+http://www.atguigu.com/download.shtml#EventBus
+
+//优秀软件集合
+https://github.com/open-android/Android
+github 
+597201889@qq.com
+sj86624932     (2019-6-8 最新密码)
+1 先在git官网上创建仓库
+2 把创建好后clone url 到本地，生成本地库
+3 之后进入本地库的根目录，git push 就可以把文件提交上去了
+
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/sujian1988/NodeDB.git
+git push -u origin master
+
+
+----------------------------------------------------
+
+21012320000228041x
+
+// 阿里云
+zhanglong
+zl86624932
+
+支付宝
+15940174189
+zhanglong2580
+199888
+
+上传图片视频文件到阿里oss使用的配置
+AccessKeyID：
+LTAI4FfRR6Xz2a47oEMLfC6q
+AccessKeySecret：
+kwdRE9uyURBr2JmOTkt77WNYLLY1p6
+
+推荐产品
+https://cart.aliyun.com/?spm=5176.10173289.console-base-top.dcart.385c2e77309RIA
+
+----------------------------------------------------------
+
+RAP2
+http://rap2.taobao.org/
+苏健
+597201889@qq.com
+86624932
+
+服务器实例密码
+Zl86624932
+
+阿里云mysql数据库密码
+Gpip6x.ytaev 临时密码
+登录mysql 命令
+mysql -uroot -p'Sj86624932.'
+
+mongoDB
+597201889@qq.com
+86624932
+
+https://dribbble.com/
+sujian181
+tiffany86624932
+
+
+apk打包签名文件
+D:\xunlei
+ail 86624932
+password 86624932
+vscode 打包签名方法
+flutter doctor -v
+D:\androidstudio\jre\bin\java
+
+
+线上后台网址：qaz.58renqifu.com
+              http://rqf.58renqifu.com/
+58后台第一层账号密码：
+
+用户名 ：SAdf%-qw-@13
+密码： LOP%90+*%%$@rqf
+
+
+第二层账号为你名字的拼音（全拼）
+密码为：你名字的拼音（全拼）123
+
+http://open.weibo.com/
+3043585358@qq.com  
+caomeipai888
+
+
+https://open.weixin.qq.com/
+3043585358@qq.com  
+caomeipai888
+
+http://open.qq.com/
+3043585358  
+Caomeipa!888
+
+//mob分享常见问题文档
+http://bbs.mob.com/thread-30-1-1.html
+
+人气符 apk签名密码 renqifu888 
+
+淘宝
+kelishidiyano
+sujian86624932
+
+
+应用宝
+http://open.qq.com/
+3043585358  
+Caomeipa!888
+
+乐固- 加固app
+https://www.qcloud.com/login?s_url=http%3A%2F%2Fconsole.qcloud.com%2Flegu%2Fmyapplication%2Findex
+597201889
+13940513983
+
+3043585358  
+Caomeipa!888
+
+
+fackbook
+sujian181@gmail.com
+sujian86624932
+
+360软件发放平台
+http://open.soft.360.cn/
+http://dev.360.cn/mod/developer/index/submittype/0
+账号：13003293164
+密码：L506!841h
+
+
+蒲公英app内侧
+https://www.pgyer.com/account/certification
+账号：wangwei@juzi025.com
+密码：L506!841h
+
+597201889@qq.com
+sj86624932
+
+
+http://account.fir.im/user
+账号：wangwei@juzi025.com
+密码：caomeipai888
+
+
+//直播需要注册的网站
+https://www.anyrtc.io/
+账号 597201889@qq.com
+密码 86624932
+
+//vs2013 激活方法。
+https://jingyan.baidu.com/article/0bc808fc68e1c11bd485b9a5.html	
+****在输入密钥界面，输入密钥“BWG7X-J98B3-W34RT-33B3R-JVYW9”，点击“确定”，等待几秒钟完成激活。
+
+//黑客基础
+http://www.bilibili.com/video/av6837025/
+
+//android dex加密
+http://bbs.pediy.com/thread-203776.htm
+
+https://github.com/nodejs/node/tree/master/lib
+
+blender
+http://bbs.blendercn.org/forum.php
+用户名 kelishidiyano
+
+//任务流程
+https://shimo.im/doc/rwq6yGeUIUU2MUjv
+
+https://shimo.im/doc/U5wODxwDPK89e0bl
+
+https://shimo.im/doc/fucpN3Ia2IMIopAe	
+
+https://shimo.im/doc/5TaK6Y5CsvAKY4D8
+
+淘宝买号
+15702455532
+wei1992wei1993
+
+18842361990
+jiangchao3463
+
+京东账号
+
+13019336754
+sujian86624932
+--------------------------------------------
+人气符账号
+13019336754
+人气符密码
+86624932
+淘宝账号                         
+13019336754
+淘宝用户名
+kelishidiyano
+淘宝密码
+sujian86624932
+支付宝1
+13019336754
+sujian86624932
+
+--------------------------------------------
+人气符账号
+13149842378
+人气符密码
+86624932
+淘宝账号                         
+13149842378
+淘宝用户名
+jiangsu86624932
+淘宝密码
+sujian86624932
+支付宝2
+13149842378
+sujian86624932
+
+----------------------------------------------
+人气符账号
+13204041701
+人气符密码
+86624932
+淘宝账号
+13204041701
+淘宝用户名
+tuoleishi86624932
+淘宝密码
+sujian86624932
+支付宝3
+13204041701
+sujian86624932
+
+---------------------------------------------
+
+人气符账号 
+小情绪_3204811
+密码
+1995.0801Swx
+1995.0801swx
+
+人气符账号 
+13019336754
+密码
+86624932
+
+人气符账号 
+13204041701
+密码
+86624932
+
+
+http://192.168.1.227/invite/invite
+
+
+premiere pro 教程网
+http://www.lookae.com/
+
+
+//leancloud网址
+https://leancloud.cn/dashboard/data.html?appid=OeUbCiMFFOXis3lKV1B95Wvm-gzGzoHsz#/_File
+//apk下载地址
+http://ac-oeubcimf.clouddn.com/9d6e0faa97b5bdb7f2a7.apk
+
+210 123 1962 1210 161x
+//基础教程绑定。
+https://www.youtube.com/watch?v=nmSf2hbEAYI&t=470s
+
+报名及直播地址：www.atguigu.com/online.shtml    8点开始
+
+
+http://192.168.0.159/trade/lists
+邮箱密码
+Sujian86624932
+
+
+sujian@shandong025.com
+Sujian86624932
+best new
+sujian@yantai025.com
+Sj86624932
+
+
+https://developer.android.com/studio/preview/index.html
+
+LLLLLLLL 密码dada123456
+DDDDDD 密码xiaoxiao123456
+C座：linlang    密码：dada1314
+
+本地互惠符买手网站
+http://buy.renqifu.com/center
+15555555555
+123456q
+
+本地互惠符后台网站
+http://hlf.com/
+hejie
+123456q
+
+本地互惠符商家网站
+17621038677
+1234567q
+发布任务完成后，在跑一遍这个链接
+http://www.renqifu.com/cron_trade/set_trade_finish
+
+
+Adobe Photoshop CS6图像设计与制作案例技能实训教程
+Houdini动态图形设计案例解析 
+正版包邮 2018A中文版Maya 2016完全自学教程时代印象计算机与互联网 图形图像/多媒体书籍9787115472564人民邮电出版社 
+传奇 zbrush4.0数字雕刻大师之路 第2版 雕塑教程畅销书籍 入门 角色建模 计算机3d技术解析 三维制作 cg雕刻机人体骨骼机械模型 
+Unreal Engine 4从入门到精通 UE4书籍 UE虚幻引擎
+
+网易邮箱
+https://mail.163.com
+m13019336754@163.com
+sujian86624932
+
+qq
+597201889
+sujian86624932
+
+宝山区场北路51号一楼
+
+公积金
+184230135205
+用户名
+tuoleishi
+密码
+86624932
+
+12306
+sjtuoleishi
+
+
+百度网盘
+杜华龙
+13840190147
+q22040556w
+
+苏健（关连qq号）
+597201889
+sj86624932
+
+
+安卓
+链接：https://pan.baidu.com/s/1zL93lU4yMgWYMrqRBqt1-g 
+提取码：i9b0 
+复制这段内容后打开百度网盘手机App，操作更方便哦
+ue4
+链接：https://pan.baidu.com/s/1QFT-SY_1h5Qk7Eu4RgP-VA 
+提取码：gmt6 
+复制这段内容后打开百度网盘手机App，操作更方便哦
+ue4辅助软件
+链接：https://pan.baidu.com/s/18QXRgN14ssya_MKOwNTxnA 
+提取码：ta9b 
+复制这段内容后打开百度网盘手机App，操作更方便哦
+
+
+
+
+http://www.qiuyunqi.net/Winner/center/?&time=3&time=3
+
+https://cloud.tencent.com/
+
+https://open.weixin.qq.com
+
+https://open.tencent.com/
+
+http://open.weibo.com
+
+https://account.umeng.com/
+
+https://tinypng.com/
+
+http://chandao123.linlangxiu.cn
+
+http://kengliren.com/forum-41-1.html
+
+http://www.wmiao.com/forum-87-1.html
+新邮箱
+sujian@jinhua025.com
+Sj86624932
+
+
+svn
+svn://106.75.70.7/myProject
+sujian  
+yV+Y6eLV
+
+b站
+13019336754
+86624932
+
+https://www.apicloud.com/console
+13019336754
+sj86624932
+
+Mongodb
+https://www.mongodb.com
+597201889@qq.com
+86624932
+
+
+三星制作主题网址
+http://support-cn.samsung.com/App/DeveloperChina/home/list?parentid=11&newsid=46
+
+http://seller.samsungapps.com/
+三星主题库
+13019336754
+sj86624932*
+sujian181@gmail.com
+
+rxjava文档
+https://github.com/RecativeX/RxJava/wiki
+rxjava中文文档
+https://mcxiaoke.githbooks.io/rxdocs/content/
+rxjava经典质料
+https://github.com/lzyzsd/Awesome-RxJava
+
+nginx生成配置文件的网站
+nginxconfig.io/
+
+http://39.96.18.249:8081/stat 

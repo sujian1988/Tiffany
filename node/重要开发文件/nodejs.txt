@@ -1,0 +1,463 @@
+命名规范
+1 模型类首字母大写
+2 字段首字母小写的驼峰命名
+3 类名首字母大写的驼峰命名
+
+
+
+初始nodejs项目 npm init （在根目录下）
+keyword ：nodebestshop
+
+1 npm init
+
+2 npm install --save express
+  npm i express@next
+
+打印请求信息的类
+npm install --save morgan
+
+npm install --save body-parser
+
+
+或者一次性装3个包
+npm i express@next mongoose cors
+
+pm2启动mongod方法
+pm2 start mongod
+
+
+
+ npm i mongoose --save
+
+
+
+
+启动项目 node-vue-moba
+进入server目录下启动后台服务
+npm run serve
+
+
+ //全局安装vue
+　　npm install vue –g	
+
+　	npm install -g vue-cli                       	//全局安装vue-cli （如何有问题，就在PS "D:\GitCode\Tiffany\node\node-vue-moba-master\admin> npm install vue g" 安装）
+
+　　npm install -g webpack                          //全局安装webpack
+
+	npm install -g webpack-dev-server             //安装webpack的本地webserver
+
+　　安装完成后，vue-cli脚手架其实就已经把vue也装掉了，
+所以只需输入vue  -V 和 webpack  -v  等等就可以查看安装成功与否。
+
+1
+vue create web 创建web端项目 这根目录
+需要执行npm install -g @vue/cli
+2    
+vue create admin 创建后台管理项目 这根目录
+
+3 
+初始化server              
+npm init -y
+
+4 在server目录下创建入口文件 index.js
+
+5 在配置到server下的package.json
+"scripts": {
+    "server": "nodemon index.js"  //配置的
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+nodemon需要安装 npm i -g nodemon  
+
+6 安装element
+PS D:\GitCode\Tiffany\node\node-vue-moba-test\admin> vue add element
+  
+7 添加路由
+PS D:\GitCode\Tiffany\node\node-vue-moba-test\admin> vue add router
+
+8 请求数据
+PS D:\GitCode\Tiffany\node\node-vue-moba-test\admin> npm i axios
+
+vue add element
+
+提交数据请求接口
+npm i axios
+
+安装连接数据库插件
+npm i express@next mongoose cors
+
+安装 inflection 处理单复数的转换
+npm i inflection 
+
+
+安装multer处理上传数据的库
+npm i multer （在server目录下安装）     如果安装错误了。npm uninstall multer
+
+制作文章时需要第三方工具  要在admin根目录下安装
+npm install --save vue2-editor  
+
+安装token插件
+npm i jsonwebtoken
+
+调试时候使用 server端安装
+npm install http-assert
+
+在server下安装
+把某一个文件夹下的所有文件都引用进来，解决找不到字级文件
+npm i require-all  在数据库中使用
+
+在server下安装 上传图片到阿里云
+npm install --save multer-aliyun-oss
+
+在web文件夹下安装
+npm i -D sass sass-loader
+
+
+使用360修复系统时可能会误删除mongodb的驱动，注意
+
+
+
+添加模块功能时
+admin
+1 先添加页面vue
+2 再到路由配置该页面 import path
+3 修改vue的数据模型
+server
+4 创建模型类在model中
+5 在server的routers-》admin-》 index.js文件中添加接口
+
+
+admin 前端界面
+
+1
+如果有事加载不出来样式
+可以查看plugins目录下的elements文件
+
+2
+前端
+表示撑满屏幕高度
+ <el-container style="height: 100vh;">
+
+3 
+click 无法识别 slot-scope="scope"时，可能是你符号打错了，例如
+错误   @click="$router.push('/categories/edit/${scope.row.name}')">编辑</el-button>
+正确   @click="$router.push(`/categories/edit/${scope.row.name}`)">编辑</el-button>
+
+4 
+如果vue文件里的方法没有调用 请确定方法是否写在method里
+
+5
+如果没有获取到参数或者返回值为空，看看是不是param没有加s
+
+6 
+:action="$https.defaults.baseURL + '/upload'" 前面加“：”表示动态绑定 
+
+7
+突然项目所有接口返回数据都为空，，那个很可能是语法错误，，方法名重复，冲突
+
+8
+TypeError: Cannot read property 'difficult' of undefined （model.scores.difficult）
+遇到这种问题解决方法：在model中添加 difficult前面的属性字段 scores
+
+9
+属性对齐    
+
+10
+   <el-col :md="12" v-for="(item, i) in model.skills">
+   (item, i)表示取for循环的索引值
+
+11
+正常赋值
+res => item.icon = res.url
+
+显示赋值
+$set(item, 'icon', res.url) 显示赋值 如果一开始没有icon属性，就不能赋值，就需要用到显示赋值
+
+12
+用结构的方式直接获取里面的数据
+import {VueEditor} from 'vue2-editor'
+
+13
+//上传文件要用表单格式的数据
+const formData = new FormData();
+
+14 
+respons code 304 
+需要清除浏览器缓存数据 就可返回200了
+快捷键 ctlr + shift + delete
+
+15
+如果vue的方法没有执行，很可能是方法名单引号的问题
+例如  const res =  await this.$http.post(‘uploadnew’, formData); 错误
+	  const res =  await this.$http.post("uploadnew", formData);正确
+
+16
+获取请求头，前端首字母大写，后端首字母小写，他们会自动对应	  
+	  
+	  
+17
+node-vue-test 可以sujjian 123456（未加密的密码）登录
+node-vue-master 用jiangyuting 123456（加密的密码） 的登录
+	  
+	  
+打包上线
+要把admin文件和web文件都打包到server目录下
+先在admin目录下配置vue.config 再执行命令npm run build
+这样server文件夹就会生成admin文件夹	  
+平时在开发是如果需要admin单独运行，只需要把vue.config.js删除。
+否则改admin的文件，则要运行npm run build 不是npm run serve！！！！！！！！
+
+	  
+在阿里云上安装mongodb  -y表示不要是手动点击确认。。自动确认y
+yum install -y mongodb-server	  
+
+运行mongodb  很多时候数据运行不起来可能是因为没有创建数据库的目录 “mkdir -p /data/db”即可
+直接执行
+[root@iz2ze1nmsp5lb40y72gwdpz mongodb]# ./bin/mongod
+
+
+下载git后生成key
+ssh-keygen
+后面一顿回车就好了
+自动生成key
+
+如何查看key
+**Your identification has been saved in /root/.ssh/id_rsa.**
+Your public key has been saved in /root/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:DLsqJfY9a9pkweaUiFcd8Da9rsQYPLFbwrYQVRWCifI root@iz2ze1nmsp5lb40y72gwdpz
+The key's randomart image is:
++---[RSA 2048]----+
+|     .o=+.o.     |
+|  . ..oo +       |
+|   o. + = .      |
+|   .EB O . .     |
+|  . + / S .      |
+|  o..* % .       |
+| . + .O o .      |
+|  . .=+. .       |
+|   .oooo.        |
++----[SHA256]-----+
+cat /root/.ssh/id_rsa.pub
+阿里云服务器的key
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDaG1MFEgWt1Lgc12SaOvcZgkxjzV3EV2+RhFFfAhJ8js3D4rwiVNNf4O7TN3ahGb3sHtCJjiXKYUYvJbcLUgVgWixyaitwW/IwRLIQUaBJ2pRrgVDz4FynCJfqjSQdzLt1W8CL8c0sPIbG3ROyHyIRe6r+6pNFrOKjxM4lUuCBuBaqFwplOOtsNElXl+lgac6A69LsAi2EcO1PfExSiz6UphEq0wEOE8dtlfTB1AC9ga9ShwlMGnV+j63YdSvAlcYOyFaiNLAwkHXw/HYLxYY5uykfBWPsgnuwJ/7mscTxeiEiXIyAUiUhgjEna9p8ePTQYIFRc43PpYFjr1W0WaX7 root@iz2ze1nmsp5lb40y72gwdpz
+
+PS D:\GitCode\Tiffany\node\node-vue-moba-master> ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (C:\Users\DELL/.ssh/id_rsa):
+
+MIIEogIBAAKCAQEAu5CqbfLC4ipVRVWwK4aMPX/sTLoQgbMn/PFDOMBBgBfBChpk
+oSkyILz3MrrehJB8nXdBWzIuk70Pu5eX9cl78cV5poC6NT1LIMCE70Zyo88WN9tP
+Ope3g2ysxRER9QjyTNnARdFF4vXqYzKewDnawhZv1zvLvnAVhqTJESbyhG8NqRzK
+wk0c9x1xHYNael3hiUyoAdlqEdfnfVhnZNXYkftcFKoaP5ey+Kk/5VHPMbchazaq
+9H8xorGZKWeFoQW6p6oH4EB9khpt3XLaRpdUI4umqtFj84JrkVKSoUoGNMNlChTF
+Kl1ytC1J8oxvku41x7Yzjv/S9vsriiU1N36UOQIDAQABAoIBAEKLMZvuW6vHnxcJ
+LoZSpuCOyPPzszWArTg1FEdHFjXut4LxGDCBIBKzV/Q8jgN0C3IGRD6pkBLEKZfB
+UZ1WzU1aZS1oUCfhRg0poEAPu05YgyZv/SzpdKcA4E7OHpPTh7syKd/bPjMmUfC9
+ncrO+8iOE0HGKiO3OjvZrKgULEhFTezVMhbE3iI+X58kHvpbDtM7kFhT+Khth3xR
+7xr/uQpsjYh6Sn/6t82az9g9pdyMbsSLOP0JWM7vR27j/vebE5UjA6yV/FhspLeJ
+TMaEO5IWeMhBjuguV4sCs7pYGWaanPbeKWbrUliuLjQYUr0v5+xUErXp40lc3e6M
+bIxU8LECgYEA8CwaGv4BRLBAYYngY1MMt2/k0hgREOzDsIj9iSpsE23yNVdZzNKk
+JtBT8J8aD5T9JV7VLYSHpeTQXNqNqZkARLLKfFO9y/ODHa0oHr1eMGUSv1iAfpsz
+z/OVxDv78zdrcFSb1NitB+6Wj42NBr9MwbIbiKVFOI/wM+wpcO+BiOUCgYEAx+0J
+69QHypb9oXffGi7b028jbCCtJyoviDkZOFkZx6voNYPUuStREjnmHKYAdCgXZG0S
+vRW+vApsHX0F/YHIlTZd5rJEvV+7xxkBR5EYcCmwnfaKpJt9MgYRd5cVmCESYCzH
+Rh8OT0/qh1Nokgsl/nWA9UxwxBh+avTLrDn3jMUCgYBSrNvPruCA5KtE6FF134Dh
+JIOATwiQ6u/yNTYRoajSh2Z5NjiTaW9YbR54FkzCUGdUFfEMWjLXyIxxakqZtzGA
+dIt/gNQ1AP6BmLnW2xkxT5nEhJK3AnYzf4Zuprd0Yf96C6YY/v2RXXA2umNxjyi9
+BLK1ty686c+mEAWz+r58gQKBgHOVXhQCbFK6wn2UcN6RUrPFYCRGK/UllX9bC3Kh
+SJ9AiqpNwjEfkupHoPrVGhQNjaCY0qmQpcnO+Lx/qHPskYt6eAVE8SrO6x/rG+tF
+PmyyHZLlkzghUNsX2QdbyLc//4CswrSOhdZirIN6PE2atmeLhXfLrrIgOw4Y4pt6
+k9zFAoGADHNY2GemuB6w9V2yWM9LHLDEk5BRRUFbuxiNxSHXxVSN/fTr6tGE9NtG
+/T/L55r4DLdm5Y6e/9KKexyYB4qxOHeljaWS9NcBs7MkyDjt0ke3UiWWYg00cSXI
+2HHwaItToYcbHN8m3fqJnaPUMfm4QsPLwWmMbKIi5CHlfnK2GTk=
+
+
+切换npm镜像的工具
+npm i -g nrm
+查看当前镜像
+nrm current 
+设置使用的镜像
+nrm use npm
+nrm use taobao
+
+升级node 本身的包
+npm i -g n
+
+
+安装pm2
+npm i -g pm2
+
+//有时项目有问题，多重启试一试
+用pm2运行项目 
+pm2 start index.js
+
+pm2 stop index.js
+
+pm2 list 查看进程
+
+pm2 log 
+
+pm2 reload index
+
+$ npm install pm2 -g     # 命令行安装 pm2 
+$ pm2 start app.js -i 4 #后台运行pm2，启动4个app.js 
+                                # 也可以把'max' 参数传递给 start
+                                # 正确的进程数目依赖于Cpu的核心数目
+$ pm2 start app.js --name my-api # 命名进程
+$ pm2 list               # 显示所有进程状态
+$ pm2 monit              # 监视所有进程
+$ pm2 logs               #  显示所有进程日志
+$ pm2 stop all           # 停止所有进程
+$ pm2 restart all        # 重启所有进程
+$ pm2 reload all         # 0秒停机重载进程 (用于 NETWORKED 进程)
+$ pm2 stop 0             # 停止指定的进程
+$ pm2 restart 0          # 重启指定的进程
+$ pm2 startup            # 产生 init 脚本 保持进程活着
+$ pm2 web                # 运行健壮的 computer API endpoint (http://localhost:9615)
+$ pm2 delete 0           # 杀死指定的进程
+$ pm2 delete all         # 杀死全部进程
+
+
+如果不加name，很可能index.js的程序都会启动。到时就会无法观看最新的git代码了
+pm2 start index.js --name="app"
+
+pm2 stop index.js --name="app"
+
+
+$ pm2 delete all                # 关闭并删除所有应用
+
+$ pm2 delete 0                  # 删除指定应用 id 0
+
+$ pm2 scale api 10              # 把名字叫api的应用扩展到10个实例
+
+使用curl测试地址
+
+
+http://39.96.18.249:28017
+	  
+	  
+window命令行
+ls -al	  
+
+/etc/nginx
+nginx缺失site-enable目录的解决办法
+	  
+我认为nginx自身并没有创建有你说的那目录，如果是ubuntu apt安装的话，倒是有可以有这个目录。不过你可以自己手动来创建。
+创建/etc/nginx/sites-available和/etc/nginx/sites-enabled目录，在/etc/nginx/nginx.conf配置文件中的http区块添加如下行：
+include /etc/nginx/sites-enabled/*;
+所有的虚拟主机配置文件放在sites-available目录，然后你可以在sites-enabled目录创建软链接指向sites-available里的配置文件	  
+
+将数据备份到阿里云上
+1	  
+在本地
+导出mongodb数据文件 
+                    数据库名
+$ mongodump -d node-vue-moba
+
+如果在vscode下不识别mongodump命令，则需要配置环境变量
+我的电脑-》属性-》高级系统设置-》环境变量-》系统变量--》Path，添加
+D:\mongDB\Server\4.2\bin  
+即可
+
+2
+在阿里云
+mongorestore
+dump文件夹在哪个目录就在那个目录执行mongorestore命令
+如果导入失败，就把.bson文件删除，就剩下.json文件即可
+
+
+将mongod路径添加到系统路径中，方便随处执行mongod命令
+首先进入编辑页面
+[root@iz2ze1nmsp5lb40y72gwdpz /]# vim /etc/profile
+然后添加 wq保持退出
+export PATH=$PATH:/usr/local/mongodb/bin
+刷新文件
+[root@iz2ze1nmsp5lb40y72gwdpz /]# source /etc/profile
+
+进入mongodb数据库
+mongo
+
+删除数据库，删除当前所在的数据库
+db.dropDatabase();
+
+db.serverStatus()
+
+mongodb有啥连不上UnhandledPromiseRejectionWarning: MongoNetworkError:
+这种问题就是没开数据库服务，谢谢
+电脑左下角搜索服务，开启mongodb服务即可
+
+linux下查看软件安装列表
+yum list installed
+
+
+http://39.96.18.249:3000/admin/#/login
+
+连接线上数据库的软件
+https://robomongo.org/download	  
+	  
+http://39.96.18.249:3000/#/
+
+线下启动项目
+PS D:\GitCode\Tiffany\node\node-vue-moba-master\server> npm run serve   
+线上启动项目
+1 先启动mongod数据库否则无法显示数据 pm2 start mongod
+2 PS D:\GitCode\Tiffany\node\node-vue-moba-master\server> pm2 start index.js   
+
+
+ffmpeg 压缩命令      压缩视频  压缩到多大    输出目录
+D:\yasuo>ffmpeg -i me.mp4  -b    600k     D:/yasuo/me600.mp4
+
+
+懒得看直接用下面的命令
+ffmpeg -i in.png -vf palettegen=max_colors=256:stats_mode=single -y tmp.png
+ffmpeg -i in.png -i tmp.png -lavfi "[0][1:v] paletteuse" -pix_fmt pal8 -y out.png
+
+
+ 好吧 看来需要优化一下调色板 
+ffmpeg -i in.png -vf palettegen=max_colors=256:stats_mode=single -y out_3.png
+这里的输出结果是一个调色板 并不是完整图像 由于这是单张静图所以mode使用的是single
+这个参数有几种具体区别可以看文档 http://ffmpeg.org/ffmpeg-all.html#palettegen-1
+再用优化过的调色板去转换 得到结果 116 KB
+ffmpeg -i in.png -i out_3.png -lavfi "[0][1:v] paletteuse" -pix_fmt pal8 -y out_4.png
+
+
+websocket 代码推到线上 别忘记运行 npm install ws  否则运行失败  npm i (再运行一下这个命令全部安装一遍)
+
+
+origin/su 是最新的分支
+
+
+        region: 'oss-cn-zhangjiakou',
+        accessKeyId: '替换为你的真实id',
+        accessKeySecret: '替换为你的真实secret',
+        bucket: 'node-vue-moba'
+		
+android
+1 单独创建一个接口
+2 在一个类中设置这些接口
+3 在另一个类中实现这些接口
+
+
+###########################################################websocket#####################################################################33333
+npm安装模块
+【npm install xxx】利用 npm 安装xxx模块到当前命令行所在目录；
+【npm install -g xxx】利用npm安装全局模块xxx；
+本地安装时将模块写入package.json中：
+
+【npm install xxx】安装但不写入package.json；
+【npm install xxx –save】 安装并写入package.json的”dependencies”中；
+【npm install xxx –save-dev】安装并写入package.json的”devDependencies”中。
+npm 删除模块
+【npm uninstall xxx】删除xxx模块； 
+【npm uninstall -g xxx】删除全局模块xxx；
+
+
+npm i nodejs-websocket -save (save 是添加到依赖库里)
+
+更新后台网页界面      
+D:\GitCode\Tiffany\node\node-vue-moba-master\admin> npm run build
+
+
+//实现多个聊天室
+https://www.itying.com/goods-877.html?from=rss

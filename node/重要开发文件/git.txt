@@ -1,0 +1,63 @@
+1 先在github上创建库
+2 然后clonedown 到本地目录（目录必须是空的）clonedown完成后你会发现有个readme文件
+3 
+
+
+$ git reset --hard HEAD^         回退到上个版本
+$ git reset --hard HEAD~3        回退到前3次提交之前，以此类推，回退到n次提交之前
+$ git reset --hard commit_id     退到/进到 指定commit的sha码
+
+
+
+本地如何上传项目
+1 先本地项目的根目录下执行
+  git init
+  
+2 添加当前项目到本地git版本
+  git add .  
+  
+3 项目提交到本地
+  git commit -am "首次提交项目到本地"  
+  
+4 给这个项目关联一个远程地址 
+  git remote add orgin 远程地址
+例子
+  git remote add orgin https://github.com/sujian1988/NodeDB.git
+  
+5 将本地项目push到线上
+             线上  本地分支 -u 是首次提交关联换一下 
+  git push -u origin master  
+              
+  
+6 最后是在远程拉取
+  git clone 连接    
+  
+拉取好后可能会确实第三方库，进入server 执行 “npm i” 他会去找packge.json里面需要安装的包   
+  
+  
+  
+  查看分支 git branch
+  
+  gitignorge文件是忽略上传的文件，这些文件不用上传到git上面。太大
+  
+  
+7 回退上一版本
+
+git reset --hard HEAD^
+
+这个版本是数据库可以运行的  
+[root@iz2ze1nmsp5lb40y72gwdpz NodeDB]# git reset --hard HEAD^
+HEAD is now at 13f4e4c 首次提交项目到本地
+  
+  
+  
+8 切换分支
+git checkout -b 分支名  
+  
+  
+强推  
+git push -f git  
+  
+git config user.name zhangsan
+git config user.email zhangsan@qq.com  
+  

@@ -1,0 +1,79 @@
+
+new AsyncTask<Object, Object, Boolean>() {
+      @Override
+      protected void onPreExecute() {
+        mPD = new ProgressDialog(InitActivity.this);
+        mPD.setCancelable(false);
+        mPD.setMessage(InitActivity.this.getString(getResources().getIdentifier("vitamio_init_decoders", "string", getPackageName())));
+        mPD.show();
+      }
+
+      @Override
+      protected Boolean doInBackground(Object... params) {
+        return Vitamio.initialize(InitActivity.this, getResources().getIdentifier("libarm", "raw", getPackageName()));
+      }
+
+      @Override
+      protected void onPostExecute(Boolean inited) {
+        if (inited) {
+          uiHandler.sendEmptyMessage(0);
+      }
+
+
+如果要启动39.96.18.249服务器的nginx-1.17.0
+需要先进入nginx-1.17.0 
+然后在输入 ./bin/sbin/nginx
+在输入一次提示1935端口号被占用说明你启动的ngnix版本是对的
+因此这个服务器上有两个ngnix，如果你默认输入nginx他会自动启用低版本的nginx	
+停止服务
+nginx -s quit
+例如
+[root@iz2ze1nmsp5lb40y72gwdpz nginx-1.17.0]# ./bin/sbin/nginx -s quit    （不能再跟目录直接启动。。会启动到另一个nginx默认的服务器）
+[root@iz2ze1nmsp5lb40y72gwdpz nginx-1.17.0]# ./bin/sbin/nginx
+
+
+如果要启动39.96.18.249服务器的nginx-1.17.0
+需要先进入nginx-1.17.0 
+然后在输入 ./bin/sbin/nginx
+例如：
+[root@iz2ze1nmsp5lb40y72gwdpz nginx-1.17.0]# ./bin/sbin/nginx
+
+
+或者
+killall nginx
+
+启动nginx,通过netstat -ltn命令可以看到增加了一个1935端口的监听.8080是nginx默认的http监听端口.
+
+第一种推流方式    （推流时，先拉流，在推流！！！）
+//live 命令格式
+ffmpeg -re -i /home/loong/video/input.mp4 -vcodec libx264 -vprofile baseline -acodec aac -ar 44100 -strict -2 -ac 1 -f flv -s 1280x720 -q 10 rtmp://127.0.0.1:1935/live/test
+
+//测试命令
+D:\yasuo>ffmpeg -re -i fristblood.mp4 -vcodec libx264 -vprofile baseline -acodec aac -ar 44100 -strict -2 -ac 1 -f flv -s 1280x720 -q 10 rtmp://39.96.18.249/live/test
+
+
+第二种推流方式
+//hls 命令格式
+D:\yasuo>ffmpeg -re -i /home/loong/video/input.mp4 -vcodec libx264 -vprofile baseline -acodec aac -ar 44100 -strict -2 -ac 1 -f flv -s 1280x720 -q 10 rtmp://127.0.0.1:1935/hls/test
+
+//测试命令
+D:\yasuo>ffmpeg -re -i fristblood.mp4 -vcodec libx264 -vprofile baseline -acodec aac -ar 44100 -strict -2 -ac 1 -f flv -s 1280x720 -q 10 rtmp://127.0.0.1:1935/hls/test
+
+E:\迅雷下载>ffmpeg -re -i fristblood.mp4 -vcodec libx264 -vprofile baseline -acodec aac -ar 44100 -strict -2 -ac 1 -f flv -s 1280x720 -q 10 rtmp://39.96.18.249/live/test
+
+拉流地址
+rtmp://39.96.18.249/live/test
+rtmp://127.0.0.1:1935/hls/test
+
+公网测试连接
+rtmp://202.69.69.180:443/webcast/bshdlive-pc
+ rtmp://ns8.indexforce.com/home/mystream (480*270 分辨率不高)
+//rtmp://media3.sinovision.net:1935/live/livestream (720*406)
+
+
+nginx 1935端口号 是直播的端口号， 8081端口号是ngixn 1.17.0版本直播使用服务器
+
+*****
+本地测试websocket连接时，一定要用“无线局域网适配器的ipv4地址！！”
+
+d: "/data/data/test.com.livetest/libs/libffmpeg.so" has text relocations

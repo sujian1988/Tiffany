@@ -1,0 +1,158 @@
+turnserver启动命令
+/usr/local/bin/turnserver --syslog -a -f --min-port=32355 --max-port=65535 --user=dds:123456 -r dds --cert=turn_server_cert.pem --pkey=turn_server_pkey.pem --log-file=stdout -v
+
+启动turnserver命令
+/usr/local/bin/turnserver --syslog -a -f --min-port=32355 --max-port=65535 --user=dds:123456 -r dds --cert=turn_server_cert.pem --pkey=turn_server_pkey.pem --log-file=stdout -v
+
+
+socket服务器
+cd webrtc/WebrtcNodeJS/
+node server.js
+
+
+
+
+
+
+
+
+
+
+
+
+linux系统如何查看端口号
+netstat -tunlp|grep 4000
+杀掉端口号
+fuser -k -n tcp 
+
+
+
+
+/usr/local/bin
+
+
+webrtc 安装环境
+
+wget https://nodejs.org/dist/v10.16.0/node-v10.16.0-linux-x64.tar.xz   
+sudo ln -s /root/webrtc/nodejs/bin/npm /usr/local/bin/
+sudo ln -s /root/webrtc/nodejs/bin/node /usr/local/bin/    
+
+yum install openssl openssl-libs libevent2 libevent-devel
+yum install openssl-devel
+yum install sqlite
+yum install sqlite-devel
+yum install postgresql-devel
+yum install postgresql-server
+yum install mysql-devel
+yum install mysql-server
+yum install hiredis
+yum install hiredis-devel
+
+git clone http://github.com/coturn/coturn
+./configure    执行shell脚本
+make
+make install    把可执行文件放到系统目录下
+
+which turnserver  检查turn服务器是否安装
+
+设置turn服务器用户名和密码
+turnadmin -k -u sujian -r north.gov -p 123456
+生成的值 
+0xbe63637d63de5c7ab73914aa70010250
+
+创建文件
+/usr/local/etc/turnserver.config
+
+verbose
+fingerprint
+lt-cred-mech
+realm=test
+user=addssingsong:0xbe63637d63de5c7ab73914aa70010250
+user=ddssingsong:123456
+state-nonce
+no-loopback-peers
+no-multicast-peers
+mobility
+no-cli
+
+启动turnserver命令
+/usr/local/bin/turnserver --syslog -a -f --min-port=32355 --max-port=65535 --user=dds:123456 -r dds --cert=turn_server_cert.pem --pkey=turn_server_pkey.pem --log-file=stdout -v
+
+mv 旧名字 新名字 
+
+切换到webrtc目录下
+git clone https://github.com/androidtencent/WebrtcNodeJS
+下载成功后要安装
+npm install
+
+安装nginx
+wget -c http://nginx.org/download/nginx-1.12.0.tar.gz
+tar -xvf 安装包nginx
+进入解压好的nginx目录
+./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module
+
+make
+
+传教私钥
+openssl genrsa -des3 -out cert.key 2048
+密码 sujian
+
+转换成没有密码的私钥
+openssl rsa -in cert.key -out cert.key
+
+生成crt
+openssl req -new -x509 -key cert.key -out cert.crt -days 3650
+
+country name : cn
+其他的都是 sujian
+
+#Country Name (2 letter code) [XX]:cn
+#State or Province Name (full name) []:sujian
+#Locality Name (eg, city) [Default City]:sujian
+#Organization Name (eg, company) [Default Company Ltd]:sujian
+#Organizational Unit Name (eg, section) []:sujian
+#Common Name (eg, your name or your server's hostname) []:sujian
+#Email Address []:sujian
+
+生成csr
+openssl req -new -key cert.key -out cert.csr
+
+
+#Country Name (2 letter code) [XX]:cn
+#State or Province Name (full name) []:sujian
+#Locality Name (eg, city) [Default City]:sujian
+#Organization Name (eg, company) [Default Company Ltd]:sujian
+#Organizational Unit Name (eg, section) []:sujian
+#Common Name (eg, your name or your server's hostname) []:sujian
+#Email Address []:sujian
+
+#Please enter the following 'extra' attributes
+#to be sent with your certificate request
+#A challenge password []:sujian
+#An optional company name []:sujian
+
+生成cert.crt
+openssl x509 -req -days 3650 -in cert.csr -CA cert.crt -CAkey cert.key -CAcreateserial -out cert.crt
+
+合并成pem
+cat cert.key cert.crt > cert.pem
+
+cd /usr/local/nginx/
+
+
+
+编写run.sh 脚本
+#!/bin/bash
+NODE=`which node`
+nohup $NODE server.js & > log.txt
+nohup /usr/local/bin/turnserver --syslog -a -f --min-port=32355 --max-port=65535 --user=dds:123456 -r dds --cert=turn_server_cert.pem --pkey=turn_server_pkey.pem --log-file=stdout -v & > log.txt
+
+找到node的可执行文件
+which node
+
+给文件夹赋值权限
+chmod 777 run.sh
+
+运行shell脚本
+./run.sh
+

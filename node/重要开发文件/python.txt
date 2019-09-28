@@ -1,0 +1,9 @@
+在cmd 中输入 python
+
+退出 exit()
+
+pip list
+
+pip install flake8
+
+pip install yapf
