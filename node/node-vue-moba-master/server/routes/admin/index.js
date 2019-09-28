@@ -244,6 +244,29 @@ app.post("/admin/api/app_comments_like", async(req, res)=>{
 })
 
 
+//创建直播
+app.post('/admin/api/app_create_live', async (req, res) => {
+  const live = require('../../modles/Live')
+  const newLive = await live.create(req.body)
+  var liveidapp = {mliveId: newLive._id} 
+  //将_id赋值给mliveId
+  const changeLive= await live.findByIdAndUpdate(newLive._id,liveidapp)
+  res.status(200).json(changeLive);
+
+})
+
+//获取个人直播列表
+app.post('/admin/api/app_user_live_list/:id', async (req, res) => {
+  const live = require('../../modles/Live')
+   //通过user_id查询
+  const lives = await live.find({user_id: req.params.id}).skip((parseInt(req.query.page)-1) * 5).limit(5)
+  //res.send(req.params.id);
+  res.status(200).json({
+     lives
+  });
+
+})
+
 //获取直播列表
 app.get('/admin/api/app_live_list', async(req, res) =>{
   const live = require('../../modles/Live')

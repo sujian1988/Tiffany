@@ -3,11 +3,15 @@
     <h1>{{id ? '编辑' : '新建'}}直播live</h1>
     <el-form label-width="120px" @submit.native.prevent="save">
       <el-form-item label="标题">
-        <el-input v-model="model.mLiveTopic"></el-input>
+        <el-input v-model="model.mliveTitle"></el-input>
       </el-form-item>
 
      <el-form-item label="up主">
         <el-input v-model="model.nickName"></el-input>
+      </el-form-item>
+
+      <el-form-item label="房间号">
+        <el-input v-model="model.roomId"></el-input>
       </el-form-item>
 
       <el-form-item label="观看人数">
@@ -24,6 +28,10 @@
 
      <el-form-item label="up主头像">
         <el-input v-model="model.headerUrl"></el-input>
+      </el-form-item>
+
+      <el-form-item label="封面">
+        <el-input v-model="model.bgImageUrl"></el-input>
       </el-form-item>
             
       
