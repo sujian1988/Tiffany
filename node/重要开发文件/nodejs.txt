@@ -438,6 +438,45 @@ android
 2 在一个类中设置这些接口
 3 在另一个类中实现这些接口
 
+设置防火墙
+yum install iptables-services
+systemctl mask firewalld.service
+systemctl enable iptables.service
+systemctl enable ip6tables.service
+
+进入iptables配置80端口，因为nginx默认是由80端口访问
+vi /etc/sysconfig/iptables
+
+　添加完毕之后就需要防火墙配置了：
+
+　　1、开启防火墙
+
+　　systemctl start firewalld
+
+　　2、设置打开的端口号（永久打开）
+
+　　firewall-cmd --add-port=8000/tcp --permanent
+
+　　3、更新一下：在设置好端口后，需要执行
+
+　　firewall-cmd --reload
+
+　　4、查看已经打开的端口
+
+　　firewall-cmd --list-all
+
+
+重启防火墙
+systemctl restart iptables.service
+1
+查看80端口被占用的进程
+lsof -i:80
+1
+通过kill命令干掉该进程
+
+kill -9 进程号
+1
+启动nginx
 
 ###########################################################websocket#####################################################################33333
 npm安装模块
@@ -461,6 +500,8 @@ D:\GitCode\Tiffany\node\node-vue-moba-master\admin> npm run build
 //安装heroku 线上部署websocket项目
 npm install -g heroku
 
+如何初始化nodejs项目
+在根目录 输入 npm init 就会初始化项目结构，生成package.json 文件
 
 //实现多个聊天室
 https://www.itying.com/goods-877.html?from=rss
