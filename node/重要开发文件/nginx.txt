@@ -25,8 +25,10 @@ new AsyncTask<Object, Object, Boolean>() {
 然后在输入 ./bin/sbin/nginx
 在输入一次提示1935端口号被占用说明你启动的ngnix版本是对的
 因此这个服务器上有两个ngnix，如果你默认输入nginx他会自动启用低版本的nginx	
-停止服务
+
+nginx停止服务
 nginx -s quit
+
 例如
 [root@iz2ze1nmsp5lb40y72gwdpz nginx-1.17.0]# ./bin/sbin/nginx -s quit    （不能再跟目录直接启动。。会启动到另一个nginx默认的服务器）
 [root@iz2ze1nmsp5lb40y72gwdpz nginx-1.17.0]# ./bin/sbin/nginx
@@ -70,8 +72,55 @@ rtmp://202.69.69.180:443/webcast/bshdlive-pc
  rtmp://ns8.indexforce.com/home/mystream (480*270 分辨率不高)
 //rtmp://media3.sinovision.net:1935/live/livestream (720*406)
 
+香港卫视,rtmp://live.hkstv.hk.lxdns.com/live/hks
+
+香港财经,rtmp://202.69.69.180:443/webcast/bshdlive-pc
+
+韩国GoodTV,rtmp://mobliestream.c3tv.com:554/live/goodtv.sdp
+
+韩国朝鲜日报,rtmp://live.chosun.gscdn.com/live/tvchosun1.stream
+
+美国1,rtmp://ns8.indexforce.com/home/mystream
+
+美国2,rtmp://media3.scctv.net/live/scctv_800
+
+美国中文电视,rtmp://media3.sinovision.net:1935/live/livestream
+
+湖南卫视,rtmp://58.200.131.2:1935/livetv/hunantv
+————————————————
+版权声明：本文为CSDN博主「快乐风男灬」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/q386815991/article/details/80942155
+
 
 nginx 1935端口号 是直播的端口号， 8081端口号是ngixn 1.17.0版本直播使用服务器
+
+
+
+
+表示的是监听的服务器的配置
+1. listen 20038                                 表示 nginx 监听的端口
+2. locations /                                  表示监听的路径(/表示所有路径,通用匹配,相当于default)
+3. proxt_http_version 1.1                       表示反向代理发送的HTTP协议的版本是1.1,HTTP1.1支持长连接
+4. proxy_pass http://wsbackend;                 表示反向代理的uri,这里可以使用负载均衡变量
+5. proxy_redirect off;                          表示不要替换路径,其实这里如果是/则有没有都没关系,因为default也是将路径替换到proxy_pass的后边
+6. proxy_set_header Host $host;					表示传递时请求头不变, $host是nginx内置变量,表示的是当前的请求头,proxy_set_header表示设置请求头
+7. proxy_set_header X-Real-IP $remote_addr;        表示传递时来源的ip还是现在的客户端的ip
+8. proxy_read_timeout 3600s;                    表的两次请求之间的间隔超过 3600s 后才关闭这个连接,默认的60s.自动关闭的元凶
+9. proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;        表示X-Forwarded-For头不发生改变
+10. proxy_set_header Upgrade $http_upgrade;        表示设置Upgrade不变
+11. proxy_set_header Connection $connection_upgrade;		表示如果 $http_upgrade为upgrade,则请求为upgrade(websocket),如果不是,就关闭连接
+————————————————
+版权声明：本文为CSDN博主「lhn1599085」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/lhn1599085/article/details/80612890
+
+
+
+
+
+
+
+
+
 
 *****
 本地测试websocket连接时，一定要用“无线局域网适配器的ipv4地址！！”

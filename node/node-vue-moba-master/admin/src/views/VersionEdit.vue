@@ -2,12 +2,24 @@
   <div class="about">
     <h1>{{id ? '编辑' : '新建'}}app版本控制</h1>
     <el-form label-width="120px" @submit.native.prevent="save">
-      <el-form-item label="是否更新 0：不更新 1：更新 2 强更">
+      <el-form-item label="更新开关 0：不更新 1：更新">
         <el-input v-model="model.update_flag"></el-input>
       </el-form-item>
 
      <el-form-item label="最新版本号">
         <el-input v-model="model.latest_version"></el-input>
+      </el-form-item>
+
+      <el-form-item label="最新版本code">
+        <el-input v-model="model.versionCode"></el-input>
+      </el-form-item> 
+
+        <el-form-item label="最小支持版本code"> 
+        <el-input v-model="model.minVersionCode"></el-input>
+      </el-form-item>
+      
+      <el-form-item label="已经更新用户"> 
+        <el-input v-model="model.done_update_Usernum"></el-input>
       </el-form-item>
 
       <el-form-item label="更新内容提示">

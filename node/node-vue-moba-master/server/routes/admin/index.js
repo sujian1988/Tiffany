@@ -93,12 +93,10 @@ module.exports = app => {
 
 //获取版本号
 app.post('/admin/api/app_update_version/', async (req, res) => {
-  const version = require('../../modles/Version')
+  const mversion = require('../../modles/Version')
    //通过user_id查询
-  const mversion = await version.find();
-  res.status(200).json({
-     mversion
-  });
+  const version = await mversion.findOne();
+  res.status(200).json(version);
 
 })
 

@@ -5,6 +5,9 @@
       <el-table-column prop="_id" label="ID" width="240"></el-table-column>
       <el-table-column prop="update_flag" label="更新flag"></el-table-column>
        <el-table-column prop="latest_version" label="最新版本号"></el-table-column>
+       <el-table-column prop="versionCode" label="最新版本code"></el-table-column>
+        <el-table-column prop="minVersionCode" label="最小支持版本code"></el-table-column>
+         <el-table-column prop="done_update_Usernum" label="已经更新的用户"></el-table-column>
         <el-table-column prop="notes" label="更新内容提示"></el-table-column>
        <el-table-column prop="update_url" label="apk下载链接"></el-table-column>
       <el-table-column fixed="right" label="操作" width="180">
