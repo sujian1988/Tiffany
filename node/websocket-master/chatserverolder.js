@@ -85,5 +85,5 @@ io.on('connection', function(socket){
 });
  
 http.listen(2334, function(){
-    console.log('listening on *:2333');
+    console.log('listening on *:2334');
 });
