@@ -18,15 +18,16 @@ io.on('connection', function(socket){
 
     //监听新用户加入
     socket.on('login', function(obj){
-        console.log(obj.username+'加入了聊天室');
+        console.log(obj.user_id+'加入了聊天室');
         //将新加入用户的唯一标识当作socket的名称，后面退出的时候会用到
-        socket.name = obj.userid;
+        socket.name = obj.user_id;
          
         //检查在线列表，如果不在里面就加入
-        if(!onlineUsers.hasOwnProperty(obj.userid)) {
-            onlineUsers[obj.userid] = obj.username;
+        if(!onlineUsers.hasOwnProperty(obj.user_id)) {
+            onlineUsers[obj.user_id] = obj.user_id;
             //在线人数+1
             onlineCount++;
+
         }
          
         //向所有客户端广播用户加入
@@ -34,19 +35,20 @@ io.on('connection', function(socket){
         console.log(obj.username+'加入了聊天室');
     });
     
-    socket.on('add user', (username) => {
+    socket.on('add user', function(data) {
         if (addedUser) return;
         // we store the username in the socket session for this client
-        socket.username = username;
-        ++numUsers;
-        addedUser = true;
-        socket.emit('login', {
-          numUsers: numUsers
-        });    
-        socket.broadcast.emit('user joined', {
-        username: socket.username,
-        numUsers: numUsers
-    });
+            console.log("adduser : " + data );
+            socket.username = data.user_name;
+            ++numUsers;
+            addedUser = true;
+            socket.emit('login', {
+                numUsers: numUsers
+            });    
+
+            socket.broadcast.emit('user joined', {
+                numUsers : numUsers 
+            });
   }); 
 
     //监听用户退出
@@ -85,5 +87,5 @@ io.on('connection', function(socket){
 });
  
 http.listen(2334, function(){
-    console.log('listening on *:2333');
+    console.log('listening on *:2334');
 });
