@@ -91,6 +91,18 @@ module.exports = app => {
 //----------------------------------------------appApi--------------------------------------
 
 
+//获取版本号
+app.post('/admin/api/app_update_version/', async (req, res) => {
+  const version = require('../../modles/Version')
+   //通过user_id查询
+  const mversion = await version.find();
+  res.status(200).json({
+     mversion
+  });
+
+})
+
+
 app.post('/admin/api/app_login', async (req, res) => {
   
   const{ user_name, user_password } = req.body

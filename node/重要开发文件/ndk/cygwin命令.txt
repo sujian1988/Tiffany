@@ -1,0 +1,35 @@
+进入编译器
+nano   
+
+cd 是退出命令
+
+配置linux环境
+ssh-host-config
+
+*** Info: Generating missing SSH host keys
+ssh-keygen: generating new host keys: RSA DSA ECDSA ED25519
+*** Info: Creating default /etc/ssh_config file
+*** Info: Creating default /etc/sshd_config file
+
+
+mkpasswd -l >/etc/passwd
+
+DELL@DESKTOP-UH0QVU9 ~
+$ ssh-host-config
+
+*** Info: Generating missing SSH host keys
+ssh-keygen: generating new host keys: RSA DSA ECDSA ED25519
+
+-----------------------------------------------------------------------
+
+vim命令
+
+当你通过vi/vim更改文件之后，按“Esc“键，退出”insert“模式，然后输入冒号（：）,紧接着输入下面的命令：q!
+
+rtmp://47.244.134.48/myapp
+
+1.物件编号+房间编号:    C136-101
+2.入住日期:         2019-6-22
+3.付款方式:         信用卡（VISA/Master）
+4.入居当天签约时间：      （10点）
+5.預計入住期間:     2019-6-22

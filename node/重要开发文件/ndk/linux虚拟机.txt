@@ -1,0 +1,795 @@
+﻿我的阿里
+阿里云服务器
+密码：Sj86624932
+
+
+// 阿里云
+zhanglong
+zl86624932
+支付宝
+15940174189
+zhanglong2580
+199888
+
+服务器实例密码
+Zl86624932
+
+
+安装命令
+https://iluoy.com/articles/173
+
+
+C:\Users\DELL\VirtualBox VMs
+
+用户名 tuoleishi
+密码   86624932
+
+root 密码 86624932
+
+进入文件夹
+cd 文件夹名
+
+查看当前目录
+ls
+
+返回上层目录
+cd
+
+删除文件夹
+rm -rf 文件夹名
+
+解压文件
+tar -xvf 文件夹名
+
+编译文件
+            生成的目录     添加模块
+./config --prefix=./bin  --add-moudle=../文件夹名
+
+rm -rf 文件加名   全部删除f表示不用提示全部删除
+
+推流服务下载
+http://nginx.org/en/download.html
+
+
+x264 是工具   H264 是协议
+
+x264 工具下载地址
+https://www.videolan.org/developers/x264.html
+git方式下载
+git clone https://code.videolan.org/videolan/x264.git
+
+在linux下载安装命令
+git clone https://code.videolan.org/videolan/x264.git
+
+yum install git
+
+yum install make
+
+apt-get install make
+
+yum install yasm
+
+yum install gcc
+
+yum install gcc-c++ libstdc++-devel
+
+yum install unzip
+
+删除该文件夹
+rpm -Uvh nasm-2.13.03-0.fc24.x86_64.rpm 
+
+git clone http://git.videolan.org/git/x264.git
+刚开始用以下命令编译后:
+./configure --prefix=/usr/loal --enable-yasm
+发现/usr/local/include中没有x264的头文件，/usr/local/lib中也没有x264的.a静态库。
+正确的编译安装方法是:
+./configure --prefix=/usr/loal --enable-static --enable-yasm
+make && make install
+
+ yum  clean all                           清空缓存信息
+  yum  list                                   列出所有包的信息
+  yum  list  httpd                         查看 httpd 是否安装
+  yum  info httpd                        显示 httpd 包的详细具体信息
+  yum install httpd   -y               安装 httpd 包
+  yum remove httpd  -y            卸载 httpd 包
+  yum search 关键词                 根据关键词，在已发现的repo源中搜索包含关键词的rpm包
+  yum provides 命令                   根据命令，在已发现的repo源中搜索安装指令的rpm包
+  yum history  list/info/undo/redo number             history可以列出，查看，重装，反安装对应的包，但是是以yum指令的操作顺序为依据的，所以需要加指定的数字执行
+-------------------------------------------------------------------------------
+Found yasm 0.x.x.xxxx
+Minimum version is yasm-1.0.0
+If you really want to compile without asm, configure with --disable-asm.
+that means that you have an old version of yasm on your system, so you should update it. The quickest way to do so is like this:
+
+（意思是说你有一个老版本的yasm（似乎是编译器？）装在你的系统里面，所以该升级他了。快速解决方法：）
+
+# git clone git://github.com/yasm/yasm.git
+# cd yasm
+# ./autogen.sh
+# ./configure
+# make
+# make install
+
+
+查看环境变量
+vim /etc/profile
+
+2.2 保存文件并退出Vim
+
+:wq：保存当前文件并退出Vim。如果文件只读或者该缓冲区无名，写回操作将失败。
+
+:wq test.txt：保存当前Vim缓冲区中的内容到文件 test.txt 中并退出Vim。
+
+:[range]wq test.txt：保存当前Vim缓冲区中由range界定的内容到文件 test.txt 中并退出Vim。
+
+:[range]x test.txt：功能和 :[range]wq test.txt 类似， 但只有文件有修改时写入才会实际进行保存。
+
+:wqa 保存所有修改过的缓冲区并退出Vim。
+
+:wqall 保存所有修改过的缓冲区并退出Vim。
+
+:xa 保存所有修改过的缓冲区并退出Vim。
+
+:xall：保存所有修改过的缓冲区并退出Vim。
+
+
+export ANDROID_NDK=/usr/local/ndk/android-ndk-r17b
+export PATH=ANDROID_NDK:PATH
+
+***************************************************************
+输入 ls命令
+提示： bash: ls: 未找到命令…  相似命令是： 'lz'
+
+原因：
+环境变量PATH被修改了
+
+解决办法：
+执行：
+export PATH=/bin:/usr/bin:$PATH
+
+****************************************************
+
+
+bsdiff.c:33:19: fatal error: bzlib.h: No such file or directory
+ #include <bzlib.h>
+
+
+yum -y install bzip2-devel.x86_64
+
+=====================================================================
+
+
+增量更新编译差异包在bsdiff-4.3文件夹下传入老安装apk和新apk
+执行 ./bsdiff old.apk new.apk patch
+
+----------------------------------------------------------------
+
+下载nginx
+wget https://github.com/arut/nginx-rtmp-module/archive/v1.2.1.tar.gz
+
+./configure --prefix=/usr/local/nginx\--user=nginx\--group=nginx\--with-http_stub_status_module\--with-http_ssl_module                
+
+./configure --prefix=./bin --add-module=../nginx-rtmp-module-1.2.1/
+
+pcre-8.34安装
+wget http://downloads.sourceforge.net/project/pcre/pcre/8.35/pcre-8.35.tar.gz
+安装openssl 
+ yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel
+
+ 
+ 
+   listen       8081;
+        location /stat{
+                rtmp_stat all;
+                rtmp_stat_stylesheet stat.xsl;
+        }
+        location /stat.xsl{
+                root /root/nginx-rtmp-module-1.2.1/;
+        }
+        location /control{
+                rtmp_control all;
+        }
+        location /rtmp-publisher{
+                root /root/nginx-rtmp-module-1.2.1/test;
+        }
+
+        #access_log  logs/host.access.log  main;
+
+        location / {
+                root /root/nginx-rtmp-module-1.2.1/test/www;
+        }
+
+===========================================
+执行prefix=./bin  但是没有生产bin目录 ？
+再执行1  make
+      2  make install
+	  
+============================================
+
+杀死进入 1找到端口号
+netstat -tunlp|grep 8081
+2杀死 listen的号码
+kill -9 listen的号码
+
+47.107.132.117:8081/stat   
+47.244.134.48:8081/stat
+
+/root/nginx-rtmp-module-1.2.1/test/www
+
+启动nginx服务器
+进入nginx目录执行改名了即可：
+./bin/sbin/nginx
+
+停止服务器
+./bin/sbin/nginx -s stop
+----------------------------------------------------------
+
+node 下载好后，要在其目录下 执行 npm install
+
+
+
+
+
+user  root;
+worker_processes  1;
+error_log  logs/error.log debug;
+events {
+    worker_connections  1024;
+}
+
+rtmp {
+     server{
+     listen 1935;
+     application myapp{
+          live on;
+          drop_idle_publisher 5s;
+          }
+     }
+ }
+
+ http {
+      server {
+          listen       8081;
+    
+		location /stat{
+             rtmp_stat all;
+             rtmp_stat_stylesheet stat.xsl;
+          }
+          location /stat.xsl{                                                                                                                                                                             
+			
+			root /root/nginx-rtmp-module-1.2.1;                                                                                                                                                     
+			}
+			
+          location /control{
+             rtmp_control all;
+		  }
+			 
+		 location /rtmp-publisher{
+             root /root/nginx-rtmp-module-1.2.1/test;                                                                                                                                            
+		 }                                                                                                                                                                                           
+	
+    	location / {			 
+             root /root/nginx-rtmp-module-1.2.1/test/www;
+		 }
+	 }
+
+			 
+        
+	}
+
+这是正确的配置
+
+如果要启动39.96.18.249服务器的nginx-1.17.0
+需要先进入nginx-1.17.0 
+然后在输入 ./bin/sbin/nginx
+在输入一次提示1935端口号被占用说明你启动的ngnix版本是对的
+因此这个服务器上有两个ngnix，如果你默认输入nginx他会自动启用低版本的nginx	
+停止服务
+nginx -s quit
+或者
+killall nginx
+
+启动nginx,通过netstat -ltn命令可以看到增加了一个1935端口的监听.8080是nginx默认的http监听端口.
+
+
+
+
+解压命令
+unzip filename.zip
+
+docker安装方法
+https://www.runoob.com/docker/windows-docker-install.html
+
+--------------------------------------------------------------
+1 管理node服务的工具防止程序运行一段时间报错
+npm install docker
+
+
+
+2 Delta RPMs disabled because /usr/bin/applydeltarpm not installed 解决办法
+ Author 时鹏亮 | 12/26/2017
+ 嗯，CentOS 安装docker遇到的，执行如下指令即可：
+yum provides '*/applydeltarpm'  
+yum install deltarpm -y
+
+3 
+查看node程序
+ps -ef | grep node
+并杀掉
+kill  id
+
+4 docker 拉node厂库到本地
+docker pull node 
+
+5 pm2 ls
+查看运行程序
+
+//拉node环境
+docker pull hub.c.163.com/nce2/nodejs:0.12.2
+
+docker run -d --name tmpcontainer -p 3000:3000 tmp
+
+
+docker ps -a查看容器
+
+docker stop id
+
+ rmi id
+
+docker images 查看镜像
+
+/root/day04_koa2_stu/bin/www
+
+
+/root/day04_koa2_stu/bin
+
+5 docker run -d -p 暴露给外部的端口：内部端口 服务名   
+
+nodejs如何部署在后台
+
+在删除任何容器之前，请确保已停止容器。你可以使用'docker ps -a'命令列出容器的状态。如果容器仍在运行，请首先使用上述步骤中的给定命令停止该容器。
+现在使用以下命令删除单个或多个容器。
+?
+1
+# docker rm <CONTAINER ID|NAME> <CONTAINER ID|NAME>
+还可以使用以下命令一次删除所有停止的容器。
+?
+1
+# docker rm $(docker ps -a -q)
+
+、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、
+删除容器有效	
+docker kill $(docker ps -a -q)
+	
+docker rm $(docker ps -a -q)
+
+删除所有未打 dangling 标签的镜
+
+Shell
+
+docker rmi $(docker images -q -f dangling=true)
+1
+docker rmi $(docker images -q -f dangling=true)
+删除所有镜像
+
+Shell
+
+docker rmi $(docker images -q)
+1
+docker rmi $(docker images -q)
+强制删除 无法删除的镜像
+
+Shell
+
+docker rmi -f <IMAGE_ID>
+docker rmi -f $(docker images -q)
+1
+2
+docker rmi -f <IMAGE_ID>
+docker rmi -f $(docker images -q)
+---------------------------------------------------------------------------------
+v12.6.0
+docker pull hub.c.163.com/nce2/nodejs:v12.6.0
+
+
+
+、、、、、、、、、、、、成功运行在阿里云上使用docker运行node程序、、、、、、、、、、、、、、、、、、、、、、、
+
+1 在程序的跟路面下执行
+docker run --rm -p 3000:3000 -ti node bash
+之后就会进入docker容器下的目录了
+
+2 打开另一个窗口路径为要拷贝node项目的跟目录
+docker cp . 容器id:/docker容器路径
+
+3 然后回到容器中将node_module之前生成的文件夹删除，从新生成一个
+npm install
+
+4 npm run start   到此，就可以访问了
+
+、、、、、、、、、、、、成功运行在阿里云上使用docker运行node程序、、、、、、、、、、、、、、、、、、、、、、、
+
+docker attach abddc22eb09f
+
+
+
+
+
+ 二、forever
+forever能做更多的事情，比如分别记录输出和错误日志，宕机重启，热部署。比如可以在js中作为api使用
+2.1安装forever
+npm install forever -g
+2.2启动服务
+service forever start //（这行可以不用执行）
+2.2使用forever启动js文件
+forever start app.js
+2.3停止js文件
+forever stop app.js
+2.4启动js文件并输出日志文件
+forever start -l forever.log -o out.log -e err.log app.js
+2.5重启js文件
+forever restart app.js
+     2.6查看正在运行的进程
+forever list
+ 
+
+[root@iz2ze1nmsp5lb40y72gwdpz bin]# forever start www
+ 
+ forever start -l forever.log -o out.log -e err.log www
+
+ forever stop www
+ 
+docker启动，关闭命令
+service docker start
+service docker stop
+service docker restart 
+
+例如
+
+[root@iz2ze1nmsp5lb40y72gwdpz ~]# service docker stop
+Redirecting to /bin/systemctl stop  docker.service
+[root@iz2ze1nmsp5lb40y72gwdpz ~]# service docker start
+Redirecting to /bin/systemctl start  docker.service
+[root@iz2ze1nmsp5lb40y72gwdpz ~]# service docker restart
+Redirecting to /bin/systemctl restart  docker.service
+[root@iz2ze1nmsp5lb40y72gwdpz ~]#
+
+//查看docker虚拟机中的node程序名
+docker search node程序名
+
+下载node程序
+docker pull node程序名
+
+查看docker虚拟机中的镜像
+docker images
+
+下载镜像
+docker save 镜像名 > /路径/压缩包名
+
+查看路径 在任务路径下都可以
+ls /路径名  
+
+导入镜像image
+docker load < /路径/ 压缩包名
+
+查看镜像images
+docker ps -a
+
+想删除image必须先删除docker的容器id
+docker rm
+
+所以想要删除运行过的images必须首先删除它的container。继续来看刚才的例子，
+
+[yaxin@ubox ~]$docker ps -a
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS                   NAMES
+117843ade696        ed9c93747fe1        /bin/sh -c /usr/sbin   46 hours ago        Up 46 hours         0.0.0.0:49153->22/tcp   test_sshd
+可以看出ed9c93747fe1的image被117843ade696的container使用着，所以必须首先删除该container
+
+[yaxin@ubox ~]$docker rm 117843ade696
+Error: container_delete: Impossible to remove a running container, please stop it first
+2014/03/22 16:36:44 Error: failed to remove one or more containers
+出现错误，这是因为该container正在运行中(运行docker ps查看)，先将其关闭
+
+[yaxin@ubox ~]$docker stop 117843ade696
+117843ade696
+[yaxin@ubox ~]$docker rm 117843ade696
+117843ade696
+[yaxin@ubox ~]$docker rmi ed9c93747fe1
+Deleted: ed9c93747fe16627be822ad3f7feeb8b4468200e5357877d3046aa83cc44c6af
+Deleted: c8a0c19429daf73074040a14e527ad5734e70363c644f18c6815388b63eedc9b
+Deleted: 95dba4c468f0e53e5f1e5d76b8581d6740aab9f59141f783f8e263ccd7cf2a8e
+Deleted: c25dc743e40af6858c34375d450851bd606a70ace5d04e231a7fcc6d2ea23cc1
+Deleted: 20562f5714a5ce764845119399ef75e652e23135cd5c54265ff8218b61ccbd33
+Deleted: c8af1dc23af7a7aea0c25ba9b28bdee68caa8866f056e4f2aa2a5fa1bcb12693
+Deleted: 38fdb2c5432e08ec6121f8dbb17e1fde17d5db4c1f149a9b702785dbf7b0f3be
+Deleted: 79ca14274c80ac1df1333b89b2a41c0e0e3b91cd1b267b31bef852ceab3b2044
+[yaxin@ubox ~]$docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+CentOS65            latest              e55a74a32125        2 days ago          360.6 MB
+可以看出，image已经被删除。
+
+**********************************************************************************************
+[root@iz2ze1nmsp5lb40y72gwdpz docker]# docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+hello-world         latest              fce289e99eb9        7 months ago        1.84kB
+[root@iz2ze1nmsp5lb40y72gwdpz docker]# docker rmi fce289e99eb9
+Untagged: hello-world:latest
+Untagged: hello-world@sha256:6540fc08ee6e6b7b63468dc3317e3303aae178cb8a45ed3123180328bcc1d20f
+Deleted: sha256:fce289e99eb9bca977dae136fbe2a82b6b7d4c372474c9235adc1741675f587e
+Deleted: sha256:af0b15c8625bb1938f1d7b17081031f649fd14e6b233688eea3c5483994a66a3
+****************************************************************************************
+
+docker run --rm -p 3000:3000 -ti node bash
+
+拷贝命令
+docker cp docker容器:/路径
+
+docker：如何查看容器的挂载目录
+docker inspect container_name | grep Mounts -A 20
+docker inspect container_id | grep Mounts -A 20
+
+docker：如何查看容器的挂载目录
+[root@localhost docker]# docker container ls -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                      PORTS               NAMES
+806c175229ce        original:1.0        "/tomcat/bin/catal..."   20 hours ago        Up 5 seconds                8080/tcp            origin-debug
+f04275ad9896        newtomcat:1.0       "/root/run.sh"           26 hours ago        Exited (137) 21 hours ago                       newtomcat_3
+[root@localhost docker]# docker exec -it 806c /bin/bash
+
+
+systemctl status docker.service
+
+
+
+NDKROOT=/root/android-ndk-r17c
+export PATH=$NDKROOT:$PATH
+
+查找端口号
+输入命令：netstat -ano，列出所有端口的情况。在列表中我们观察被占用的端口，比如是49157，首先找到它。
+看被占用端口对应的PID，输入命令：netstat -aon|findstr "49157"，回车，记下最后一位数字，即PID,这里是2720。
+
+训练人脸模型
+
+E:\android_app\wangyi_cpp\人脸识别\训练>D:\opencv-3.4.6\x64\vc15\bin\opencv_createsamples.exe -info positive.txt -vec wangyi.vec -num 100 -w 24 -h 24
+
+D:\opencv-3.4.6\x64\vc15\bin\opencv_traincascade.exe -data data -vec wangyi.vec -bg negative.txt -numPos 100 -numNeg 300 -numStages 15 -featureType LBP -w 24 -h 24
+
+
+基于Yum的方式安装Nginx
+
+我们可以先来查看一下yum是否已经存在，命令如下：
+
+yum list | grep nginx
+如果出现类似下面的内容，说明yum源是存在的。 alt
+
+(细心的小伙伴可以发现系统原来的源只支持1.1.12版本，这版本有些低)
+
+如果不存在，或者不是你需要的版本，那我们可以自行配置yum源，下面是官网提供的源，我们可以放心大胆的使用。
+
+[nginx]
+name=nginx repo
+baseurl=http://nginx.org/packages/OS/OSRELEASE/$basearch/
+gpgcheck=0
+enabled=1
+复制上面的代码，然后在终端里输入：
+
+vim /etc/yum.repos.d/nginx.repo
+然后把代码复制进去，这里你可能需要一些Vim的操作知识，如果不熟悉，可以自行学习一下，当然我视频中也是有讲解的。
+
+赋值完成后，你需要修改一下对应的操作系统和版本号，因为我的是centos和7的版本，所以改为这样。
+
+baseurl=http://nginx.org/packages/centos/7/$basearch/
+你可以根据你的系统或需要的版本进行修改。
+
+如果都已经准备好了，那就可以开始安装了，安装的命令非常简单：
+
+yum install nginx
+安装完成后可以使用命令，来检测Nginx的版本。
+
+nginx -v
+如果出现下面图片的内容，说明Nginx就安装成功了。
+
+列出nignx目录安装情况
+rpm -ql nginx
+
+如果购买阿里云清理服务器端口80被占用
+可以尝试把阿里云自带的apache服务器器删除，或者将端口号改掉
+路径为 etc/httpd/conf, 然后vim httpd.conf,修改端口号即可
+
+location = /img{
+	allow all;
+}
+location = /admin{
+	deny all;
+}
+
+ location / {
+        root   /usr/share/nginx/html;
+        index  index.html index.htm;
+        #拒绝访问
+        #deny 126.235.11.167;
+        #allow 126.235.11.164;
+    }
+
+server{
+        listen 8001;
+        server_name localhost;
+        root /usr/share/nginx/html/html8001;
+        index index.html;
+}
+nginx服务器配置不成功，，记住要在阿里服务器添加你所新添加的端口号
+*******************************************************
+
+server {
+    listen       80;
+    server_name  localhost;
+
+    #charset koi8-r;
+    #access_log  /var/log/nginx/host.access.log  main;
+
+    location / {
+        root   /usr/share/nginx/html;
+        index  index.html;
+        #拒绝访问
+        #deny 126.235.11.167;
+        #allow 126.235.11.164;
+    }
+
+   #根据目录设置访问权限
+    location = /img{
+        allow all;
+    }
+    location = /admin{
+        deny all;
+    }
+
+    #error_page  404              /404.html;
+
+    # redirect server error pages to the static page /50x.html
+    #
+    error_page   500 502 503 504  /50x.html;
+    #error_page 404 /404_error.html;
+
+    error_page 404 https://www.baidu.com/index.php?tn=87048150_dg&ch=1;
+    location = /50x.html {
+        root 
+		/usr/share/nginx/html;
+    }
+
+    # proxy the PHP scripts to Apache listening on 127.0.0.1:80
+    #
+    #location ~ \.php$ {
+    #    proxy_pass   http://127.0.0.1;
+    #}
+
+    # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+    #
+    #location ~ \.php$ {
+    #    root           html;
+    #    fastcgi_pass   127.0.0.1:9000;
+    #    fastcgi_index  index.php;
+    #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+    #    include        fastcgi_params;
+    #}
+
+    # deny access to .htaccess files, if Apache's document root
+    # concurs with nginx's one
+    #
+    #location ~ /\.ht {
+    #    deny  all;
+    #
+}
+
+root权限可以
+:wq! 
+强行保存退出
+
+**********************************************************
+启动数据库服务在
+/usr/local/mongodb/bin
+目录下
+./mongod --dbpath=/var/mongodb/data
+
+查看软件安装目录
+可以直接使用  rpm -qal |grep mysql 查看mysql所有安装包的文件存储位置
+	
+	
+39.96.18.249
+<h1>welcome port 8001</h1>
+
+
+1.熟练掌握Android应用UI设计， 自定义控件开发。
+2.熟练掌握Android数据存储(文件，SQLite， SharedPreference)。
+3.如何防止Android中的OOM和ANR异常发生 。
+4.熟悉使用分享，推送，及第三方支付等功能SDK。
+5.使用okhttp做为网络框架 。
+6.混合开发，原生与JS相互调用 。
+7.使用SVN作为整个APP项目的代码版本控制。
+8.项目使用MVP或MVC模式作架构。
+9.使用阿里apk热更新，在apk不重启下实现bug修复。
+10.手动优化内存，使用studio查看内存使用情况，使用eclipse插件
+   查看内存使用情况。
+11.熟悉Cmakefile anroid.mk语法。
+12.熟练使用在linux平台下编译so库供android项目使用。
+13.熟悉FFmpeg库影音解码功能使用。
+14.直播服务器搭建，实现app端推流和拉流功能。
+15.apk优化9步骤: 
+      1 使用svg格式图片，体积小，屏幕适配。
+      2 在build配置文件中设置resconfig属性，去除其他国家的言语包。
+      3 配置so库cpu架构 设置abifilters（'armeabi'）。
+      4 移除无用资源（Lint） Run inspection by name。
+      5 代码混淆  minifyenable。
+      6 启用资源压缩 shrinkRes。
+      7 启用webp转换插件压缩图片。
+      8 使用tint着色器。
+      9 Res资源混淆和7zip压缩，对齐，签名。
+
+
+
+1 AndroidアプリケーションUIデザイン、カスタムコントロール開発に精通している
+Androidのデータストレージに精通した2人（ファイル、SQLite、SharedPreference）
+3 AndroidでOOMとANRの例外が発生しないようにする方法
+4共有、プッシュ、サードパーティの支払い機能SDKの使用に精通している
+5ネットワークフレームワークとしてokhttpを使う
+6つの混合開発、ネイティブとJSはお互いに呼び出します
+7 APPプロジェクト全体のコードバージョン管理としてのSVNの使用
+8プロジェクトはアーキテクチャとしてMVPまたはMVCモードを使用
+9 Ali apkホットアップデート、apk再起動なしのバグ修正
+10手動でメモリを最適化し、メモリ使用量を表示するためにスタジオを使用し、Eclipseプラグインを使用する
+      メモリ使用量を表示する
+11 Cmakefileのanroid.mk構文に精通している
+12 Linuxプラットフォームでのアンドロイドプロジェクト用のライブラリをコンパイルするための熟練した使用法
+13 FFmpegライブラリのビデオとオーディオのデコード機能に精通している
+アプリ側のプッシュおよびプル機能を実現するための14台のライブサーバーの生成
+16 個のapk最適化9ステップ
+      1 svgフォーマットの写真、小さいサイズ、スクリーンの適応を使う
+      2他の国から音声パックを削除するには、ビルド設定ファイルでresconfig属性を設定します。
+      3 so library cpuアーキテクチャを設定するabifiltersを設定します（ 'armeabi'）
+      4無駄な資源を除去する（リント）名前で検査を実施
+      5コードの混乱を最小限に抑える
+      6リソース圧縮を有効にする
+      7 Web変換プラグインを有効にして画像を圧縮する
+      8ティントシェーダを使う
+      9リソースの混乱と7zipの圧縮、整列、署名
+
+
+
+1.AndroidアプリケーションUIの設計に熟練し、コントロールの開発をカスタマイズしています。
+2.Androidデータストア（ファイル、SPLite、ＳｈａｒｅｄＰｒｅｆｅｒｅｎｃｅ）を使いこなす。
+3.AndroidでのOOMとANRの異常発生を防止する方法。
+4.共有、プッシュ、サードパーティの支払いなどの機能SDKの使用に慣れています。
+5.ネットワークフレームとしてｏｋｈｔｐを使用する。
+6.ハイブリッド開発では，ネイティブとＪＳが相互に呼び出される。
+7.APPプロジェクト全体のコードバージョン管理としてSVNを使用する。
+8.プロジェクトはＭＶＰまたはＭＶＣモードで構成される。
+9.アリpk熱更新を使用して、apkを再起動せずにバグ修復を行う。
+10.メモリを手動で最適化し、studioを使用してメモリの使用状況を確認し、
+    eclipseプラグインを使用してメモリの使用状況を確認します。
+11.CMakefile，anroid.mkのシンタックスに精通しています。
+12.このライブラリは、androidプロジェクトで使用するためにlinuxプラットフォームでコンパイルされています。
+13.FFmpegライブラリ音声デコード機能に詳しい。
+14.ライブサーバーは、アプリ側のpushSteamおよびpull-stream機能を実装するように構築されています。
+15.apk最適化9ステップ：
+	1.はsvg形式の画像を使用して、体積が小さくて、スクリーンにフィットする。
+	2.外部言語パッケージを削除するために、ビルダ構成ファイルにｒｅｓｃｏｎｆｉｇ属性を設定します。
+    3.ｓｏライブラリｃｐｕアーキテクチャを構成ａｂｉｆｉｌｔｅｒｓ（‘ａｒｍｅａｂｉ’）を設定する。
+    4.不要なリソース（Ｌｉｎｔ）Ｒｕｎ　ｉｎｓｐｅｃｔｉｏｎ　ｂｙ　ｎａｍｅを削除する。
+    5.コードがｍｉｎｉｆｙｅｎａｂｌｅであることを混同する。
+	6.資源圧縮shrinkResを有効にします。
+	7.webp変換プラグイン圧縮画像を有効にする。
+	8.tintシェーダーを使用します。
+	9.Resリソースの混乱と7zipの圧縮、整列、署名。
+	
+	
+	
+	
+	
+	/root/node/testDB/www/day01/message/app.js
+
+	
+	 insert into users(account, password, createdAt, updatedAt)
+	 values
+	 ("ssss","1223", CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);
+
+	
+	琳琅试用
+	玩家可以通过试用商品免费得到商品，并按照卖家指定要求评论

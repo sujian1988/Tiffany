@@ -60,6 +60,12 @@
             <el-menu-item index="/admin_users/create">新建管理员</el-menu-item>
             <el-menu-item index="/admin_users/list">管理员列表</el-menu-item>
           </el-menu-item-group>
+
+           <el-menu-item-group>
+            <template slot="title">app版本控制</template>
+            <el-menu-item index="/versions/create">编辑版本号</el-menu-item>
+            <el-menu-item index="/versions/list">历史版本</el-menu-item>
+          </el-menu-item-group>
       
         </el-submenu>
       
@@ -102,8 +108,7 @@
             <el-menu-item index="/lives/create">新建直播live</el-menu-item>
             <el-menu-item index="/lives/list">直播live列表</el-menu-item>
           </el-menu-item-group>
-       
-
+      
         </el-submenu>
 
 

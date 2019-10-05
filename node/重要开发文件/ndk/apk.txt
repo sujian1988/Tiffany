@@ -1,0 +1,7 @@
+ 1 删除其他语言包 resConfigs('zh-rCN')
+ 2 配置cpu       ndk{
+            abiFilters('armeabi')
+        }
+ 3 删除无用资源 Analyze--》Run inspection by name --搜索 unusedres。。。		
+ 4 启用webp压缩图片
+ 

@@ -1,0 +1,16 @@
+源码 native层jni
+https://github.com/googlesamples/android-ndk/blob/master/native-audio/app/src/main/cpp/native-audio-jni.c
+
+
+l录屏命令 
+
+ffmpeg -f gdigrab -framerate 30 -offset_x 0 -offset_y 0 -video_size 1920*1080 -i desktop out.mpg
+
+ctrl + c  完成录屏
+
+2 推流成功后如何播放直播，俗称拉流
+  在cmd窗口中输入： ffplay -i rtmp: ip 地址（不用端口号）
+  rtmp://47.244.134.48/myapp
+  
+  
+androidstudio 安装glsl插件。  

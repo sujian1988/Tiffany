@@ -1,3 +1,5 @@
+
+//无用
 // 加载node上websocket模块 ws;  手机端根据roomid区分。不在服务器区分
 var ws = require("ws");
 

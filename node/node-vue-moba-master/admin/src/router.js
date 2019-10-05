@@ -32,7 +32,8 @@ import CommentList from './views/CommentList.vue'
 import LiveEdit from './views/LiveEdit.vue'
 import LiveList from './views/LiveList.vue'
 
-
+import VersionEdit from './views/VersionEdit.vue'
+import VersionList from './views/VersionList.vue'
 
 Vue.use(Router)
 
@@ -83,6 +84,10 @@ const router = new Router({
         { path: '/lives/create', component: LiveEdit },
         { path: '/lives/edit/:id', component: LiveEdit, props: true },
         { path: '/lives/list', component: LiveList },
+
+        { path: '/versions/create', component: VersionEdit },
+        { path: '/versions/edit/:id', component: VersionEdit, props: true },
+        { path: '/versions/list', component: VersionList},
       ]
     },
 

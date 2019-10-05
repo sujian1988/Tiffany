@@ -2,6 +2,10 @@
 http://39.96.18.249:8081/stat
 线上后台
 http://39.96.18.249:3000/admin/#/lives/list
+jiangyuting
+123456w
+sujian
+123456
 
 websocket部署
 https://signup.heroku.com/
@@ -29,7 +33,7 @@ ping++
 https://www.pingxx.com/guidance/client/sdk/android
 后台开发文档
 https://www.pingxx.com/docs/downloads
-后台继承好后app端只需要更换支付的url地址即可。
+后台继承好后app端只需要更换支付的url地址即可。s
 用户名：597201889@qq.com
 密  码：86624932
 
@@ -51,6 +55,7 @@ http://www.mob.com/#/
 sdk下载
 http://www.mob.com/#/downloadDetail/ShareSDK/android
 
+
 //微信开发平台
 http://open.weixin.qq.com
 用户名：597201889@qq.com
@@ -67,6 +72,10 @@ https://leancloud.cn/login.html#/signin
 
 友盟推送
 http://push.umeng.com/57fa2298e0f55a672b000ded/msgList
+
+appkey 5d611fa03fc19553c60006df
+Umeng Message Secret 855b1abce2b0d7d627d39647230fd3e0
+App Master Secret imcfkuzw6p7zxghspniv5txbtgnfuiji
 
 //小米审核平台
 https://dev.mi.com/console/

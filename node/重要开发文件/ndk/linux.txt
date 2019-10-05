@@ -1,0 +1,506 @@
+C:\Users\DELL\VirtualBox VMs
+
+
+IP:47.107.132.117
+用户名：root
+密码：Wangyi110
+
+
+// 阿里云
+zhanglong
+zl86624932
+支付宝
+15940174189
+zhanglong2580
+199888
+
+IP:39.96.18.249
+用户名：root
+端口 22
+服务器实例密码
+Zl86624932
+
+
+nginx服务器启动命令
+nginx 什么也没有说明启动成功了 
+
+ps aux | grep nginx
+
+停止服务
+nginx -s quit
+或者
+killall nginx
+
+查看端口
+netstat -tlnp
+
+查看端口号
+netstat -ano
+
+查看被占用端口对应的PID，
+输入命令：netstat -aon|findstr "8080"，
+回车，记下最后一位数字，即PID,这里是2720。
+
+cmd输入：<br>netstat -ano | findstr :3000//查看是谁占用了3000号端口
+显示如下
+  TCP    0.0.0.0:3000           0.0.0.0:0              LISTENING       18412
+  TCP    [::]:3000              [::]:0                 LISTENING       18412
+ 
+接着输入：<br>taskkill -PID 18412 -F//结束端口号
+
+在rap2项目中用到的命令
+在mysql数据库依赖，运行完后会在package.json中体现
+npm install mysql mysql2 --save
+操作数据比较方便
+npm install sequelize --save
+
+nodemon命令是保持就会刷新项目
+
+在项目目录下的命令行安装mysql 安装好后nodemodule目录会有显示
+npm install mysql --save-dev
+
+安装n模块：
+
+npm install -g n
+
+升级node.js到最新稳定版
+
+n stable
+
+升级node.js到最新版
+
+n latest
+
+升级node.js到制定版本
+
+n v7.10.0
+
+-------------------------------------------------------
+安装nvm node版本托管器
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+---------------------------------------------------
+
+yum install numactl
+
+-------------------------------------------------------
+1 安装mysql引导库
+wget https://repo.mysql.com//mysql80-community-release-el7-3.noarch.rpm
+
+[root@iz2ze1nmsp5lb40y72gwdpz ~]# wget https://repo.mysql.com//mysql80-community-release-el7-3.noarch.rpm
+--2019-07-18 12:28:29--  https://repo.mysql.com//mysql80-community-release-el7-3.noarch.rpm
+Resolving repo.mysql.com (repo.mysql.com)... 23.201.158.84
+Connecting to repo.mysql.com (repo.mysql.com)|23.201.158.84|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 26024 (25K) [application/x-redhat-package-manager]
+Saving to: ‘mysql80-community-release-el7-3.noarch.rpm’
+表示安装成功
+
+2 安装mysql仓库
+rpm -ivh mysql80-community-release-el7-3.noarch.rpm
+
+Updating / installing...
+   1:mysql80-community-release-el7-3  ################################# [100%]
+安装成功
+查看mysql仓库
+ls /etc/yum.repos.d
+
+3 更新一下mysql仓库
+yum makecache
+
+base                                                                          | 3.6 kB  00:00:00
+epel                                                                          | 5.3 kB  00:00:00
+extras                                                                        | 3.4 kB  00:00:00
+mysql-connectors-community                                                    | 2.5 kB  00:00:00
+mysql-tools-community                                                         | 2.5 kB  00:00:00
+mysql80-community                                                             | 2.5 kB  00:00:00
+nginx                                                                         | 2.9 kB  00:00:00
+updates                                                                       | 3.4 kB  00:00:00
+(1/7): mysql-connectors-community/x86_64/other_db                             |  11 kB  00:00:00
+(2/7): mysql-tools-community/x86_64/other_db                                  |  14 kB  00:00:00
+(3/7): mysql80-community/x86_64/primary_db                                    |  70 kB  00:00:00
+(4/7): mysql-connectors-community/x86_64/filelists_db                         |  54 kB  00:00:01
+(5/7): mysql-tools-community/x86_64/filelists_db                              | 158 kB  00:00:01
+(6/7): mysql80-community/x86_64/other_db                                      |  19 kB  00:00:00
+(7/7): mysql80-community/x86_64/filelists_db                                  | 457 kB  00:00:02
+Loading mirror speeds from cached hostfile
+Metadata Cache Created
+
+3.1查看mysql仓库
+yum repolist
+3.2 查看安装后的md5值
+md5sum  mysql80-community-release-el7-3.noarch.rpm
+    查看shal值
+shalsum  mysql80-community-release-el7-3.noarch.rpm
+
+过滤包
+yum list | grep mysql-com
+
+mysql-community-client.i686             8.0.16-2.el7                   mysql80-community
+mysql-community-client.x86_64           8.0.16-2.el7                   mysql80-community
+mysql-community-common.i686             8.0.16-2.el7                   mysql80-community
+mysql-community-common.x86_64           8.0.16-2.el7                   mysql80-community
+mysql-community-devel.i686              8.0.16-2.el7                   mysql80-community
+mysql-community-devel.x86_64            8.0.16-2.el7                   mysql80-community
+mysql-community-embedded-compat.i686    8.0.16-2.el7                   mysql80-community
+mysql-community-embedded-compat.x86_64  8.0.16-2.el7                   mysql80-community
+mysql-community-libs.i686               8.0.16-2.el7                   mysql80-community
+mysql-community-libs.x86_64             8.0.16-2.el7                   mysql80-community
+mysql-community-libs-compat.i686        8.0.16-2.el7                   mysql80-community
+mysql-community-libs-compat.x86_64      8.0.16-2.el7                   mysql80-community
+mysql-community-release.noarch          el7-5                          mysql-connectors-community
+mysql-community-server.x86_64           8.0.16-2.el7                   mysql80-community
+mysql-community-test.x86_64             8.0.16-2.el7                   mysql80-community
+
+mysql-community-server.x86_64   
+
+
+
+我们要安装的是
+mysql-community-server.x86_64 依赖库会自动安装 
+
+4 安装mysql仓库
+yum -y install mysql-community-server.x86_64
+
+5 安装好后启动mysql
+systemctl start mysqld  或者是 sytemctl start mysql
+
+
+关闭防火墙
+systemctl stop firewalld
+systemctl disable firewalld
+
+6 查看密码
+grep 'password' /var/log/mysqld.log
+
+阿里云mysql数据库密码
+Gpip6x.ytaev 临时密码
+登录mysql 命令
+mysql -uroot -p'Gpip6x.ytaev'
+新密码 Sj86624932.
+
+ mysql -uroot -p'Sj86624932.'
+7 修改用户密码
+mysql_secure_installation
+之后要输入旧密码
+
+find / -name 匹配名称
+
+create database dev_xwplay DEFAULT CHARSET utf8 COLLATE utf8_general_ci;
+
+create user 'xb'@'localhost' identified by '123456';
+
+ 
+grant all privileges on *.* to 'root'@'%' identified by '86624932';
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY `Sj86624932.` WITH GRANT OPTION; 
+ 
+alter user root@localhost identified by sj86624932； 
+update user set authentication_string=password('sj86624932') where user='root' and Host='localhost';
+
+查看错误原因 systemctl status mysqld.service
+[root@iz2ze1nmsp5lb40y72gwdpz ~]# systemctl status mysqld.service
+
+● mysqld.service - MySQL Server
+   Loaded: loaded (/usr/lib/systemd/system/mysqld.service; enabled; vendor preset: disabled)
+   Active: failed (Result: exit-code) since Thu 2019-07-18 13:00:01 CST; 1min 3s ago
+     Docs: man:mysqld(8)
+           http://dev.mysql.com/doc/refman/en/using-systemd.html
+  Process: 7541 ExecStart=/usr/sbin/mysqld $MYSQLD_OPTS (code=exited, status=1/FAILURE)
+  Process: 7511 ExecStartPre=/usr/bin/mysqld_pre_systemd (code=exited, status=0/SUCCESS)
+ Main PID: 7541 (code=exited, status=1/FAILURE)
+   Status: "SERVER_BOOTING"
+
+Jul 18 13:00:01 iz2ze1nmsp5lb40y72gwdpz mysqld_pre_systemd[7511]: my_print_defaults: [ERROR] Foun....
+Jul 18 13:00:01 iz2ze1nmsp5lb40y72gwdpz mysqld_pre_systemd[7511]: my_print_defaults: [ERROR] Fata...!
+Jul 18 13:00:01 iz2ze1nmsp5lb40y72gwdpz mysqld_pre_systemd[7511]: my_print_defaults: [ERROR] Foun....
+Jul 18 13:00:01 iz2ze1nmsp5lb40y72gwdpz mysqld_pre_systemd[7511]: my_print_defaults: [ERROR] Fata...!
+Jul 18 13:00:01 iz2ze1nmsp5lb40y72gwdpz mysqld_pre_systemd[7511]: mysqld: [ERROR] Found option wi....
+Jul 18 13:00:01 iz2ze1nmsp5lb40y72gwdpz mysqld_pre_systemd[7511]: mysqld: [ERROR] Fatal error in ...!
+Jul 18 13:00:01 iz2ze1nmsp5lb40y72gwdpz systemd[1]: mysqld.service: main process exited, code=ex...RE
+Jul 18 13:00:01 iz2ze1nmsp5lb40y72gwdpz systemd[1]: Failed to start MySQL Server.
+Jul 18 13:00:01 iz2ze1nmsp5lb40y72gwdpz systemd[1]: Unit mysqld.service entered failed state.
+Jul 18 13:00:01 iz2ze1nmsp5lb40y72gwdpz systemd[1]: mysqld.service failed.
+Hint: Some lines were ellipsized, use -l to show in full.
+
+查看mysql的日志终于找到问题
+vim /var/log/mysqld.log
+
+# cat /var/log/mysqld.log
+
+2017-08-25 10:01:53 4995 [Note] Server hostname (bind-address): '*'; port: 3306
+2017-08-25 10:01:53 4995 [Note] IPv6 is available.
+2017-08-25 10:01:53 4995 [Note]   - '::' resolves to '::';
+2017-08-25 10:01:53 4995 [Note] Server socket created on IP: '::'.
+2017-08-25 10:01:54 4995 [Note] Event Scheduler: Loaded 0 events
+2017-08-25 10:01:54 4995 [Note] /usr/sbin/mysqld: ready for connections.
+Version: '5.6.37'  socket: '/var/lib/mysql/mysql.sock'  port: 3306  MySQL Community Server (GPL)
+2017-08-25 10:04:07 4995 [Note] /usr/sbin/mysqld: Normal shutdown
+
+
+create table class(id int(4) not null primary key auto_increment comment '主键', name varchar(20) not null comment '姓名', sex int(4) not null default '0' comment '性别',degree double(16,2) default null comment '分数');
+
+
+--查看表详情：
+mysql> show full fields from class;
+或
+mysql> show full columns from class;
++--------+--------------+-----------------+------+-----+---------+----------------+---------------------------------+---------+
+| Field  | Type         | Collation       | Null | Key | Default | Extra          | Privileges                      | Comment |
++--------+--------------+-----------------+------+-----+---------+----------------+---------------------------------+---------+
+| id     | int(4)       | NULL            | NO   | PRI | NULL    | auto_increment | select,insert,update,references | 主键    |
+| name   | varchar(20)  | utf8_general_ci | NO   |     | NULL    |                | select,insert,update,references | 姓名    |
+| sex    | int(4)       | NULL            | NO   |     | 0       |                | select,insert,update,references | 性别    |
+| degree | double(16,2) | NULL            | YES  |     | NULL    |                | select,insert,update,references | 分数    |
++--------+--------------+-----------------+------+-----+---------+----------------+---------------------------------+---------+
+4 rows in set (0.01 sec)
+
+
+修改密码安全策略 5.多是 validate_password_policy
+set global validate_password.policy=0;	
+
+修改密码的长度
+set global validate_password.length=0;
+让这个用户本地连接
+ALTER USER 'root'@'localhost' IDENTIFIED BY '86624932';
+让这个用户远程连接
+ALTER USER 'xb2'@'%' identified by 'Sj86624932.';
+
+********重点必须执行这个行。否则远程连接会报错**********
+ALTER USER 'xb2'@'%' IDENTIFIED WITH mysql_native_password BY 'Sj86624932.';
+//刷新权限
+FLUSH PRIVILEGES;
+//给xb2这个用户授权 全部权限 （远程）
+                        数据库名字     用户名
+grant all privileges on dev_xwplay* to  xb2@'%' with grant option;
+
+//给xb2这个用户授权 全部权限 （本地）
+grant all privileges on xb2.* to xb2@'localhost' with grant option;
+-------------------------------------------------------
+iDavQOJufDWl
+
+mysql-community-libs-5.6.37-2.el7.x86_64
+
+mysql-community-server-5.6.37-2.el7.x86_64
+mysql-community-release-el7-5.noarch
+mysql-community-client-5.6.37-2.el7.x86_64
+mysql-community-common-5.6.37-2.el7.x86_64
+
+mysql密码在/var/log/mysqld.log中
+输入命令需要过滤password
+grep 'password' /var/log/mysqld.log
+
+安装好后如何测试
+mysql -uroot -p密码
+
+
+ npm 
+
+----------------------------------------------------------------
+解压tar.xz文件
+tar xvJf  node-v8.9.4-linux-x64.tar.xz
+
+查看内存
+free -m
+
+
+
+        mysql-community-common(x86-64) >= 8.0.11 is needed by (installed)
+		mysql-community-libs-8.0.16-2.el7.x86_64
+
+
+mysql-community-client-8.0.16-2.el7.x86_64
+mysql-community-libs-8.0.16-2.el7.x86_64
+mysql-community-common-8.0.16-2.el7.x86_64
+mysql80-community-release-el7-3.noarch
+mysql-community-server-8.0.16-2.el7.x86_64
+
+
+/tmp/npm-2401-0eb940a8/registry.npmjs.org/mysql
+/usr/share/mysql
+/usr/local/mysql
+/root/.npm/registry.npmjs.org/mysql
+/root/.npm/mysql
+/etc/selinux/targeted/active/modules/100/mysql
+/var/lib/mysql
+/var/lib/mysql/mysql
+
+
+rm -rf /usr/lib64/perl5/vendor_perl/DBD/mysql
+rm -rf /usr/lib64/perl5/vendor_perl/auto/DBD/mysql
+rm -rf /usr/lib64/mysql
+
+rm -rf /usr/share/mysql
+
+rm -rf /usr/bin/mysql
+
+rm -rf /usr/local/mysql
+rm -rf /root/.npm/registry.npmjs.org/mysql
+
+rm -rf /root/.npm/mysql
+rm -rf /etc/selinux/targeted/active/modules/100/mysql
+rm -rf /var/lib/mysql
+rm -rf /var/lib/mysql/mysql
+rm -rf /var/mysql
+[root@iz2ze1nms
+
+vscode快捷键
+//! + tab 快速生成html
+
+创建表
+CREATE TABLE `users` ( 
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT, 
+    `username` VARCHAR(20) NOT NULL, 
+    `password` CHAR(60) NOT NULL, 
+        PRIMARY KEY (`id`), 
+    UNIQUE INDEX `id_UNIQUE` (`id` ASC), 
+    UNIQUE INDEX `username_UNIQUE` (`username` ASC) )
+	
+删除表
+
+drop table 表名	
+
+
+mysql插入字段有问题，主要可能是单引号的问题，要是有反引号键盘左上角的
+
+ALTER TABLE `users` ADD `age` varchar(20);
+
+
+INSERT INTO
+  `users` (account, age, createdAt,  password, updatedAt)
+VALUES
+  (
+    'www',
+    '28',
+    now(),
+    'p122',
+    now()
+  );
+
+-----------------------------------------------------------------
+
+在根目录下全局安装koa框架
+npm install koa-generator -g
+
+//1 如何创建koa2项目
+koa2 day04_koa2_stu
+
+//2 然后进入项目目录安装插件
+cd day4_koa2_stu && npm install
+//3 安装mysql
+npm install art-template koa-art-template mysql
+
+运行项目 npm start
+
+重启 nodemon bin/www
+   
+--------------------------------------------------------------
+
+
+docker build -t node-docker-tutorial .
+
+设置阿里云防火墙：：：：：：：：：：：：：：：：：：：：：：：：：：：：：：：：
+改变防火墙的配置只需要改/etc/sysconfig/iptables文件即可，但是阿里云的的这个文件让人看不懂，
+也不知道怎么打开关闭端口，所以只需要把它的覆盖掉即可：(端口是我自己的配置，可根据需要修改，
+修改完后，service iptables restart)
+
+*filter
+:INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+-A INPUT -p icmp -j ACCEPT
+-A INPUT -i lo -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 90 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 8090 -j ACCEPT
+-A INPUT -j REJECT --reject-with icmp-host-prohibited
+-A FORWARD -j REJECT --reject-with icmp-host-prohibited
+COMMIT
+————————————————
+
+//进入路径
+[root@iz2ze1nmsp5lb40y72gwdpz sysconfig]# cd iptables
+-bash: cd: iptables: Not a directory
+[root@iz2ze1nmsp5lb40y72gwdpz sysconfig]# vim iptables
+[root@iz2ze1nmsp5lb40y72gwdpz sysconfig]# service iptables restart
+Redirecting to /bin/systemctl restart iptables.service
+[root@iz2ze1nmsp5lb40y72gwdpz sysconfig]# pwd
+/etc/sysconfig
+
+
+版权声明：本文为CSDN博主「qq_21566775」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_21566775/article/details/85159230
+
+
+
+
+
+
+{
+  "name": "wordpress",
+  "dialect": "MySQL",
+  "server": "39.96.18.249",
+  "port": 3306,
+  "database": "SJ",
+  "username": "root",
+  "password": "Sj86624932.",
+  "askForPassword": false,
+  "connectionTimeout": 30
+  
+  
+  
+  
+  
+  
+  
+  
+  
+     okHttpClient = new OkHttpClient.Builder()
+                .readTimeout(1000, TimeUnit.MILLISECONDS)
+                .connectTimeout(1000, TimeUnit.MILLISECONDS)
+                .retryOnConnectionFailure(true) // 失败重发
+                .addInterceptor(new MyLoggingInterceptor())
+                .build();
+
+        // 创建单例
+        if (sRetrofit == null) {
+            synchronized (AppRetrofit.class) {
+                if (sRetrofit == null) {
+                    sRetrofit = new Retrofit.Builder()
+                            .addConverterFactory(GsonConverterFactory.create()) //加入Gson格式转换器
+                            .addCallAdapterFactory(RxJavaCallAdapterFactory.create()) //加入RxJava
+                            .baseUrl(Apis.BASE_URL_API)
+                            //.client(okHttpClient)
+                            .build();
+                }
+            }
+        }
+}
+
+   okHttpClient = new OkHttpClient.Builder()
+                .readTimeout(1000, TimeUnit.MILLISECONDS)
+                .connectTimeout(1000, TimeUnit.MILLISECONDS)
+                .retryOnConnectionFailure(true) // 失败重发
+                .addInterceptor(new MyLoggingInterceptor())
+                .build();
+
+        // 创建单例
+        if (sRetrofit == null) {
+            synchronized (AppRetrofit.class) {
+                if (sRetrofit == null) {
+                    sRetrofit = new Retrofit.Builder()
+                            .addConverterFactory(GsonConverterFactory.create()) //加入Gson格式转换器
+                            .addCallAdapterFactory(RxJavaCallAdapterFactory.create()) //加入RxJava
+                            .baseUrl(Apis.BASE_URL_API)
+                            //.client(okHttpClient)
+                            .build();
+                }
+            }
+        }
+
+
+
+
+
+30
