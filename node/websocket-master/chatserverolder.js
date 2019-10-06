@@ -50,22 +50,34 @@ io.on('connection', function(socket){
   }); 
 
     //监听用户退出
-    socket.on('disconnect', function(){
-        //将退出的用户从在线列表中删除
-        if(onlineUsers.hasOwnProperty(socket.name)) {
-            //退出用户的信息
-            var obj = {userid:socket.name, username:onlineUsers[socket.name]};
+    // socket.on('disconnect', function(){
+    //     //将退出的用户从在线列表中删除
+    //     if(onlineUsers.hasOwnProperty(socket.name)) {
+    //         //退出用户的信息
+    //         var obj = {userid:socket.name, username:onlineUsers[socket.name]};
              
-            //删除
-            delete onlineUsers[socket.name];
-            //在线人数-1
-            onlineCount--;
+    //         //删除
+    //         delete onlineUsers[socket.name];
+    //         //在线人数-1
+    //         onlineCount--;
              
-            //向所有客户端广播用户退出
-            io.emit('logout', {onlineUsers:onlineUsers, onlineCount:onlineCount, user:obj});
-            console.log(obj.username+'退出了聊天室');
+    //         //向所有客户端广播用户退出
+    //         io.emit('logout', {onlineUsers:onlineUsers, onlineCount:onlineCount, user:obj});
+    //         console.log(obj.username+'退出了聊天室');
+    //     }
+    // });
+
+    socket.on('disconnect', () => {
+        if (addedUser) {
+          --onlineCount;
+          console.log(socket.username+'退出了聊天室');
+          // echo globally that this client has left
+          socket.broadcast.emit('user left', {
+            username: socket.username,
+            numUsers: onlineCount
+          });
         }
-    });
+      });
      
     //监听用户发布聊天内容
     // socket.on('message', function(obj){

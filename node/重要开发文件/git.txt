@@ -60,4 +60,23 @@ git push -f git
   
 git config user.name zhangsan
 git config user.email zhangsan@qq.com  
-  
+ 
+
+如果在一个分支上（dev/third-application)修改了内容，
+并未推送到远端，那么从该分支进入到另外一个分支(dev/join-corp)时会提示：
+Your local changes to the following files would be overwritten by checkout，
+也就是无法切换到另一个分支，那么应该怎么既保留修改的内容，又可以正常切换到另一个分支呢，
+可以使用git stash将本地修改的内容暂存起来，等再次切换到dev/third-application分支时只需要将
+暂存的内容释放出来（git stash apply）就可了。
+
+
+在分支 dev 的工作结束，切换到分支 master ，然后把 dev 合并到 master 上：
+
+$ git checkout master
+Switched to branch 'master'
+$ git merge dev
+Merge made by the 'recursive' strategy.
+ test-2.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+ 
