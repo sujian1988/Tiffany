@@ -158,6 +158,13 @@ app.post('/admin/api/app_create_user', async (req, res) => {
 
 })
 
+app.get('/admin/api/app_categories', async(req, res) =>{
+  const category = require('../../modles/Category')
+  const categories = await category.find() // 限制5条数据
+  res.status(200).json({
+      categories
+  });
+})
 
 app.get('/admin/api/app_video_list', async(req, res) =>{
   const video = require('../../modles/Video')
