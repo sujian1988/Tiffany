@@ -168,6 +168,7 @@ app.get('/admin/api/app_categories', async(req, res) =>{
   });
 })
 
+//获取视频接口
 app.get('/admin/api/app_video_list', async(req, res) =>{
   const video = require('../../modles/Video')
   //const videos = await video.find().limit(5) // 限制10条数据
