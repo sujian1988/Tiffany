@@ -6,7 +6,6 @@
         <el-input v-model="model.name"></el-input>
       </el-form-item>
       <el-form-item label="广告">
-        
         <el-button size="small" @click="model.items.push({})">
           <i class="el-icon-plus"></i> 添加广告
         </el-button>
@@ -16,6 +15,7 @@
               <el-input v-model="item.url"></el-input>
             </el-form-item>
             <el-form-item label="图片" style="margin-top: 0.5rem;">
+
               <el-upload
                 class="avatar-uploader"
                 :action="uploadUrl"
@@ -55,7 +55,7 @@ export default {
   },
   methods: {
     async save() {
-      let res
+      let res;
       if (this.id) {
         res = await this.$http.put(`rest/ads/${this.id}`, this.model);
       } else {
