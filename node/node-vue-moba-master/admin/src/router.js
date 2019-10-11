@@ -20,6 +20,20 @@ import AdList from './views/AdList.vue'
 import AdminUserEdit from './views/AdminUserEdit.vue'
 import AdminUserList from './views/AdminUserList.vue'
 
+import UserEdit from './views/UserEdit.vue'
+import UserList from './views/UserList.vue'
+
+import VideoEdit from './views/VideoEdit.vue'
+import VideoList from './views/VideoList.vue'
+
+import CommentEdit from './views/CommentEdit.vue'
+import CommentList from './views/CommentList.vue'
+
+import LiveEdit from './views/LiveEdit.vue'
+import LiveList from './views/LiveList.vue'
+
+import VersionEdit from './views/VersionEdit.vue'
+import VersionList from './views/VersionList.vue'
 
 Vue.use(Router)
 
@@ -55,6 +69,25 @@ const router = new Router({
         { path: '/admin_users/edit/:id', component: AdminUserEdit, props: true },
         { path: '/admin_users/list', component: AdminUserList },
 
+        { path: '/users/create', component: UserEdit },
+        { path: '/users/edit/:id', component: UserEdit, props: true },
+        { path: '/users/list', component: UserList },
+
+        { path: '/videos/create', component: VideoEdit },
+        { path: '/videos/edit/:id', component: VideoEdit, props: true },
+        { path: '/videos/list', component: VideoList },
+
+        { path: '/comments/create', component: CommentEdit },
+        { path: '/comments/edit/:id', component: CommentEdit, props: true },
+        { path: '/comments/list', component: CommentList },
+
+        { path: '/lives/create', component: LiveEdit },
+        { path: '/lives/edit/:id', component: LiveEdit, props: true },
+        { path: '/lives/list', component: LiveList },
+
+        { path: '/versions/create', component: VersionEdit },
+        { path: '/versions/edit/:id', component: VersionEdit, props: true },
+        { path: '/versions/list', component: VersionList},
       ]
     },
 
