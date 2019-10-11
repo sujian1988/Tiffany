@@ -5,6 +5,7 @@ module.exports = app => {
   const jwt = require('jsonwebtoken')
   const AdminUser = require('../../modles/AdminUser')
   
+
   const router = express.Router({
     mergeParams: true //表示合并url参数
   })
@@ -158,6 +159,7 @@ app.post('/admin/api/app_create_user', async (req, res) => {
 
 })
 
+//添加获取maintitle接口
 app.get('/admin/api/app_categories', async(req, res) =>{
   const category = require('../../modles/Category')
   const categories = await category.find() // 限制5条数据
