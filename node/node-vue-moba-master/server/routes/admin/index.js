@@ -169,8 +169,8 @@ app.get('/admin/api/app_categories', async(req, res) =>{
 
 app.get('/admin/api/app_video_list', async(req, res) =>{
   const video = require('../../modles/Video')
-  //const videos = await video.find().limit(5) // 限制10条数据
-  const videos = await video.find().skip((parseInt(req.query.page)-1) * 5).limit(5) // 限制5条数据
+  //const videos = await video.find().limit(5) // 限制10条数据                           根据时间降序查询   
+  const videos = await video.find().skip((parseInt(req.query.page)-1) * 5).limit(5).sort({'create_time' : -1})// 限制5条数据
   res.status(200).json({
       videos
   });

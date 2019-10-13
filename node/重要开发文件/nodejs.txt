@@ -1,3 +1,6 @@
+vscode 一定要在Tiffany目录下启动项目，，否则上传代码到git，服务器下载会有问题
+
+
 命名规范
 1 模型类首字母大写
 2 字段首字母小写的驼峰命名
@@ -502,6 +505,27 @@ npm install -g heroku
 
 如何初始化nodejs项目
 在根目录 输入 npm init 就会初始化项目结构，生成package.json 文件
+[root@iz2ze1nmsp5lb40y72gwdpz sysconfig]# vim iptables
+[root@iz2ze1nmsp5lb40y72gwdpz sysconfig]# service iptables stop
+Redirecting to /bin/systemctl stop iptables.service
+[root@iz2ze1nmsp5lb40y72gwdpz sysconfig]# pwd
+/etc/sysconfig
+
+
+
+ No route to host
+解决方法
+如果是linux，是iptables阻挡造成的，你可以用service iptables stop关闭iptables试试，或者重新配置local的DNS。
 
 //实现多个聊天室
 https://www.itying.com/goods-877.html?from=rss
+
+
+
+[root@iz2ze1nmsp5lb40y72gwdpz node-vue-moba-master]# cd admin/
+[root@iz2ze1nmsp5lb40y72gwdpz admin]# npm run build
+
+
+
+
+
