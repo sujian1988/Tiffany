@@ -170,7 +170,7 @@ app.get('/admin/api/app_categories', async(req, res) =>{
 app.get('/admin/api/app_video_list', async(req, res) =>{
   const video = require('../../modles/Video')
   //const videos = await video.find().limit(5) // 限制10条数据                           根据时间降序查询   
-  const videos = await video.find().skip((parseInt(req.query.page)-1) * 5).limit(5).sort({'create_time' : -1})// 限制5条数据
+  const videos = await video.find().skip((parseInt(req.query.page)-1) * 10).limit(10).sort({'create_time' : -1})// 限制5条数据
   res.status(200).json({
       videos
   });
@@ -277,7 +277,7 @@ app.post('/admin/api/app_create_live', async (req, res) => {
 app.post('/admin/api/app_user_live_list/:id', async (req, res) => {
   const live = require('../../modles/Live')
    //通过user_id查询
-  const lives = await live.find({user_id: req.params.id}).skip((parseInt(req.query.page)-1) * 5).limit(5)
+  const lives = await live.find({user_id: req.params.id}).skip((parseInt(req.query.page)-1) * 10).limit(10).sort({'create_time' : -1})
   //res.send(req.params.id);
   res.status(200).json({
      lives

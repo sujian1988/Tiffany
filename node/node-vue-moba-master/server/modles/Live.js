@@ -14,7 +14,10 @@ const schema = new mongoose.Schema({
     headerUrl: {type: String},
     bgImageUrl: {type: String},
     nickName: {type: String},
-    roomId: {type: String},	
+    roomId: {type: String},
+    StartTime: {type: String},
+    user_num: {type: Number},	
+    screenOrientation: {type: String},
 
 })
 

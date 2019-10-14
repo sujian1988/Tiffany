@@ -28,3 +28,26 @@ activity切换横屏
 3、设置Activity的android:configChanges="orientation|keyboardHidden"时，切屏不会重新调用各个生命周期，只会执行onConfigurationChanged方法
 
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 未解决的问题
+ 1 framelayout 中布局无法获取点击事件 直播界面？？？？
+ 
+ 
+ 2直播列表 updataData 时 clear数据把方法中参数也clear了？？？
+   同一个索引一clear都别clear掉。。。解决方法从新new一个值把索引区分开
+ 
+ 
+ 

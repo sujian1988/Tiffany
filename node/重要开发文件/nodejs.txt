@@ -526,6 +526,7 @@ https://www.itying.com/goods-877.html?from=rss
 [root@iz2ze1nmsp5lb40y72gwdpz admin]# npm run build
 
 
-
+线下服务器不要在server--》routes --》admin 根目录下启动index.js
+!!!!!!!是根目录下的server的index.js！！！！！！！！！！！！！！
 
 
