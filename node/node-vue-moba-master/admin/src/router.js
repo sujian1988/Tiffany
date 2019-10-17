@@ -29,6 +29,9 @@ import VideoList from './views/VideoList.vue'
 import CommentEdit from './views/CommentEdit.vue'
 import CommentList from './views/CommentList.vue'
 
+import CommentReplyEdit from './views/CommentReplyEdit.vue'
+import CommentReplyList from './views/CommentReplyList.vue'
+
 import LiveEdit from './views/LiveEdit.vue'
 import LiveList from './views/LiveList.vue'
 
@@ -80,6 +83,10 @@ const router = new Router({
         { path: '/comments/create', component: CommentEdit },
         { path: '/comments/edit/:id', component: CommentEdit, props: true },
         { path: '/comments/list', component: CommentList },
+
+        { path: '/commentreplyitems/create', component: CommentReplyEdit },
+        { path: '/commentreplyitems/edit/:id', component: CommentReplyEdit, props: true },
+        { path: '/commentreplyitems/list', component: CommentReplyList },
 
         { path: '/lives/create', component: LiveEdit },
         { path: '/lives/edit/:id', component: LiveEdit, props: true },

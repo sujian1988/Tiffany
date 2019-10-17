@@ -18,6 +18,7 @@ const schema = new mongoose.Schema({
     StartTime: {type: String},
     user_num: {type: Number},	
     screenOrientation: {type: String},
+    create_time: { type: Date, default: Date.now },
 
 })
 

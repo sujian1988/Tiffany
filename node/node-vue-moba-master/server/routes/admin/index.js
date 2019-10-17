@@ -176,8 +176,6 @@ app.get('/admin/api/app_video_list', async(req, res) =>{
   });
 })
 
-
-
 //创建视频
  app.post('/admin/api/app_create_video', async (req, res) => {
   const video = require('../../modles/Video')
@@ -202,7 +200,6 @@ app.post('/admin/api/app_find_userown_video/:id', async (req, res) => {
 
 //通过视频id获取视频的评论列表
 app.post("/admin/api/app_comments/:id", async(req, res)=>{
-  
   const comment = require('../../modles/Comment')
   //通过video_id查询
  const comments = await comment.find({video_id: req.params.id}).skip((parseInt(req.query.page)-1) * 5).limit(5)
@@ -212,7 +209,71 @@ app.post("/admin/api/app_comments/:id", async(req, res)=>{
   //res.send(req.params.id)
 })
 
+//******************************************************************************************* */
 
+
+app.post("/admin/api/app_commentreplys", async(req, res)=>{
+  const comment = require('../../modles/CommentReplyItem')
+  //通过video_id查询
+ const comments = await comment.find({video_id: req.params.id}).skip((parseInt(req.query.page)-1) * 5).limit(5)
+ res.status(200).json({
+    comments
+ });
+  //res.send(req.params.id)
+})
+
+
+//回复视频地下的评论
+app.post('/admin/api/app_create_commentreply', async (req, res) => {
+  const commentreply = require('../../modles/CommentReplyItem')
+  const newcommentreply = await commentreply.create(req.body)
+  res.status(200).json(newcommentreply);
+})
+
+
+//多表通过视频id获取视频的评论列表
+app.post("/admin/api/app_aggregate_comments/:id", async(req, res)=>{
+  const comment = require('../../modles/Comment')
+
+  //const comments = await comment.find({video_id: req.params.id}).skip((parseInt(req.query.page)-1) * 5).limit(5)
+
+  //通过video_id查询
+ const comments = await comment.aggregate([
+    {
+       $match : 
+       {
+        "video_id" : req.params.id,
+       }
+    },
+    {
+      $lookup:
+        {
+          from: "commentreplyitems",
+          localField: "comment_reply_id",
+          foreignField: "comment_reply_id",
+          as: "items"
+        }
+   },
+  
+   {
+     $skip : ((parseInt(req.query.page)-1) * 5)
+   },
+
+   {
+    $limit: 5
+   },
+
+ ]);
+ 
+ //.find({video_id: req.params.id}).skip((parseInt(req.query.page)-1) * 5).limit(5)
+ 
+  res.status(200).json({
+      comments
+  });
+  //res.send(req.query.page)
+})
+
+//***************************************************************************************** */
 
 app.post("/admin/api/app_comment_reply/:id", async(req, res)=>{
   
@@ -233,6 +294,17 @@ app.post("/admin/api/api_relaese_comment", async(req, res)=> {
   const comment = require('../../modles/Comment')
   const newComment = await comment.create(req.body)
   var commentidapp = {comment_id: newComment._id} 
+  //将_id赋值给video_id
+  const changeComment = await comment.findByIdAndUpdate(newComment._id, commentidapp)
+  res.status(200).json(changeComment);
+})
+
+
+//发布回复评论
+app.post("/admin/api/api_relaese_comment_reply", async(req, res)=> {
+  const comment = require('../../modles/Comment_reply')
+  const newComment = await comment.create(req.body)
+  var commentidapp = {comment_reply_id: newComment._id} 
   //将_id赋值给video_id
   const changeComment = await comment.findByIdAndUpdate(newComment._id, commentidapp)
   res.status(200).json(changeComment);

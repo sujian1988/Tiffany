@@ -511,14 +511,27 @@ Redirecting to /bin/systemctl stop iptables.service
 [root@iz2ze1nmsp5lb40y72gwdpz sysconfig]# pwd
 /etc/sysconfig
 
-
-
  No route to host
 解决方法
 如果是linux，是iptables阻挡造成的，你可以用service iptables stop关闭iptables试试，或者重新配置local的DNS。
 
 //实现多个聊天室
 https://www.itying.com/goods-877.html?from=rss
+
+
+mongdb
+
+lookup
+1
+from的表面一定要是数据库的小写表面 ，因为如果不在mongoose.model('CommentReplyItem', schema)
+设置第三个参数表名，，他就会自动转小写了。所以lookup会关联不到表
+2
+skip一定放在limit的前面。否则无法查询数据
+
+
+
+
+
 
 
 
@@ -528,5 +541,28 @@ https://www.itying.com/goods-877.html?from=rss
 
 线下服务器不要在server--》routes --》admin 根目录下启动index.js
 !!!!!!!是根目录下的server的index.js！！！！！！！！！！！！！！
+
+
+线更新代码从新启动方法
+1 代码线git stash
+例如
+[root@iz2ze1nmsp5lb40y72gwdpz Tiffany]#
+[root@iz2ze1nmsp5lb40y72gwdpz Tiffany]# git stash
+Saved working directory and index state WIP on master: 7f83c1e 复原项目
+HEAD is now at 7f83c1e 复原项目
+[root@iz2ze1nmsp5lb40y72gwdpz Tiffany]# git pull
+
+2 更新好代码后 在这个路径从新生成vue文件
+[root@iz2ze1nmsp5lb40y72gwdpz admin]# npm run build
+
+3 进入server目录下
+[root@iz2ze1nmsp5lb40y72gwdpz admin]# cd ..
+[root@iz2ze1nmsp5lb40y72gwdpz node-vue-moba-master]# cd server/
+[root@iz2ze1nmsp5lb40y72gwdpz server]# pm2 list
+pm2 stop index.js 
+pm2 start index.js
+
+
+
 
 

@@ -12,6 +12,7 @@ const schema = new mongoose.Schema({
   },
   user_headimg: {type: String},
   comment: {type: String},
+  comment_reply_id:{type: String},
   reply_user_id: {type: String},
   reply_user_name: { type: String },
   reply_comment: {type: String},
@@ -20,7 +21,6 @@ const schema = new mongoose.Schema({
     default : 0
   },
   comment_type: {type: Number}, //1是发表视频评论，2 是回复用户评论
-
   
 })
 

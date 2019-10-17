@@ -97,6 +97,12 @@
             <el-menu-item index="/comments/list">评论列表</el-menu-item>
           </el-menu-item-group>   
 
+           <el-menu-item-group>
+            <template slot="title">回复评论</template>
+            <el-menu-item index="/commentreplyitems/create">新建回复评论</el-menu-item>
+            <el-menu-item index="/commentreplyitems/list">回复评论列表</el-menu-item>
+          </el-menu-item-group>   
+
         </el-submenu>
 
         <el-submenu index="6">
