@@ -291,10 +291,10 @@ app.post("/admin/api/api_relaese_comment", async(req, res)=> {
 app.post("/admin/api/api_relaese_comment_reply", async(req, res)=> {
   const comment = require('../../modles/CommentReplyItem')
   const newComment = await comment.create(req.body)
-  var commentidapp = {comment_reply_id: newComment._id} 
+  //var commentidapp = {comment_reply_id: newComment._id} 
   //将_id赋值给video_id
-  const changeComment = await comment.findByIdAndUpdate(newComment._id, commentidapp)
-  res.status(200).json(changeComment);
+  //const changeComment = await comment.findByIdAndUpdate(newComment._id, commentidapp)
+  res.status(200).json(newComment);
 })
 
 //回复视频地下的评论
