@@ -223,20 +223,9 @@ app.post("/admin/api/app_commentreplys", async(req, res)=>{
 })
 
 
-//回复视频地下的评论
-app.post('/admin/api/app_create_commentreply', async (req, res) => {
-  const commentreply = require('../../modles/CommentReplyItem')
-  const newcommentreply = await commentreply.create(req.body)
-  res.status(200).json(newcommentreply);
-})
-
-
-//多表通过视频id获取视频的评论列表
+//多表通过视频id获取视频的评论和回复二级列表
 app.post("/admin/api/app_aggregate_comments/:id", async(req, res)=>{
   const comment = require('../../modles/Comment')
-
-  //const comments = await comment.find({video_id: req.params.id}).skip((parseInt(req.query.page)-1) * 5).limit(5)
-
   //通过video_id查询
  const comments = await comment.aggregate([
     {
@@ -249,7 +238,7 @@ app.post("/admin/api/app_aggregate_comments/:id", async(req, res)=>{
       $lookup:
         {
           from: "commentreplyitems",
-          localField: "comment_reply_id",
+          localField: "comment_id",
           foreignField: "comment_reply_id",
           as: "items"
         }
@@ -264,17 +253,15 @@ app.post("/admin/api/app_aggregate_comments/:id", async(req, res)=>{
    },
 
  ]);
- 
- //.find({video_id: req.params.id}).skip((parseInt(req.query.page)-1) * 5).limit(5)
- 
   res.status(200).json({
       comments
   });
-  //res.send(req.query.page)
+  
 })
 
 //***************************************************************************************** */
 
+//废弃
 app.post("/admin/api/app_comment_reply/:id", async(req, res)=>{
   
   const comment = require('../../modles/Comment')
@@ -302,13 +289,24 @@ app.post("/admin/api/api_relaese_comment", async(req, res)=> {
 
 //发布回复评论
 app.post("/admin/api/api_relaese_comment_reply", async(req, res)=> {
-  const comment = require('../../modles/Comment_reply')
+  const comment = require('../../modles/CommentReplyItem')
   const newComment = await comment.create(req.body)
   var commentidapp = {comment_reply_id: newComment._id} 
   //将_id赋值给video_id
   const changeComment = await comment.findByIdAndUpdate(newComment._id, commentidapp)
   res.status(200).json(changeComment);
 })
+
+//回复视频地下的评论
+// app.post('/admin/api/api_relaese_comment_reply', async (req, res) => {
+//   const r = require('../../modles/CommentReplyItem')
+//   const rr = await r.create(req.body)
+//   var a = {comment_reply_id: rr._id} 
+//   //将_id赋值给video_id
+//   const changeComment = await r.findByIdAndUpdate(rr._id, a)
+//   res.status(200).json(changeComment);
+// })
+
 
 
 //点赞
