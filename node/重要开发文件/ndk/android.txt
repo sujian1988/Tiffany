@@ -21,18 +21,24 @@ autobabhn -0.5.0 废弃包。。原因无法彻底部署到阿里云
 必须是25.3.1才可以。。。坑了我两天。。。。。
 
 activity切换横屏
-1、不设置Activity的android:configChanges时，切屏会重新调用各个生命周期，切横屏时会执行一次，切竖屏时会执行两次
-
-2、设置Activity的android:configChanges="orientation"时，切屏还是会重新调用各个生命周期，切横、竖屏时只会执行一次
-
-3、设置Activity的android:configChanges="orientation|keyboardHidden"时，切屏不会重新调用各个生命周期，只会执行onConfigurationChanged方法
+	1、不设置Activity的android:configChanges时，切屏会重新调用各个生命周期，切横屏时会执行一次，切竖屏时会执行两次
+	2、设置Activity的android:configChanges="orientation"时，切屏还是会重新调用各个生命周期，切横、竖屏时只会执行一次
+	3、设置Activity的android:configChanges="orientation|keyboardHidden"时，切屏不会重新调用各个生命周期，只会执行onConfigurationChanged方法
 
  
+3 
+ SpannableStringBuilder: SPAN_EXCLUSIVE_EXCLUSIVE spans cannot have a zero length
+    SPAN_EXCLUSIVE_EXCLUSIVE spans cannot have a zero length
  
+ 解决方法：
+       在对应EditText下添加  android:inputType="textNoSuggestions"  属性即可
  
- 
- 
- 
+4
+android.content.res.Resources$NotFoundException: String resource ID #0x0 找不到资源文件ID #0x0
+
+原因分析如下：
+
+遇到这种情况，很有可能是把一个int型业务数据的 设置setText（）或者类似的方法中， 这样Android系统就会主动去资源文件当中寻找， 但是它不是一个资源文件ID， 所以就会报出这个bug。 将int型业务数据，转换成String类型即可。 
  
  
  

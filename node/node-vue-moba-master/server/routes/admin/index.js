@@ -331,6 +331,28 @@ app.post("/admin/api/app_comments_like", async(req, res)=>{
   //res.send(req.params.id)
 })
 
+app.post("/admin/api/app_comments_unlike", async(req, res)=>{
+  
+  const{comment_id, other_up, user_id } = req.body
+  const comment = require('../../modles/Comment')
+  var commentup = {other_up: other_up}
+  
+  const tmpComment = await comment.findOne({comment_id})
+   
+  if(tmpComment.other_up === other_up){
+    res.status(424).json("点赞失败")
+    return
+  }
+  //通过comment_id查询
+  const changeComment = await comment.findByIdAndUpdate(comment_id, commentup) 
+  res.status(200).json(
+    "取消成功"
+  );
+ 
+  //res.send(req.params.id)
+})
+
+
 
 //创建直播
 app.post('/admin/api/app_create_live', async (req, res) => {

@@ -9,6 +9,7 @@ const schema = new mongoose.Schema({
   reply_user_id: {type: String},
   reply_user_name: { type: String },
   reply_comment: {type: String},
+  create_time: { type: Date, default: Date.now },
  
 })
 
