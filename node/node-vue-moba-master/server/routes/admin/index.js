@@ -271,7 +271,7 @@ app.post("/admin/api/app_comment_reply/:id", async(req, res)=>{
   res.status(200).json({
     comments
   });
-  // res.send(req.params.id)
+
 })
 
 
@@ -291,9 +291,6 @@ app.post("/admin/api/api_relaese_comment", async(req, res)=> {
 app.post("/admin/api/api_relaese_comment_reply", async(req, res)=> {
   const comment = require('../../modles/CommentReplyItem')
   const newComment = await comment.create(req.body)
-  //var commentidapp = {comment_reply_id: newComment._id} 
-  //将_id赋值给video_id
-  //const changeComment = await comment.findByIdAndUpdate(newComment._id, commentidapp)
   res.status(200).json(newComment);
 })
 
@@ -327,7 +324,6 @@ app.post("/admin/api/app_comments_like", async(req, res)=>{
   res.status(200).json(
     "点赞成功"
   );
- 
   //res.send(req.params.id)
 })
 
@@ -348,8 +344,7 @@ app.post("/admin/api/app_comments_unlike", async(req, res)=>{
   res.status(200).json(
     "取消成功"
   );
- 
-  //res.send(req.params.id)
+
 })
 
 
@@ -386,8 +381,45 @@ app.get('/admin/api/app_live_list', async(req, res) =>{
   });
 })
 
+//创建弹幕
+app.post('/admin/api/app_add_dandiscuss', async(req, res) =>{
+  const danDiscuss = require('../../modles/DanDiscuss')
+  const newDanDiscuss = await danDiscuss.create(req.body)
+  res.status(200).json(newDanDiscuss);
+})
+
+//获取某视频的弹幕列表
+app.post('/admin/api/app_dandiscuss_list/:id', async (req, res) => {
+  const danDiscuss = require('../../modles/DanDiscuss')
+   //通过user_id查询
+  //const danDiscusses = await danDiscuss.find({video_id: req.params.id})
+  
+  const danDiscusses = await danDiscuss.aggregate([
+    
+    {
+       $match : 
+       {
+        "video_id" : req.params.id,
+       }
+    },
+    {
+      $project : 
+        {
+          _id:0,
+          c:1, 
+          m:1
+        }
+
+    }
 
 
+ ]);
+
+  res.status(200).json(
+    danDiscusses
+  );
+
+})
 
 
 //每次写接口，先测试接口是否通畅

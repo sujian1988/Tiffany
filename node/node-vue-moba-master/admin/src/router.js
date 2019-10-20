@@ -38,6 +38,8 @@ import LiveList from './views/LiveList.vue'
 import VersionEdit from './views/VersionEdit.vue'
 import VersionList from './views/VersionList.vue'
 
+import QrImage from './views/QrImage.vue'
+
 Vue.use(Router)
 
 const router = new Router({
@@ -95,6 +97,9 @@ const router = new Router({
         { path: '/versions/create', component: VersionEdit },
         { path: '/versions/edit/:id', component: VersionEdit, props: true },
         { path: '/versions/list', component: VersionList},
+
+        { path: '/qrimage', component: QrImage},
+
       ]
     },
 

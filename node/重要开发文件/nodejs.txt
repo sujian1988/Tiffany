@@ -563,6 +563,16 @@ pm2 stop index.js
 pm2 start index.js
 
 
+mongdb
+ $project : 设置查询结果返回的字段 1显示返回 0是不显示
+ 例如{
+      $project : 
+        {
+          _id:0,
+          c:1, 
+          m:1
+        }
+    }
 
-
+	
 

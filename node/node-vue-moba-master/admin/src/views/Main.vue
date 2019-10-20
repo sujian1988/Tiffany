@@ -117,7 +117,13 @@
       
         </el-submenu>
 
-
+      <el-submenu index="7">
+          <el-menu-item-group>
+            <template slot="title">二维码</template>
+            <el-menu-item index="/qrimage">二维码</el-menu-item>
+          </el-menu-item-group>
+      
+        </el-submenu>
       
       
       </el-menu>
