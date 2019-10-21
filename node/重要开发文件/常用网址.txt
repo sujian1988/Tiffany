@@ -185,6 +185,12 @@ git push -u origin master
 zhanglong
 zl86624932
 
+mongdb compass客户端连接设置
+SSH Hostname: 39.96.18.249
+SSH TunnelPort: 22
+SSH Username: root
+SSH Password: Zl86624932
+
 支付宝
 15940174189
 zhanglong2580

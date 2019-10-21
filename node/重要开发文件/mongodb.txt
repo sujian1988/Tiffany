@@ -1,0 +1,9 @@
+卸载之前安装的2.4.14版本，命令如下：
+
+// 找出mongodb相关的安装包
+yum list installed | grep mongo
+
+// 删除指定的安装包,包名由上面的list命令获得
+yum erase mongodb.x86_64
+yum erase mongodb-server.x86_64
+

@@ -211,16 +211,16 @@ app.post("/admin/api/app_comments/:id", async(req, res)=>{
 
 //******************************************************************************************* */
 
-
-app.post("/admin/api/app_commentreplys", async(req, res)=>{
-  const comment = require('../../modles/CommentReplyItem')
-  //通过video_id查询
- const comments = await comment.find({video_id: req.params.id}).skip((parseInt(req.query.page)-1) * 5).limit(5)
- res.status(200).json({
-    comments
- });
-  //res.send(req.params.id)
-})
+//废弃
+// app.post("/admin/api/app_commentreplys", async(req, res)=>{
+//   const comment = require('../../modles/CommentReplyItem')
+//   //通过video_id查询
+//  const comments = await comment.find({video_id: req.params.id}).skip((parseInt(req.query.page)-1) * 5).limit(5)
+//  res.status(200).json({
+//     comments
+//  });
+//   //res.send(req.params.id)
+// })
 
 
 //多表通过视频id获取视频的评论和回复二级列表

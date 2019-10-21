@@ -351,6 +351,13 @@ nginx缺失site-enable目录的解决办法
 include /etc/nginx/sites-enabled/*;
 所有的虚拟主机配置文件放在sites-available目录，然后你可以在sites-enabled目录创建软链接指向sites-available里的配置文件	  
 
+连接远程mongdb数据
+mongdb compass客户端连接设置
+SSH Hostname: 39.96.18.249
+SSH TunnelPort: 22
+SSH Username: root
+SSH Password: Zl86624932
+
 将数据备份到阿里云上
 1	  
 在本地
@@ -552,6 +559,11 @@ Saved working directory and index state WIP on master: 7f83c1e 复原项目
 HEAD is now at 7f83c1e 复原项目
 [root@iz2ze1nmsp5lb40y72gwdpz Tiffany]# git pull
 
+如果切换分支。。就有点麻烦，你在origin/su分支开发完提交完后，要切换的master主分支上
+这主分支执行git pull 记住。。到这么还没完。。一定要在git push一下。否则远端无法更新到最新的代码！！！！！！！！
+
+
+
 2 更新好代码后 在这个路径从新生成vue文件
 [root@iz2ze1nmsp5lb40y72gwdpz admin]# npm run build
 
@@ -574,5 +586,7 @@ mongdb
         }
     }
 
+更新mongodb数据库
+npm install mongodb update
 	
 
