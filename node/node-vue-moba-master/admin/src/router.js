@@ -38,6 +38,9 @@ import LiveList from './views/LiveList.vue'
 import VersionEdit from './views/VersionEdit.vue'
 import VersionList from './views/VersionList.vue'
 
+import XCircleEdit from './views/XCircleEdit.vue'
+import XCircleList from './views/XCircleList.vue'
+
 import QrImage from './views/QrImage.vue'
 
 Vue.use(Router)
@@ -97,6 +100,10 @@ const router = new Router({
         { path: '/versions/create', component: VersionEdit },
         { path: '/versions/edit/:id', component: VersionEdit, props: true },
         { path: '/versions/list', component: VersionList},
+
+        { path: '/xcircles/create', component: XCircleEdit },
+        { path: '/xcircles/edit/:id', component: XCircleEdit, props: true },
+        { path: '/xcircles/list', component: XCircleList},
 
         { path: '/qrimage', component: QrImage},
 

@@ -589,4 +589,12 @@ mongdb
 更新mongodb数据库
 npm install mongodb update
 	
+、、、、、、、、、、、、、、、、、、、、、、、、、、、错误问题-------------------------------------------------------------------
+
+express\lib\application.js:604:24) 
+解决方法
+app.listen(3000, () => {
+  console.log('http://localhost:3000');
+});
+修改端口号3001。运行程序，再改回3000，运行，就不会报错了
 

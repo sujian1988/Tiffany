@@ -13,4 +13,4 @@ const schema = new mongoose.Schema({
  
 })
 
-module.exports = mongoose.model('CommentReplyItem', schema)
+module.exports = mongoose.model('CommentReplyItem', schema, 'commentreplyitems')

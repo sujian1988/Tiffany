@@ -7,3 +7,39 @@ yum list installed | grep mongo
 yum erase mongodb.x86_64
 yum erase mongodb-server.x86_64
 
+https://www.bilibili.com/video/av58991071?from=search&seid=10900743755399242349
+解压4.0的安装包 安装包在E:\wangyinbkDown
+[root@iz2ze1nmsp5lb40y72gwdpz tmp]# tar -zxvf mongodb-linux-x86_64-4.0.13.tgz
+
+
+安装mongodb数据库时的错误：
+	SocketException: Address already in use
+解决方法：
+	在安装完MongoDB时有两种常用的启动服务的方式
+		1.直接在后台启动运行
+	sudo service mongodb start
+		2.sudo mongod
+		以守护进程的方式启动  此方式随命令行窗口关闭而停止服务 可用ps -au|grep mongo命令查看进程
+
+		两种方式择一即可  如果报上面错误  一般是已经开启服务了  可直接用sodu mongo命令连接  如正常进入  则无问题  
+
+		如果不能进入  考虑是不是别的服务占用port导致  可尝试关闭占用该port的进程或者指定mongodb服务的port
+
+		
+此时如果我想杀了火狐的进程就在终端输入：
+$ kill -s 9 1827
+其中-s 9 制定了传递给进程的信号是９，即强制、尽快终止进程。各个终止信号及其作用见附录。
+1827则是上面ps查到的火狐的PID。
+
+
+
+若数据库出现如上不能连接的原因，可能是data目录下的mongod.lock文件问题，可以用如下命令修复：
+解决方法：
+[root@localhost mongodb]# ./bin/mongod --repair
+或者直接删除mongod.lock
+rm -f /usr/local/mongodb/data/db/mongod.lock
+
+然后再启动mongodb。
+service mongodb start
+service mongodb stop
+如果上面两条命令不好使说明还没有实例化服务 执行 [root@iz2ze1nmsp5lb40y72gwdpz bin]# ./mongod （/usr/local/mongodb）

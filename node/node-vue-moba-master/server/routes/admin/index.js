@@ -393,7 +393,6 @@ app.post('/admin/api/app_dandiscuss_list/:id', async (req, res) => {
   const danDiscuss = require('../../modles/DanDiscuss')
    //通过user_id查询
   //const danDiscusses = await danDiscuss.find({video_id: req.params.id})
-  
   const danDiscusses = await danDiscuss.aggregate([
     
     {
@@ -411,16 +410,29 @@ app.post('/admin/api/app_dandiscuss_list/:id', async (req, res) => {
         }
 
     }
-
-
  ]);
-
   res.status(200).json(
     danDiscusses
   );
 
 })
 
+
+//获取秀秀圈列表
+app.get('/admin/api/app_xcircle_list', async(req, res) =>{
+  const XCircle = require('../../modles/XCircle')
+  const xcircles = await XCircle.find().skip((parseInt(req.query.page)-1) * 5).limit(5) // 限制5条数据
+  res.status(200).json({
+      xcircles
+  });
+})
+
+//创建弹幕
+app.post('/admin/api/app_add_xcircle', async(req, res) =>{
+  const xcircles = require('../../modles/XCircle')
+  const newXcircle = await xcircles.create(req.body)
+  res.status(200).json(newXcircle);
+})
 
 //每次写接口，先测试接口是否通畅
 // app.post("/admin", async(req, res)=>{

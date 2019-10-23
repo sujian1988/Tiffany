@@ -117,10 +117,14 @@
       
         </el-submenu>
 
-      <el-submenu index="7">
+       <el-submenu index="7">
+          <template slot="title">
+            <i class="el-icon-message"></i>秀秀圈
+          </template>
           <el-menu-item-group>
-            <template slot="title">二维码</template>
-            <el-menu-item index="/qrimage">二维码</el-menu-item>
+            <template slot="title">秀秀圈</template>
+              <el-menu-item index="/xcircles/create">发布说说</el-menu-item>
+            <el-menu-item index="/xcircles/list">秀秀圈列表</el-menu-item>
           </el-menu-item-group>
       
         </el-submenu>
