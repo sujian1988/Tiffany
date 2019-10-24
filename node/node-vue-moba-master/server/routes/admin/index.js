@@ -289,9 +289,9 @@ app.post("/admin/api/api_relaese_comment", async(req, res)=> {
 
 //发布回复评论
 app.post("/admin/api/api_relaese_comment_reply", async(req, res)=> {
-  const comment = require('../../modles/CommentReplyItem')
-  const newComment = await comment.create(req.body)
-  res.status(200).json(newComment);
+  const commentreply = require('../../modles/Commentreplyitem')
+  const newCommentreply = await commentreply.create(req.body)
+  res.status(200).json(newCommentreply);
 })
 
 //回复视频地下的评论
@@ -420,8 +420,8 @@ app.post('/admin/api/app_dandiscuss_list/:id', async (req, res) => {
 
 //获取秀秀圈列表
 app.get('/admin/api/app_xcircle_list', async(req, res) =>{
-  const XCircle = require('../../modles/XCircle')
-  const xcircles = await XCircle.find().skip((parseInt(req.query.page)-1) * 5).limit(5) // 限制5条数据
+  const xcircle = require('../../modles/Xcircle')
+  const xcircles = await xcircle.find().skip((parseInt(req.query.page)-1) * 5).limit(5) // 限制5条数据
   res.status(200).json({
       xcircles
   });
@@ -429,7 +429,7 @@ app.get('/admin/api/app_xcircle_list', async(req, res) =>{
 
 //创建弹幕
 app.post('/admin/api/app_add_xcircle', async(req, res) =>{
-  const xcircles = require('../../modles/XCircle')
+  const xcircles = require('../../modles/Xcircle')
   const newXcircle = await xcircles.create(req.body)
   res.status(200).json(newXcircle);
 })

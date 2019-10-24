@@ -87,6 +87,12 @@ rtmp://202.69.69.180:443/webcast/bshdlive-pc
 美国中文电视,rtmp://media3.sinovision.net:1935/live/livestream
 
 湖南卫视,rtmp://58.200.131.2:1935/livetv/hunantv
+
+优势频道
+http://1-fss24-s0.streamhoster.com/lv_uchannel/_definst_/broadcast1/chunklist.m3u8
+
+日本电视台
+http://192.240.127.34:1935/live/cs19.stream/media_1254.m3u8
 ————————————————
 版权声明：本文为CSDN博主「快乐风男灬」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
 原文链接：https://blog.csdn.net/q386815991/article/details/80942155

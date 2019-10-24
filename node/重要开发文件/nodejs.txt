@@ -590,11 +590,20 @@ mongdb
 npm install mongodb update
 	
 、、、、、、、、、、、、、、、、、、、、、、、、、、、错误问题-------------------------------------------------------------------
-
+1
 express\lib\application.js:604:24) 
 解决方法
 app.listen(3000, () => {
   console.log('http://localhost:3000');
 });
 修改端口号3001。运行程序，再改回3000，运行，就不会报错了
+
+
+2
+Cannot overwrite `XCircle` model once compiled
+解决方法：
+因此，您可能会收到此错误的另一个原因是，如果在不同的文件中使用相同的模型，但是require路径的大小写不同。例如，在我的情况下，我有：
+require('./models/User')在一个文件中，然后在另一个文件中，我需要访问我拥有的User模型require('./models/user')。
+
+总结，这类问题，基本都是modle类文件名大小写的问题。。。命名规则进来全部小写保持和数据库一致，，不要驼峰式命名。。
 
