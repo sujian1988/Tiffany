@@ -88,7 +88,7 @@ Merge made by the 'recursive' strategy.
 git clean -d -fx
 即可。可能很多人都不明白-d，-fx到底是啥意思，其实git clean -d -fx表示：删除 一些 没有 git add 的 文件；
     git clean 参数 
-    -n 显示将要删除的文件和目录；
+    -n 显示将要删除的文件和目录；	
     -x -----删除忽略文件已经对git来说不识别的文件
     -d -----删除未被添加到git的路径中的文件
     -f -----强制运行
@@ -109,4 +109,10 @@ git clean -d -fx
 　　5 在从公用的仓库fetch代码：git fetch origin dev20181018:dev20181018
 
 　　6 然后切换分支即可：git checkout dev20181018
+ 
+ git查看分支图
+git log --graph --decorate --oneline --simplify-by-decoration --all
+ 
+***********git 坑***************
+在更新代码时，只会更新代码，不会更新文件名（nodejs） 
  

@@ -421,7 +421,7 @@ app.post('/admin/api/app_dandiscuss_list/:id', async (req, res) => {
 //获取秀秀圈列表
 app.get('/admin/api/app_xcircle_list', async(req, res) =>{
   const xcircle = require('../../modles/Xcircle')
-  const xcircles = await xcircle.find().skip((parseInt(req.query.page)-1) * 5).limit(5) // 限制5条数据
+  const xcircles = await xcircle.find().skip((parseInt(req.query.page)-1) * 5).limit(5).sort({'create_time' : -1}) // 限制5条数据
   res.status(200).json({
       xcircles
   });
@@ -431,7 +431,10 @@ app.get('/admin/api/app_xcircle_list', async(req, res) =>{
 app.post('/admin/api/app_add_xcircle', async(req, res) =>{
   const xcircles = require('../../modles/Xcircle')
   const newXcircle = await xcircles.create(req.body)
-  res.status(200).json(newXcircle);
+  var circleidapp = {circle_id: newXcircle._id} 
+  //将_id赋值给circle_id
+  const changeXcircle= await xcircles.findByIdAndUpdate(newXcircle._id,circleidapp)
+  res.status(200).json(changeXcircle);
 })
 
 //每次写接口，先测试接口是否通畅
