@@ -29,6 +29,18 @@
             <i v-else class="el-icon-plus avatar-uploader-icon"></i>
           </el-upload>
         </el-form-item>
+
+        <el-form-item label="gif图片">
+          <el-upload
+            class="avatar-uploader"
+            :action="uploadUrl"
+            :headers="getAuthHeaders()"
+            :show-file-list="false"
+            :on-success="afterUploadGif">
+            <img v-if="model.gif" :src="model.gif" class="gif">
+            <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+          </el-upload>
+        </el-form-item>
            
       <el-form-item label="视频缩略图">
        <el-input v-model="model.thumbnail"></el-input>
@@ -60,6 +72,9 @@ export default {
           this.$set(this.model, 'image', res.url)  
         },
 
+  afterUploadGif(res){
+          this.$set(this.model, 'gif', res.url)  
+        },
     async save() {
       let res
       if (this.id) {

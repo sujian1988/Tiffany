@@ -12,6 +12,7 @@ const schema = new mongoose.Schema({
   user_type: {type: String},
   xiuxiu_type: {type: String},
   top_commentsVoiceuri: {type: String},
+  gif: {type : String},
   up: {type: Number},
   down: {type: Number},
   forward: {type: Number},

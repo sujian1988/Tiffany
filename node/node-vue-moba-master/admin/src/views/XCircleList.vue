@@ -5,13 +5,19 @@
       <el-table-column prop="_id" label="ID" width="240"></el-table-column>
       <el-table-column prop="user_name" label="名称"></el-table-column>
        <el-table-column prop="xiucricle_id" label="秀秀圈id"></el-table-column>
-        <el-table-column prop="image" label="图标">
-
+       
+      <el-table-column prop="image" label="图标"> 
         <template slot-scope="scope">
           <img :src="scope.row.image" style="height:3rem;">
         </template>
-      
       </el-table-column>
+
+      <el-table-column prop="gif" label="gif图标">
+        <template slot-scope="scope">
+          <img :src="scope.row.gif" style="height:3rem;">
+        </template>
+      </el-table-column>
+
       <el-table-column fixed="right" label="操作" width="180">
         <template slot-scope="scope">
           <el-button

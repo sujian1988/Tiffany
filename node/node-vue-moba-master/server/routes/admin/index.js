@@ -427,7 +427,7 @@ app.get('/admin/api/app_xcircle_list', async(req, res) =>{
   });
 })
 
-//创建弹幕
+//发布秀秀说说
 app.post('/admin/api/app_add_xcircle', async(req, res) =>{
   const xcircles = require('../../modles/Xcircle')
   const newXcircle = await xcircles.create(req.body)
@@ -436,6 +436,17 @@ app.post('/admin/api/app_add_xcircle', async(req, res) =>{
   const changeXcircle= await xcircles.findByIdAndUpdate(newXcircle._id,circleidapp)
   res.status(200).json(changeXcircle);
 })
+
+//发布秀秀说说
+app.post('/admin/api/app_delete_xcircle/:id', async(req, res) =>{
+  const xcircles = require('../../modles/Xcircle')
+  await xcircles.findByIdAndDelete(req.params.id)  
+  res.status(200).json({
+    success: true
+  });
+})
+
+
 
 //每次写接口，先测试接口是否通畅
 // app.post("/admin", async(req, res)=>{
