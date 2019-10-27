@@ -14,6 +14,8 @@ const schema = new mongoose.Schema({
   top_commentsVoiceuri: {type: String},
   gif: {type : String},
   up: {type: Number},
+  share_num:{type : Number},
+  chat_num: {type : Number},
   down: {type: Number},
   forward: {type: Number},
   image: {type: String},

@@ -421,7 +421,7 @@ app.post('/admin/api/app_dandiscuss_list/:id', async (req, res) => {
 //获取秀秀圈列表
 app.get('/admin/api/app_xcircle_list', async(req, res) =>{
   const xcircle = require('../../modles/Xcircle')
-  const xcircles = await xcircle.find().skip((parseInt(req.query.page)-1) * 5).limit(5).sort({'create_time' : -1}) // 限制5条数据
+  const xcircles = await xcircle.find().skip((parseInt(req.query.page)-1) * 10).limit(10).sort({'create_time' : -1}) // 限制5条数据
   res.status(200).json({
       xcircles
   });
@@ -446,7 +446,68 @@ app.post('/admin/api/app_delete_xcircle/:id', async(req, res) =>{
   });
 })
 
+//点赞
+app.post("/admin/api/app_xiuxiu_like", async(req, res)=>{
+  
+  const{circle_id, up, user_id } = req.body
+  const xcircle = require('../../modles/Xcircle')
+  var xcircleup = {up: up}
+  
+  const tmpXcircle = await xcircle.findOne({circle_id})
+  //如果同时很多人点赞,就要判断在你点赞前。点赞数是否有变化
+  if(tmpXcircle.up === up){
+    res.status(424).json("点赞失败")
+    return
+  }
+  //通过comment_id查询
+  const changeComment = await xcircle.findByIdAndUpdate(circle_id, xcircleup) 
+  res.status(200).json(
+    "点赞成功"
+  );
+  //res.send(req.params.id)
+})
 
+app.post("/admin/api/app_xiuxiu_unlike", async(req, res)=>{
+  
+  const{circle_id, up, user_id } = req.body
+  const xcircle = require('../../modles/Xcircle')
+  var xcircleup = {up: up}
+  
+  const tmpXcircle = await xcircle.findOne({circle_id})
+   
+  if(tmpXcircle.up === up){
+    res.status(424).json("点赞失败")
+    return
+  }
+  //通过comment_id查询
+  const changeComment = await xcircle.findByIdAndUpdate(circle_id, xcircleup) 
+  res.status(200).json(
+    "取消成功"
+  );
+
+})
+
+
+//分享次数
+app.post("/admin/api/app_xiuxiu_share", async(req, res)=>{
+  
+  const{circle_id, share_num, user_id } = req.body
+  const xcircle = require('../../modles/Xcircle')
+  var xcircleup = {share_num: share_num}
+  
+  const tmpXcircle = await xcircle.findOne({circle_id})
+  //如果同时很多人点赞,就要判断在你点赞前。点赞数是否有变化
+  if(tmpXcircle.share_num === share_num){
+    res.status(424).json("分享失败")
+    return
+  }
+  //通过comment_id查询
+  const changeComment = await xcircle.findByIdAndUpdate(circle_id, xcircleup) 
+  res.status(200).json(
+    "分享成功"
+  );
+  //res.send(req.params.id)
+})
 
 //每次写接口，先测试接口是否通畅
 // app.post("/admin", async(req, res)=>{
