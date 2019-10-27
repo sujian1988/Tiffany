@@ -126,6 +126,18 @@
               <el-menu-item index="/xcircles/create">发布说说</el-menu-item>
             <el-menu-item index="/xcircles/list">秀秀圈列表</el-menu-item>
           </el-menu-item-group>
+
+           <el-menu-item-group>
+            <template slot="title">秀秀圈评论</template>
+              <el-menu-item index="/xcomments/create">发布评论</el-menu-item>
+            <el-menu-item index="/xcomments/list">评论列表</el-menu-item>
+          </el-menu-item-group>
+
+           <el-menu-item-group>
+            <template slot="title">秀秀圈回复评论</template>
+              <el-menu-item index="/xcommentreplyitems/create">回复评论</el-menu-item>
+            <el-menu-item index="/xcommentreplyitems/list">回复评论列表</el-menu-item>
+          </el-menu-item-group>
       
         </el-submenu>
       

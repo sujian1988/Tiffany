@@ -41,6 +41,13 @@ import VersionList from './views/VersionList.vue'
 import XCircleEdit from './views/XCircleEdit.vue'
 import XCircleList from './views/XCircleList.vue'
 
+import XcommentEdit from './views/XcommentEdit.vue'
+import XcommentList from './views/XcommentList.vue'
+
+import XcommentReplyEdit from './views/XcommentReplyEdit.vue'
+import XcommentReplyList from './views/XcommentReplyList.vue'
+
+
 import QrImage from './views/QrImage.vue'
 
 Vue.use(Router)
@@ -104,6 +111,14 @@ const router = new Router({
         { path: '/xcircles/create', component: XCircleEdit },
         { path: '/xcircles/edit/:id', component: XCircleEdit, props: true },
         { path: '/xcircles/list', component: XCircleList},
+
+        { path: '/xcomments/create', component: XcommentEdit },
+        { path: '/xcomments/edit/:id', component: XcommentEdit, props: true },
+        { path: '/xcomments/list', component: XcommentList},
+
+        { path: '/xcommentreplyitems/create', component: XcommentReplyEdit },
+        { path: '/xcommentreplyitems/edit/:id', component: XcommentReplyEdit, props: true },
+        { path: '/xcommentreplyitems/list', component: XcommentReplyList},
 
         { path: '/qrimage', component: QrImage},
 

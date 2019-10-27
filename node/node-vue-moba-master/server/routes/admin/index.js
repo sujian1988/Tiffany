@@ -211,19 +211,9 @@ app.post("/admin/api/app_comments/:id", async(req, res)=>{
 
 //******************************************************************************************* */
 
-//废弃
-// app.post("/admin/api/app_commentreplys", async(req, res)=>{
-//   const comment = require('../../modles/CommentReplyItem')
-//   //通过video_id查询
-//  const comments = await comment.find({video_id: req.params.id}).skip((parseInt(req.query.page)-1) * 5).limit(5)
-//  res.status(200).json({
-//     comments
-//  });
-//   //res.send(req.params.id)
-// })
 
-
-//多表通过视频id获取视频的评论和回复二级列表
+//多表关联查询 
+//通过视频id获取视频的评论和回复二级列表
 app.post("/admin/api/app_aggregate_comments/:id", async(req, res)=>{
   const comment = require('../../modles/Comment')
   //通过video_id查询
@@ -417,7 +407,6 @@ app.post('/admin/api/app_dandiscuss_list/:id', async (req, res) => {
 
 })
 
-
 //获取秀秀圈列表
 app.get('/admin/api/app_xcircle_list', async(req, res) =>{
   const xcircle = require('../../modles/Xcircle')
@@ -508,6 +497,74 @@ app.post("/admin/api/app_xiuxiu_share", async(req, res)=>{
   );
   //res.send(req.params.id)
 })
+
+
+
+//多表关联查询 
+//通过视频id获取视频的评论和回复二级列表
+app.post("/admin/api/app_aggregate_xcomments/:id", async(req, res)=>{
+  const xcomment = require('../../modles/Xcomment')
+  //通过video_id查询
+ const xcomments = await xcomment.aggregate([
+    {
+       $match : 
+       {
+        "circle_id" : req.params.id,
+       }
+    },
+    {
+      $lookup:
+        {
+          from: "xcommentreplyitems",
+          localField: "xcomment_id",
+          foreignField: "xcomment_reply_id",
+          as: "items"
+        }
+   },
+  
+   {
+     $skip : ((parseInt(req.query.page)-1) * 5)
+   },
+
+   {
+    $limit: 5
+   },
+
+ ]);
+  res.status(200).json({
+      xcomments
+  });
+  
+})
+
+//发布评论
+app.post("/admin/api/api_relaese_xcomment", async(req, res)=> {
+  const xcomment = require('../../modles/Xcomment')
+  const newXcomment = await xcomment.create(req.body)
+  var xcommentidapp = {xcomment_id: newXcomment._id} 
+  //将_id赋值给video_id
+  const changeXcomment = await xcomment.findByIdAndUpdate(newXcomment._id, xcommentidapp)
+  res.status(200).json(changeXcomment);
+})
+
+
+//发布回复评论
+app.post("/admin/api/api_relaese_xcomment_reply", async(req, res)=> {
+  const xcommentreply = require('../../modles/Xcommentreplyitem')
+  const newXcommentreply = await xcommentreply.create(req.body)
+  res.status(200).json(newXcommentreply);
+})
+
+
+
+
+
+
+
+
+
+
+
 
 //每次写接口，先测试接口是否通畅
 // app.post("/admin", async(req, res)=>{
