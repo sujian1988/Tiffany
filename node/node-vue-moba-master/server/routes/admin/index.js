@@ -556,6 +556,69 @@ app.post("/admin/api/api_relaese_xcomment_reply", async(req, res)=> {
 })
 
 
+//统计评论数量
+app.post("/admin/api/app_xcircle_chat_num", async(req, res)=>{
+  
+  const{circle_id, chat_num, user_id } = req.body
+  const xcircle = require('../../modles/Xcircle')
+  var xcircle_chat_num = {chat_num: chat_num}
+  
+  const tmpXcircle = await xcircle.findOne({circle_id})
+   
+  if(tmpXcircle.chat_num === chat_num){
+    res.status(424).json("评论次数统计失败")
+    return
+  }
+  //通过comment_id查询
+  const changeXcircle = await xcircle.findByIdAndUpdate(circle_id, xcircle_chat_num) 
+  res.status(200).json(
+    "评论次数统计成功"
+  );
+  //res.send(req.params.id)
+})
+
+
+//点赞
+app.post("/admin/api/app_xcomments_like", async(req, res)=>{
+  
+  const{xcomment_id, other_up, user_id } = req.body
+  const xcomment = require('../../modles/Xcomment')
+  var xcommentup = {other_up: other_up}
+  
+  const tmpXcomment = await xcomment.findOne({xcomment_id})
+   
+  if(tmpXcomment.other_up === other_up){
+    res.status(424).json("点赞失败")
+    return
+  }
+  //通过comment_id查询
+  const changeXcomment = await xcomment.findByIdAndUpdate(xcomment_id, xcommentup) 
+  res.status(200).json(
+    "点赞成功"
+  );
+  //res.send(req.params.id)
+})
+
+
+app.post("/admin/api/app_xcomments_unlike", async(req, res)=>{
+  
+  const{xcomment_id, other_up, user_id } = req.body
+  const xcomment = require('../../modles/Xcomment')
+  var xcommentup = {other_up: other_up}
+  
+  const tmpXcomment = await xcomment.findOne({xcomment_id})
+   
+  if(tmpXcomment.other_up === other_up){
+    res.status(424).json("点赞失败")
+    return
+  }
+  //通过comment_id查询
+  const changeXcomment = await xcomment.findByIdAndUpdate(xcomment_id, xcommentup) 
+  res.status(200).json(
+    "取消成功"
+  );
+
+})
 
 
 
