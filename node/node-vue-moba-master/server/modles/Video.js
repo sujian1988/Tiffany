@@ -21,6 +21,8 @@ const schema = new mongoose.Schema({
   video: {type:String},
   duration_Time: {type: Number},
   create_time: { type: Date, default: Date.now },
+  looknum : {type: Number},   //观看次数
+  danmunum : {type: Number},  //弹幕数
 
 
 })

@@ -577,6 +577,48 @@ app.post("/admin/api/app_xcircle_chat_num", async(req, res)=>{
   //res.send(req.params.id)
 })
 
+//统计视频播放次数
+app.post("/admin/api/app_video_looknum", async(req, res)=>{
+  
+  const{video_id, looknum, user_id } = req.body
+  const video = require('../../modles/Video')
+  var video_looknum = {looknum: looknum}
+  
+  const tmpVideo = await video.findOne({video_id})
+   
+  if(tmpVideo.looknum === looknum){
+    res.status(424).json("观看次数统计失败")
+    return
+  }
+  //通过comment_id查询
+  const changeVideo = await video.findByIdAndUpdate(video_id, video_looknum) 
+  res.status(200).json(
+    "观看次数统计成功"
+  );
+  //res.send(req.params.id)
+})
+
+
+//统计视频弹幕数
+app.post("/admin/api/app_video_danmunum", async(req, res)=>{
+  
+  const{video_id, danmunum, user_id } = req.body
+  const video = require('../../modles/Video')
+  var video_danmunum = {danmunum: danmunum}
+  
+  const tmpVideo = await video.findOne({video_id})
+   
+  if(tmpVideo.danmunum === danmunum){
+    res.status(424).json("弹幕统计失败")
+    return
+  }
+  //通过comment_id查询
+  const changeVideo = await video.findByIdAndUpdate(video_id, video_danmunum) 
+  res.status(200).json(
+    "观看次数统计成功"
+  );
+  //res.send(req.params.id)
+})
 
 //点赞
 app.post("/admin/api/app_xcomments_like", async(req, res)=>{

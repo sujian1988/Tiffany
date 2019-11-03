@@ -60,4 +60,5 @@ android.content.res.Resources$NotFoundException: String resource ID #0x0 找不�
    同一个索引一clear都别clear掉。。。解决方法从新new一个值把索引区分开
  
  
- 
+7 vitamio
+  使用scrollview包裹时，记得要设置一个高度，否则不会显示 
