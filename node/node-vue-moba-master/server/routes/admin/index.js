@@ -662,11 +662,31 @@ app.post("/admin/api/app_xcomments_unlike", async(req, res)=>{
 
 })
 
+//关注
+app.post("/admin/api/app_follow_user", async(req, res)=> {
+  const follow = require('../../modles/Follow')
+  const newFollow = await follow.create(req.body)
+  res.status(200).json("已关注");
+})
 
 
-
-
-
+//废弃 （关注数在二次关联查询就可以查出）关注成功后，要更新user的follow数量
+app.post("/admin/api/app_update_follow", async(req, res)=>{
+  
+  const{follow, user_id } = req.body
+  const user = require('../../modles/User')
+  var newfollow = {follow: follow}
+  const tmpFollow = await user.findOne({user_id})
+  if(tmpFollow.follow === follow){
+    res.status(424).json("关注失败")
+    return
+  }
+  //通过user_id查询
+  const changeUserFollow = await user.findByIdAndUpdate(user_id, newfollow) 
+  res.status(200).json(
+    "关注成功"
+  );
+})
 
 
 

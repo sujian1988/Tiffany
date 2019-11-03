@@ -25,6 +25,7 @@ const schema = new mongoose.Schema({
   share_status: {type: String},
   password_status: {type: String},
   order_real_status: {type: String},
+  follow: {type: Number},
 
 })
 
