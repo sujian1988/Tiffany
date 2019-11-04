@@ -210,7 +210,42 @@ app.post("/admin/api/app_comments/:id", async(req, res)=>{
 })
 
 //******************************************************************************************* */
+//个人中心 多表关联查询 
+//通过视频id获取视频的评论和回复二级列表
+app.post("/admin/api/app_aggregate_total_comments/:id", async(req, res)=>{
+  const comment = require('../../modles/Comment')
+  //通过video_id查询
+ const comments = await comment.aggregate([
+    {
+       $match : 
+       {
+        "user_id" : req.params.id,
+       }
+    },
+    {
+      $lookup:
+        {
+          from: "commentreplyitems",
+          localField: "comment_id",
+          foreignField: "comment_reply_id",
+          as: "items"
+        }
+   },
+  
+   {
+     $skip : ((parseInt(req.query.page)-1) * 5)
+   },
 
+   {
+    $limit: 5
+   },
+
+ ]);
+  res.status(200).json({
+      comments
+  });
+  
+})
 
 //多表关联查询 
 //通过视频id获取视频的评论和回复二级列表
