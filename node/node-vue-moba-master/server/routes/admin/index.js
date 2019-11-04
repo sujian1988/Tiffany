@@ -198,6 +198,7 @@ app.post('/admin/api/app_find_userown_video/:id', async (req, res) => {
 
 })
 
+
 //通过视频id获取视频的评论列表
 app.post("/admin/api/app_comments/:id", async(req, res)=>{
   const comment = require('../../modles/Comment')
@@ -207,6 +208,17 @@ app.post("/admin/api/app_comments/:id", async(req, res)=>{
     comments
  });
   //res.send(req.params.id)
+})
+
+//查找该用户下的所有粉丝
+app.post('/admin/api/app_find_userown_follow/:id', async (req, res) => {
+  const follow = require('../../modles/Follow')
+   //通过user_id查询
+  const follows = await follow.find({user_id: req.params.id}).limit(100)
+  res.status(200).json({
+     follows
+  });
+
 })
 
 //******************************************************************************************* */
