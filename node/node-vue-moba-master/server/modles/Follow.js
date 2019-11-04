@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 
 //	@AutoIncKey
 const schema = new mongoose.Schema({
+  mfollow_id: {type: String},
   user_id: {
     type: String,
     index: true,

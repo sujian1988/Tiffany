@@ -210,54 +210,9 @@ app.post("/admin/api/app_comments/:id", async(req, res)=>{
   //res.send(req.params.id)
 })
 
-//查找该用户下的所有粉丝
-app.post('/admin/api/app_find_userown_follow/:id', async (req, res) => {
-  const follow = require('../../modles/Follow')
-   //通过user_id查询
-  const follows = await follow.find({user_id: req.params.id}).limit(100)
-  res.status(200).json({
-     follows
-  });
-
-})
 
 //******************************************************************************************* */
-//个人中心 多表关联查询 
-//通过视频id获取视频的评论和回复二级列表
-app.post("/admin/api/app_aggregate_total_comments/:id", async(req, res)=>{
-  const comment = require('../../modles/Comment')
-  //通过video_id查询
- const comments = await comment.aggregate([
-    {
-       $match : 
-       {
-        "user_id" : req.params.id,
-       }
-    },
-    {
-      $lookup:
-        {
-          from: "commentreplyitems",
-          localField: "comment_id",
-          foreignField: "comment_reply_id",
-          as: "items"
-        }
-   },
-  
-   {
-     $skip : ((parseInt(req.query.page)-1) * 5)
-   },
 
-   {
-    $limit: 5
-   },
-
- ]);
-  res.status(200).json({
-      comments
-  });
-  
-})
 
 //多表关联查询 
 //通过视频id获取视频的评论和回复二级列表
@@ -709,13 +664,75 @@ app.post("/admin/api/app_xcomments_unlike", async(req, res)=>{
 
 })
 
+//个人中心 多表关联查询 
+//通过视频id获取视频的评论和回复二级列表
+app.post("/admin/api/app_aggregate_total_comments/:id", async(req, res)=>{
+  const comment = require('../../modles/Comment')
+  //通过video_id查询
+ const comments = await comment.aggregate([
+    {
+       $match : 
+       {
+        "user_id" : req.params.id,
+       }
+    },
+    {
+      $lookup:
+        {
+          from: "commentreplyitems",
+          localField: "comment_id",
+          foreignField: "comment_reply_id",
+          as: "items"
+        }
+   },
+  
+   {
+     $skip : ((parseInt(req.query.page)-1) * 5)
+   },
+
+   {
+    $limit: 5
+   },
+
+ ]);
+  res.status(200).json({
+      comments
+  });
+  
+})
+
+//查找该用户下的所有粉丝
+app.post('/admin/api/app_find_userown_follow/:id', async (req, res) => {
+  const follow = require('../../modles/Follow')
+   //通过user_id查询
+  const changeFollow = await follow.find({user_id: req.params.id}).limit(100)
+  res.status(200).json({
+    changeFollow
+  });
+
+})
+
 //关注
 app.post("/admin/api/app_follow_user", async(req, res)=> {
   const follow = require('../../modles/Follow')
   const newFollow = await follow.create(req.body)
-  res.status(200).json("已关注");
+  var followid = {mfollow_id: newFollow._id} 
+  //将_id赋值给video_id
+  const changeFollow = await follow.findByIdAndUpdate(newFollow._id,followid)
+  res.status(200).json({
+    changeFollow
+  });
 })
 
+
+//取消关注
+app.post('/admin/api/app_unfollow_user/:id', async(req, res) =>{
+  const follow = require('../../modles/Follow')
+  await follow.findByIdAndDelete(req.params.id)  
+  res.status(200).json({
+    success: true
+  });
+})
 
 //废弃 （关注数在二次关联查询就可以查出）关注成功后，要更新user的follow数量
 app.post("/admin/api/app_update_follow", async(req, res)=>{
