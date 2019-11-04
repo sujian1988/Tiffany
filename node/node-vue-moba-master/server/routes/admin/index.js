@@ -705,7 +705,7 @@ app.post("/admin/api/app_aggregate_total_comments/:id", async(req, res)=>{
 app.post('/admin/api/app_find_userown_follow/:id', async (req, res) => {
   const follow = require('../../modles/Follow')
    //通过user_id查询
-  const changeFollow = await follow.find({user_id: req.params.id}).limit(100)
+  const changeFollow = await follow.find({follow_user_id: req.params.id}).limit(100)
   res.status(200).json({
     changeFollow
   });
