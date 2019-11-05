@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-//	@AutoIncKey
+//	@AutoIncKey 
 const schema = new mongoose.Schema({
   mfollow_id: {type: String},
   user_id: {

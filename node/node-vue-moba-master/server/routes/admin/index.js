@@ -274,7 +274,7 @@ app.post("/admin/api/api_relaese_comment", async(req, res)=> {
   const newComment = await comment.create(req.body)
   var commentidapp = {comment_id: newComment._id} 
   //将_id赋值给video_id
-  const changeComment = await comment.findByIdAndUpdate(newComment._id, commentidapp)
+  const changeComment = await comment.findByIdAndUpdate(newComment._id, commentidapp, {new : true})
   res.status(200).json(changeComment);
 })
 
@@ -424,7 +424,7 @@ app.post('/admin/api/app_add_xcircle', async(req, res) =>{
   const newXcircle = await xcircles.create(req.body)
   var circleidapp = {circle_id: newXcircle._id} 
   //将_id赋值给circle_id
-  const changeXcircle= await xcircles.findByIdAndUpdate(newXcircle._id,circleidapp)
+  const changeXcircle= await xcircles.findByIdAndUpdate(newXcircle._id,circleidapp, {new : true})
   res.status(200).json(changeXcircle);
 })
 
@@ -544,8 +544,8 @@ app.post("/admin/api/api_relaese_xcomment", async(req, res)=> {
   const xcomment = require('../../modles/Xcomment')
   const newXcomment = await xcomment.create(req.body)
   var xcommentidapp = {xcomment_id: newXcomment._id} 
-  //将_id赋值给video_id
-  const changeXcomment = await xcomment.findByIdAndUpdate(newXcomment._id, xcommentidapp)
+  //将_id赋值给video_id                                                                    //添加{new: true} 参数表示返回的数据是更新后的数据  
+  const changeXcomment = await xcomment.findByIdAndUpdate(newXcomment._id, xcommentidapp, {new: true}) 
   res.status(200).json(changeXcomment);
 })
 
@@ -718,7 +718,7 @@ app.post("/admin/api/app_follow_user", async(req, res)=> {
   const newFollow = await follow.create(req.body)
   var followid = {mfollow_id: newFollow._id} 
   //将_id赋值给video_id
-  const changeFollow = await follow.findByIdAndUpdate(newFollow._id,followid)
+  const changeFollow = await follow.findByIdAndUpdate(newFollow._id,followid , {new : true})
   res.status(200).json({
     changeFollow
   });
