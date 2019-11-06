@@ -138,6 +138,7 @@ app.post('/admin/api/app_create_user', async (req, res) => {
   const user = await User.findOne({user_name})
   if(user){
     res.status(424).json("用户已存在");
+    return;
   }
     
   const newuser = await User.create(req.body)
@@ -162,9 +163,7 @@ app.get('/admin/api/app_qq_login/:id', async(req, res) =>{
   const user = require('../../modles/User')
   const user_token = req.params.id;
   const userback = await user.findOne({user_token})
-  res.status(200).json({
-    userback
-  });
+  res.status(200).json(userback);
 })
 
 

@@ -18,6 +18,7 @@ const schema = new mongoose.Schema({
   user_type: {type: String},
   user_headimg: {type: String},
   user_status: {type: String},
+  sex : {type: String},
   buyer_name: {type: String},
   user_token: {type: String},
   invite_code: {type: String},
