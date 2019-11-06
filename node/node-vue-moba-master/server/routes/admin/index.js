@@ -150,12 +150,23 @@ app.post('/admin/api/app_create_user', async (req, res) => {
   //将_id赋值给user_id
   await User.findByIdAndUpdate(newuser._id, useridapp)
   // 最后赋值给数据库对象 赋值好后再返回给前端 
-  const userback = await User.findByIdAndUpdate(newuser._id, userapp)
+  const userback = await User.findByIdAndUpdate(newuser._id, userapp, {new : true})
   //res.send('ok')
   //返回json数组要加大括号，返回对象不用加大括号
   res.status(200).json(userback);
 
 })
+
+//qq登录
+app.get('/admin/api/app_qq_login/:id', async(req, res) =>{
+  const user = require('../../modles/User')
+  const user_token = req.params.id;
+  const userback = await user.findOne({user_token})
+  res.status(200).json({
+    userback
+  });
+})
+
 
 //添加获取maintitle接口
 app.get('/admin/api/app_categories', async(req, res) =>{
@@ -709,7 +720,16 @@ app.post('/admin/api/app_find_userown_follow/:id', async (req, res) => {
   res.status(200).json({
     changeFollow
   });
+})
 
+//获取你关注的偶像
+app.post('/admin/api/app_find_user_follow/:id', async (req, res) => {
+  const follow = require('../../modles/Follow')
+   //通过user_id查询
+  const changeFollow = await follow.find({user_id: req.params.id}).limit(100)
+  res.status(200).json({
+    changeFollow
+  });
 })
 
 //关注

@@ -41,6 +41,9 @@ https://www.pingxx.com/docs/downloads
 用户名：597201889@qq.com
 密  码：86624932
 
+qq开发平台
+http://op.open.qq.com/manage_centerv2/android?owner=597201889&uin=597201889
+
 stuido ndk 下载地址
 https://developer.android.google.cn/ndk/downloads/index.html
 

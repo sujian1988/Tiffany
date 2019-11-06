@@ -12,6 +12,8 @@ const schema = new mongoose.Schema({
   user_type: {type: String},
   user_headimg: {type: String},
   follow_user_id: {type: String},
+  follow_user_name: {type: String},
+  follow_user_headimg: {type: String},
 
 })
 
