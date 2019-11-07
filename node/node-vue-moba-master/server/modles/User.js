@@ -27,7 +27,10 @@ const schema = new mongoose.Schema({
   password_status: {type: String},
   order_real_status: {type: String},
   follow: {type: Number},
-
+  birthday:{type: String},
+  qq : {type: String},
+  weixin : {type: String},
+  email : {type: String},
 })
 
 module.exports = mongoose.model('User', schema)
