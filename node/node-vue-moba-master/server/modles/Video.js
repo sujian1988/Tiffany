@@ -23,6 +23,8 @@ const schema = new mongoose.Schema({
   create_time: { type: Date, default: Date.now },
   looknum : {type: Number},   //观看次数
   danmunum : {type: Number},  //弹幕数
+  sharenum : {type: Number},   //分享次数
+  collectnum : {type: Number},   //收藏次数
 
 
 })

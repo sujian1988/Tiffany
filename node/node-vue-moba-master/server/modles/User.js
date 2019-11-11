@@ -6,6 +6,7 @@ const schema = new mongoose.Schema({
     type: String,
     index: true,
   },
+  uid: {type: String},
   user_name: { type: String },
   user_password: {
     type: String,

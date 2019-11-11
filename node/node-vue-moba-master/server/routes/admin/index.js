@@ -161,8 +161,8 @@ app.post('/admin/api/app_create_user', async (req, res) => {
 //qq登录
 app.get('/admin/api/app_qq_login/:id', async(req, res) =>{
   const user = require('../../modles/User')
-  const user_token = req.params.id;
-  const userback = await user.findOne({user_token})
+  const uid = req.params.id;
+  const userback = await user.findOne({uid})
   res.status(200).json(userback);
 })
 
@@ -402,7 +402,7 @@ app.post('/admin/api/app_user_live_list/:id', async (req, res) => {
 //获取直播列表
 app.get('/admin/api/app_live_list', async(req, res) =>{
   const live = require('../../modles/Live')
-  const lives = await live.find().skip((parseInt(req.query.page)-1) * 5).limit(5) // 限制5条数据
+  const lives = await live.find().skip((parseInt(req.query.page)-1) * 10).limit(10) // 限制5条数据
   res.status(200).json({
       lives
   });
@@ -657,6 +657,49 @@ app.post("/admin/api/app_video_danmunum", async(req, res)=>{
   //res.send(req.params.id)
 })
 
+//统计视频分享数
+app.post("/admin/api/app_video_sharenum", async(req, res)=>{
+  
+  const{video_id, sharenum, user_id } = req.body
+  const video = require('../../modles/Video')
+  var video_sharenum = {sharenum: sharenum}
+  
+  const tmpVideo = await video.findOne({video_id})
+   
+  if(tmpVideo.sharenum === sharenum){
+    res.status(424).json("分享统计失败")
+    return
+  }
+  //通过comment_id查询
+  const changeVideo = await video.findByIdAndUpdate(video_id, video_sharenum) 
+  res.status(200).json(
+    "分享次数统计成功"
+  );
+  //res.send(req.params.id)
+})
+
+//统计视频收藏数
+app.post("/admin/api/app_video_collectnum", async(req, res)=>{
+  
+  const{video_id, collectnum, user_id } = req.body
+  const video = require('../../modles/Video')
+  var video_collectnum = {collectnum: collectnum}
+  
+  const tmpVideo = await video.findOne({video_id})
+   
+  if(tmpVideo.collectnum === collectnum){
+    res.status(424).json("不能重复点赞！")
+    return
+  }
+  //通过comment_id查询
+  const changeVideo = await video.findByIdAndUpdate(video_id, video_collectnum) 
+  res.status(200).json(
+    "收藏次数统计成功"
+  );
+  //res.send(req.params.id)
+})
+
+
 //点赞
 app.post("/admin/api/app_xcomments_like", async(req, res)=>{
   
@@ -677,6 +720,51 @@ app.post("/admin/api/app_xcomments_like", async(req, res)=>{
   );
   //res.send(req.params.id)
 })
+
+
+
+//视频点赞
+app.post("/admin/api/app_video_like", async(req, res)=>{
+  
+  const{video_id, up, user_id } = req.body
+  const video = require('../../modles/Video')
+  var videoup = {up: up}
+  
+  const tmpVideo = await video.findOne({video_id})
+   
+  if(tmpVideo.up === up){
+    res.status(424).json("点赞失败")
+    return
+  }
+  //通过comment_id查询
+  const changeVideo = await video.findByIdAndUpdate(video_id, videoup) 
+  res.status(200).json(
+    "点赞成功"
+  );
+  //res.send(req.params.id)
+})
+
+//视频点赞取消
+app.post("/admin/api/app_video_unlike", async(req, res)=>{
+  
+  const{video_id, up, user_id } = req.body
+  const video = require('../../modles/Video')
+  var vidoeup = {up: up}
+  
+  const tmpVideo = await Video.findOne({video_id})
+   
+  if(tmpVideo.up === up){
+    res.status(424).json("点赞失败")
+    return
+  }
+  //通过comment_id查询
+  const changeVideo = await video.findByIdAndUpdate(video_id, videoup) 
+  res.status(200).json(
+    "取消成功"
+  );
+
+})
+
 
 
 app.post("/admin/api/app_xcomments_unlike", async(req, res)=>{

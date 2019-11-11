@@ -62,3 +62,9 @@ android.content.res.Resources$NotFoundException: String resource ID #0x0 找不�
  
 7 vitamio
   使用scrollview包裹时，记得要设置一个高度，否则不会显示 
+  
+播放svga动画的网站  
+http://svga.io/svga-preview.html
+  
+  
+  
