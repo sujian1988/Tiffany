@@ -1,3 +1,5 @@
+https://tinypng.com/
+
 唯心电视台wxtv,http://mobile.ccdntech.com/transcoder/_definst_/vod164_Live/live/chunklist_w1177047531.m3u8
 
 网络放映厅15,http://dlhls.cdn.zhanqi.tv/zqlive/53346_ESoth.m3u8
@@ -182,8 +184,10 @@
 
 YOYOTV,http://live.italkdd.com/cds160/hls/channel025/channel025_2000.m3u8
 
+//可用 good
 WOWTV,http://cdn.elsalvadordigital.com:1935/wowtv/wowtv/playlist.m3u8
 
+//可用 sky 英文台 
 Uk,http://skydvn-nowtv-atv-prod.skydvn.com/atv/skynews/1404/live/05.m3u8
 
 TVB资讯台,http://e1.vdowowza.vip.hk1.tvb.com/tvblive/smil:mobilehd_financeintl.smil/playlist.m3u8
@@ -202,6 +206,7 @@ TVBS新闻,http://60.199.188.61/HLS/WG_TVBS-N/01.m3u8
 
 TVBJ5-无线财经咨台,http://e1.vdowowza.vip.hk1.tvb.com/tvblive/smil:mobilehd_financeintl.smil/chunklist_w1412641159_b448000.m3u8
 
+//可用
 Sky Tg24 Italy,http://skyianywhere2-i.akamaihd.net/hls/live/200275/tg24/stream6/streamPlaylist.m3u8
 
 RHK 31，,http://rthklive1-lh.akamaihd.net/i/rthk31_1@167495/index_2052_av-b.m3u8
@@ -226,7 +231,7 @@ Newtv动画王国,http://183.207.249.15/PLTV/3/224/3221225555/index.m3u8
 
 NewTV潮妈辣婆,http://223.110.245.170/ott.js.chinamobile.com/PLTV/3/224/3221226983/index.m3u8
 
-music-choice,http://edge.music-choice-play-chaina1.top.comcast.net/PlayMetadataInserter/play/chunklist.m3u8
+music-choice,http://edge.music-choice-play-chaina1.top.comcast.net/PlayMetadataInserter/play/chunklist.m3u8  //可用
 
 MUSBOXTV,http://hls.novotelecom.ru/streaming/musboxtv/tvrec/playlist.m3u8
 
@@ -262,11 +267,12 @@ GOOD健康新煮流,http://live.streamingfast.net/osmflivech13.m3u8
 
 GOOD共享观点,http://live.streamingfast.net/osmflivech5.m3u8
 
-GOOD爱+好医生,http://live.streamingfast.net/osmflivech9.m3u8
+//可用
+GOOD爱+好医生,http://live.streamingfast.net/osmflivech9.m3u8  
 
 GoodTV美食旅游台,http://live.streamingfast.net/osmflivech14.m3u8
 
-FOX CINEMA，,http://161.0.157.5/PLTV/88888888/224/3221226793/index.m3u8
+FOX CINEMA，,http://161.0.157.5/PLTV/88888888/224/3221226793/index.m3u8   //电影台 可用
 
 Family Gekijyo,http://192.240.127.34:1935/live/cs11.stream/media_1254.m3u8
 
@@ -274,12 +280,16 @@ Cinefil WOWOW,http://192.240.127.34:1935/live/cs27.stream/media_1254.m3u8
 
 CHINA Reality TV 1,http://aldirect.hls.huya.com/huyalive/29169025-2686221528-11537233612571148288-2847687610-10057-A-1523932939-1_1200.m3u8
 
-600 新闻,http://live.italkdd.com/cds160/hls/channel023/channel023_2000.m3u8
+//黑莓动画 可用
+600 新闻,http://live.italkdd.com/cds160/hls/channel023/channel023_2000.m3u8   
 
 http://ws4.streamhls.huya.com/huyalive/29106097-2689279104-11550365801496182784-2777026902-10057-A-0-1_1200/playlist.m3u8
 
-http://aldirect.hls.huya.com/huyalive/30765679-2504742278-10757786168918540288-3049003128-10057-A-0-1_1200.m3u8
+http://aldirect.hls.huya.com/huyalive/30765679-2504742278-10757786168918540288-3049003128-10057-A-0-1_1200.m3u8   //台湾新闻 可用
 
 http://aldirect.hls.huya.com/huyalive/29169025-2686219962-11537226886652362752-2710080226-10057-A-0-1_1200.m3u8
 
 http://ws4.streamhls.huya.com/huyalive/29106097-2689448236-11551092217904889856-2789274572-10057-A-0-1_1200/playlist.m3u8?thebestfreeenglishchannels.m3u8
+
+
+888

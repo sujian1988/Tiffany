@@ -71,6 +71,16 @@ io.on('connection', function(socket){
         }
       });
      
+
+    socket.on('typing', (data) => {
+      // we tell the client to execute 'new message'
+      socket.broadcast.emit('new message', {
+        username: socket.username,
+        //message: data
+      });
+    });
+
+
     socket.on('new message', (data) => {
         // we tell the client to execute 'new message'
         socket.broadcast.emit('new message', {

@@ -700,29 +700,6 @@ app.post("/admin/api/app_video_collectnum", async(req, res)=>{
 })
 
 
-//点赞
-app.post("/admin/api/app_xcomments_like", async(req, res)=>{
-  
-  const{xcomment_id, other_up, user_id } = req.body
-  const xcomment = require('../../modles/Xcomment')
-  var xcommentup = {other_up: other_up}
-  
-  const tmpXcomment = await xcomment.findOne({xcomment_id})
-   
-  if(tmpXcomment.other_up === other_up){
-    res.status(424).json("点赞失败")
-    return
-  }
-  //通过comment_id查询
-  const changeXcomment = await xcomment.findByIdAndUpdate(xcomment_id, xcommentup) 
-  res.status(200).json(
-    "点赞成功"
-  );
-  //res.send(req.params.id)
-})
-
-
-
 //视频点赞
 app.post("/admin/api/app_video_like", async(req, res)=>{
   
@@ -749,10 +726,10 @@ app.post("/admin/api/app_video_unlike", async(req, res)=>{
   
   const{video_id, up, user_id } = req.body
   const video = require('../../modles/Video')
-  var vidoeup = {up: up}
+  var videoup = {up: up}
   
-  const tmpVideo = await Video.findOne({video_id})
-   
+  const tmpVideo = await video.findOne({video_id})
+
   if(tmpVideo.up === up){
     res.status(424).json("点赞失败")
     return
@@ -765,7 +742,26 @@ app.post("/admin/api/app_video_unlike", async(req, res)=>{
 
 })
 
-
+//点赞
+app.post("/admin/api/app_xcomments_like", async(req, res)=>{
+  
+  const{xcomment_id, other_up, user_id } = req.body
+  const xcomment = require('../../modles/Xcomment')
+  var xcommentup = {other_up: other_up}
+  
+  const tmpXcomment = await xcomment.findOne({xcomment_id})
+   
+  if(tmpXcomment.other_up === other_up){
+    res.status(424).json("点赞失败")
+    return
+  }
+  //通过comment_id查询
+  const changeXcomment = await xcomment.findByIdAndUpdate(xcomment_id, xcommentup) 
+  res.status(200).json(
+    "点赞成功"
+  );
+  //res.send(req.params.id)
+})
 
 app.post("/admin/api/app_xcomments_unlike", async(req, res)=>{
   
