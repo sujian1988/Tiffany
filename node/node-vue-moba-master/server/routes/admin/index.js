@@ -463,7 +463,7 @@ app.post('/admin/api/app_add_xcircle', async(req, res) =>{
   res.status(200).json(changeXcircle);
 })
 
-//发布秀秀说说
+//删除秀秀说说
 app.post('/admin/api/app_delete_xcircle/:id', async(req, res) =>{
   const xcircles = require('../../modles/Xcircle')
   await xcircles.findByIdAndDelete(req.params.id)  
@@ -842,7 +842,15 @@ app.post('/admin/api/app_find_user_follow/:id', async (req, res) => {
 
 //关注
 app.post("/admin/api/app_follow_user", async(req, res)=> {
+  
   const follow = require('../../modles/Follow')
+  const{follow_user_id, user_id } = req.body
+  const tmpFollow = await follow.findOne({follow_user_id})
+  if(tmpFollow.follow_user_id === follow_user_id){
+    res.status(424).json("不能重复关注")
+    return
+  }
+
   const newFollow = await follow.create(req.body)
   var followid = {mfollow_id: newFollow._id} 
   //将_id赋值给video_id
@@ -880,6 +888,34 @@ app.post("/admin/api/app_update_follow", async(req, res)=>{
   );
 })
 
+
+//获取消息列表 2019-11-15
+app.post('/admin/api/app_message_list/:id', async(req, res) =>{
+  const message = require('../../modles/Message')
+  const messages = await message.find({user_id: req.params.id}).limit(100) // 限制5条数据
+  res.status(200).json({
+    messages
+  });
+})
+
+//发送消息 2019-11-15
+app.post('/admin/api/app_add_message', async(req, res) =>{
+  const messages = require('../../modles/Message')
+  const newMessage = await messages.create(req.body)
+  var messageidapp = {message_id: newMessage._id} 
+  //将_id赋值给circle_id
+  const changeMessage= await messages.findByIdAndUpdate(newMessage._id, messageidapp, {new : true})
+  res.status(200).json(changeMessage);
+})
+
+//删除消息 2019-11-15
+app.post('/admin/api/app_delete_message/:id', async(req, res) =>{
+  const messages = require('../../modles/Message')
+  await messages.findByIdAndDelete(req.params.id)  
+  res.status(200).json({
+    success: true
+  });
+})
 
 
 
