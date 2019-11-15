@@ -122,7 +122,7 @@ app.post('/admin/api/app_login', async (req, res) => {
   //创建一个临时对象 设置token
   var userapp = {user_token: user_token};
   // 最后赋值给数据库对象 赋值好后再返回给前端
-  const userback = await User.findByIdAndUpdate(user._id, userapp)
+  const userback = await User.findByIdAndUpdate(user._id, userapp, {new : true})
     
   //res.send('ok')
   //返回json数组要加大括号，返回对象不用加大括号
@@ -163,6 +163,14 @@ app.get('/admin/api/app_qq_login/:id', async(req, res) =>{
   const user = require('../../modles/User')
   const uid = req.params.id;
   const userback = await user.findOne({uid})
+  res.status(200).json(userback);
+})
+
+//自动登录
+app.get('/admin/api/app_auto_login/:id', async(req, res) =>{
+  const user = require('../../modles/User')
+  const user_token = req.params.id;
+  const userback = await user.findOne({user_token})
   res.status(200).json(userback);
 })
 
