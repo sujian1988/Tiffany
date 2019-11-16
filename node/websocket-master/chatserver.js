@@ -1,3 +1,4 @@
+//普通聊天的服务
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
@@ -74,7 +75,7 @@ io.on('connection', function(socket){
 
     socket.on('typing', (data) => {
       // we tell the client to execute 'new message'
-      socket.broadcast.emit('new message', {
+      socket.broadcast.emit('typing', {
         username: socket.username,
         //message: data
       });
