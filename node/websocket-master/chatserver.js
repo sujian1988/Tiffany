@@ -74,8 +74,15 @@ io.on('connection', function(socket){
      
 
     socket.on('typing', (data) => {
-      // we tell the client to execute 'new message'
       socket.broadcast.emit('typing', {
+        username: socket.username,
+        //message: data
+      });
+    });
+
+    
+    socket.on('stop typing', (data) => {
+      socket.broadcast.emit('stop typing', {
         username: socket.username,
         //message: data
       });
