@@ -896,6 +896,24 @@ app.post("/admin/api/app_update_follow", async(req, res)=>{
 })
 
 
+//创建房间 2019-11-17
+app.post('/admin/api/app_create_message_room', async(req, res) =>{
+  const messageRoom = require('../../modles/MessageRoom')
+
+  const{message_room_id, user_id} = req.body;
+  const tmpRoom = await messageRoom.findOne({message_room_id}) //await是不许得加的否则返回结果不是最终查询后结果
+  if(tmpRoom){
+    res.status(200).json(tmpRoom);
+    return;
+  }
+    
+  const newMessageRoom = await messageRoom.create(req.body)
+  var roomidapp = {room_id: newMessageRoom._id} 
+  //将_id赋值给room_id
+  const changeMessageRoom = await messageRoom.findByIdAndUpdate(newMessageRoom._id, roomidapp, {new : true})
+  res.status(200).json(changeMessageRoom);
+})
+
 //获取消息列表 2019-11-15
 app.post('/admin/api/app_message_list/:id', async(req, res) =>{
   const message = require('../../modles/Message')

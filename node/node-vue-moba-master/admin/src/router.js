@@ -47,6 +47,8 @@ import XcommentList from './views/XcommentList.vue'
 import XcommentReplyEdit from './views/XcommentReplyEdit.vue'
 import XcommentReplyList from './views/XcommentReplyList.vue'
 
+import MessageList from './views/MessageList.vue'
+
 
 import QrImage from './views/QrImage.vue'
 
@@ -119,6 +121,8 @@ const router = new Router({
         { path: '/xcommentreplyitems/create', component: XcommentReplyEdit },
         { path: '/xcommentreplyitems/edit/:id', component: XcommentReplyEdit, props: true },
         { path: '/xcommentreplyitems/list', component: XcommentReplyList},
+
+        { path: '/messages/list', component: MessageList},
 
         { path: '/qrimage', component: QrImage},
 

@@ -139,6 +139,11 @@
             <el-menu-item index="/xcommentreplyitems/list">回复评论列表</el-menu-item>
           </el-menu-item-group>
       
+          <el-menu-item-group>
+            <template slot="title">消息聊天</template>
+            <el-menu-item index="/messages/list">消息聊天</el-menu-item>
+          </el-menu-item-group>
+
         </el-submenu>
       
       

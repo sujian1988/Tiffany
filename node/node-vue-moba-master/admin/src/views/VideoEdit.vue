@@ -9,6 +9,14 @@
      <el-form-item label="up主">
         <el-input v-model="model.user_name"></el-input>
       </el-form-item>
+     
+     <el-form-item label="up主user_id">
+        <el-input v-model="model.user_id"></el-input>
+      </el-form-item>
+     
+      <el-form-item label="up主头像">
+        <el-input v-model="model.user_headimg"></el-input>
+      </el-form-item>
 
       <el-form-item label="点赞">
         <el-input v-model="model.up"></el-input>
