@@ -914,9 +914,7 @@ app.post('/admin/api/app_create_message_room', async(req, res) =>{
   res.status(200).json(changeMessageRoom);
 })
 
-//根据房间号查询消息列表
-
-//消息列表 多表关联查询 
+//消息列表 多表关联查询   2019-11-15 
 //通过user_id获取房间号 再通过房间号获取消息列表
 app.post("/admin/api/app_aggregate_total_messages/:id", async(req, res)=>{
   const meesageRoom = require('../../modles/MessageRoom')
@@ -937,9 +935,6 @@ app.post("/admin/api/app_aggregate_total_messages/:id", async(req, res)=>{
           as: "msgs"
         }
    },
- 
-  
-
  ]);
   res.status(200).json({
       messageRooms
@@ -948,8 +943,7 @@ app.post("/admin/api/app_aggregate_total_messages/:id", async(req, res)=>{
 })
 
 
-
-//获取消息列表 2019-11-15
+//获取消息列表 2019-11-15 废弃
 app.post('/admin/api/app_message_list/:id', async(req, res) =>{
   const message = require('../../modles/Message')
   const messages = await message.find({user_id: req.params.id}).limit(100) // 限制5条数据
