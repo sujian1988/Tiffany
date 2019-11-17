@@ -914,6 +914,41 @@ app.post('/admin/api/app_create_message_room', async(req, res) =>{
   res.status(200).json(changeMessageRoom);
 })
 
+//根据房间号查询消息列表
+
+//消息列表 多表关联查询 
+//通过user_id获取房间号 再通过房间号获取消息列表
+app.post("/admin/api/app_aggregate_total_messages/:id", async(req, res)=>{
+  const meesageRoom = require('../../modles/MessageRoom')
+  //通过video_id查询
+ const messageRooms = await meesageRoom.aggregate([
+    {
+       $match : 
+       {
+        "user_id" : req.params.id,
+       }
+    },
+    {
+      $lookup:
+        {
+          from: "messages",
+          localField: "message_room_id",
+          foreignField: "message_room_id",
+          as: "msgs"
+        }
+   },
+ 
+  
+
+ ]);
+  res.status(200).json({
+      messageRooms
+  });
+  
+})
+
+
+
 //获取消息列表 2019-11-15
 app.post('/admin/api/app_message_list/:id', async(req, res) =>{
   const message = require('../../modles/Message')
