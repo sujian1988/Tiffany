@@ -918,12 +918,13 @@ app.post('/admin/api/app_create_message_room', async(req, res) =>{
 //通过user_id获取房间号 再通过房间号获取消息列表
 app.post("/admin/api/app_aggregate_total_messages/:id", async(req, res)=>{
   const meesageRoom = require('../../modles/MessageRoom')
+  var message_room_id = req.params.id;
   //通过video_id查询
  const messageRooms = await meesageRoom.aggregate([
     {
        $match : 
        {
-        "user_id" : req.params.id,
+       'message_room_id' : {"$regex": message_room_id},   
        }
     },
     {
