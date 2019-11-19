@@ -963,15 +963,27 @@ app.post('/admin/api/app_add_message', async(req, res) =>{
   res.status(200).json(changeMessage);
 })
 
-//删除消息 2019-11-15
-app.post('/admin/api/app_delete_message/:id', async(req, res) =>{
-  const messages = require('../../modles/Message')
-  await messages.findByIdAndDelete(req.params.id)  
+//***************************************************************************************** */
+//删除房间   app执行接口，先删除房间，再删除消息 2019-11-19
+app.post('/admin/api/app_delete_message_room/:id', async(req, res) =>{
+  const messageRoom = require('../../modles/MessageRoom')
+  await messageRoom.deleteMany({message_room_id : req.params.id})    //findbyidandDelete只能删除一条数据 使用message_room_id数据库会报错
   res.status(200).json({
     success: true
   });
 })
 
+
+//批量删除消息 2019-11-15
+app.post('/admin/api/app_delete_message/:id', async(req, res) =>{
+  const message = require('../../modles/Message')
+  //const messages = message.findByIdAndUpdate(req.params.id);
+  await message.deleteMany({message_room_id: req.params.id})  
+  res.status(200).json({
+    success: true
+  });
+})
+//***************************************************************************************** */
 
 
 //每次写接口，先测试接口是否通畅
