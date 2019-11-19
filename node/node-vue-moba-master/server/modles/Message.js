@@ -11,7 +11,7 @@ const schema = new mongoose.Schema({
   user_mobile: {type: String},
   user_headimg: {type: String},
   send_user_name: { type: String },
-  send_user_mobile: {type: String},
+  send_user_id: {type: String},
   send_user_headimg: {type: String},
   message: {type: String},
   message_type: {type: String},

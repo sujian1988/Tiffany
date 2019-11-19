@@ -852,11 +852,6 @@ app.post("/admin/api/app_follow_user", async(req, res)=> {
   
   const follow = require('../../modles/Follow')
   const{follow_user_id, user_id } = req.body
-  const tmpFollow = await follow.findOne({follow_user_id})
-  if(tmpFollow.follow_user_id === follow_user_id){
-    res.status(424).json("不能重复关注")
-    return
-  }
 
   const newFollow = await follow.create(req.body)
   var followid = {mfollow_id: newFollow._id} 
