@@ -76,7 +76,8 @@ io.on('connection', function(socket){
     socket.on('typing', (data) => {
       socket.broadcast.emit('typing', {
         username: socket.username,
-        //message: data
+        room_id : socket.room_id,
+        onlineCount: onlineCount
       });
     });
 
@@ -84,13 +85,16 @@ io.on('connection', function(socket){
     socket.on('stop typing', (data) => {
       socket.broadcast.emit('stop typing', {
         username: socket.username,
-        //message: data
+        room_id : socket.room_id,
+        onlineCount: onlineCount
       });
     });
 
 
     socket.on('new message', (data) => {
-        // we tell the client to execute 'new message'
+      var user = JSON.parse(data)
+      console.log("adduser : " + user.room_id );
+      socket.room_id = user.room_id;
         socket.broadcast.emit('new message', {
           //username: socket.username,
           message: data

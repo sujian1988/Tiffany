@@ -40,6 +40,7 @@ $ git reset --hard commit_id     退到/进到 指定commit的sha码
   
   
   
+  
   查看分支 git branch
   
   gitignorge文件是忽略上传的文件，这些文件不用上传到git上面。太大
@@ -124,6 +125,7 @@ git log --graph --decorate --oneline --simplify-by-decoration --all
 （如果想改文件名大小写，例如你要将这个文件名改为小写，那么你要先将原本大写的问题删除掉提交一次，
  再重新创建个小写的。再提交一次） 
  
- 
+1 apk下载地址
+https://github.com/sujian1988/testDB/blob/master/www/bestshow151.apk?raw=true 
  
  
