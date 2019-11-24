@@ -2,6 +2,16 @@
 597201889@qq.com
 86624932
 
+7牛云
+https://www.qiniu.com/
+597201889@qq.com
+86624932
+7牛云上传视频界面
+https://portal.qiniu.com/kodo/bucket/resource/upload?bucketName=xiuxiuvideo
+
+腾讯oos对象存储
+https://buy.cloud.tencent.com/cos
+
 线上直播服务器地址
 http://39.96.18.249:8081/stat
 线上后台

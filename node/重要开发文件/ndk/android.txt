@@ -69,6 +69,11 @@ http://svga.io/svga-preview.html
  //大礼物动画svga
     compile 'com.github.yyued:SVGAPlayer-Android:2.1.1'  
   
+8 重点研究的两个demo
+  1  AndroidCamera-master
+  2  Android-video-editor-master
+  
+  
 明日开发需要
 1 添加建房接口 
 2 修改socket只有进入房间才会接收广播通知的逻辑，app一旦开启就要编程可以接收通知状态
