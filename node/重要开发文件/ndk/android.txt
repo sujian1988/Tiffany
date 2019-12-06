@@ -73,9 +73,7 @@ http://svga.io/svga-preview.html
   1  AndroidCamera-master
   2  Android-video-editor-master
   
-  
-明日开发需要
-1 添加建房接口 
-2 修改socket只有进入房间才会接收广播通知的逻辑，app一旦开启就要编程可以接收通知状态
-3 app添加底部快捷导航栏
+明日修复的问题 
+  我的界面再次登录时。无法获取数据，添加刷新数据接口  
+
     

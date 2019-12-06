@@ -176,11 +176,13 @@ app.get('/admin/api/app_auto_login/:id', async(req, res) =>{
 //修改个人信息
 app.post('/admin/api/app_update_user', async(req, res) =>{
 
-  const{user_id, user_name, user_headimg, sex, birthday ,email, qq, weixin} = req.body
+  const{user_id, user_name, user_headimg, bg_img, zsign_text, sex, birthday ,email, qq, weixin} = req.body
   const user = require('../../modles/User')
   const username = {user_name : user_name};
   const userheadimg = {user_headimg :user_headimg};
+  const userBgImg = {bg_img : bg_img};
   const usersex = {sex: sex};
+  const usersign_text = {sign_text :sign_text};
   const userbirthday = {birthday: birthday};
   const userqq = {qq: qq};
   const userweixin = {weixin: weixin};
@@ -188,7 +190,9 @@ app.post('/admin/api/app_update_user', async(req, res) =>{
   
   await user.findByIdAndUpdate(user_id, username);
   await user.findByIdAndUpdate(user_id, userheadimg);
+  await user.findByIdAndUpdate(user_id, userBgImg);
   await user.findByIdAndUpdate(user_id, usersex);
+  await user.findByIdAndUpdate(user_id, usersign_text);
   await user.findByIdAndUpdate(user_id, userbirthday);
   await user.findByIdAndUpdate(user_id, userqq);
   await user.findByIdAndUpdate(user_id, userweixin);

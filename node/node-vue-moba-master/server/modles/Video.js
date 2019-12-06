@@ -20,6 +20,7 @@ const schema = new mongoose.Schema({
   thumbnail: {type: String},
   video: {type:String},
   video_type : {type : String},
+  video_screen_type : {type : Number},
   duration_Time: {type: Number},
   create_time: { type: Date, default: Date.now },
   looknum : {type: Number},   //观看次数

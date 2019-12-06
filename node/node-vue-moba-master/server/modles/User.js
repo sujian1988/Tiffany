@@ -18,6 +18,8 @@ const schema = new mongoose.Schema({
   user_mobile: {type: String},
   user_type: {type: String},
   user_headimg: {type: String},
+  bg_img : {type: String},
+  sign_text : {type : String},
   user_status: {type: String},
   sex : {type: String},
   buyer_name: {type: String},
