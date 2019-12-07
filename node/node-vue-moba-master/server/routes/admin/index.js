@@ -176,7 +176,7 @@ app.get('/admin/api/app_auto_login/:id', async(req, res) =>{
 //修改个人信息
 app.post('/admin/api/app_update_user', async(req, res) =>{
 
-  const{user_id, user_name, user_headimg, bg_img, zsign_text, sex, birthday ,email, qq, weixin} = req.body
+  const{user_id, user_name, user_headimg, bg_img, sign_text, sex, birthday ,email, qq, weixin} = req.body
   const user = require('../../modles/User')
   const username = {user_name : user_name};
   const userheadimg = {user_headimg :user_headimg};
