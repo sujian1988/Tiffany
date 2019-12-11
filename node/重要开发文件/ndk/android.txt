@@ -78,7 +78,7 @@ http://svga.io/svga-preview.html
 		Glide.with(getApplicationContext())
 
 
-
+10   app:elevation="0dp" 去除tablayout的阴影
 
 
   

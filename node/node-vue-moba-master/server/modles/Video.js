@@ -20,8 +20,8 @@ const schema = new mongoose.Schema({
   share_status: {type: String},
   gif: {type: String},
   thumbnail: {type: String},
-  video: {type:String},
-  video_type : {type : String},
+  video: {type:String},      
+  video_type : {type : String},  // 1 表示秀秀圈的短视频  // 2 娱乐  // 3 游戏 // 4 日语 5 电影
   video_screen_type : {type : Number},
   duration_Time: {type: Number},
   create_time: { type: Date, default: Date.now },

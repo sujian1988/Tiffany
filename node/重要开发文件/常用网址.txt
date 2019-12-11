@@ -613,3 +613,14 @@ nginx生成配置文件的网站
 nginxconfig.io/
 
 http://39.96.18.249:8081/stat 
+
+
+youtube下载网站
+https://zh.savefrom.net/1-how-to-download-youtube-video.html
+bilibili 视频下载网站
+https://www.tubeoffline.com/download-BiliBili-videos.php
+
+
+叮噜噜噜
+网盘资源
+第五个：https://jidanso.com/

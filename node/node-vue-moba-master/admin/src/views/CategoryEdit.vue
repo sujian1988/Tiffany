@@ -11,6 +11,9 @@
       <el-form-item label="名称">
         <el-input v-model="model.name"></el-input>
       </el-form-item>
+         <el-form-item label="视频分类">
+        <el-input v-model="model.video_type"></el-input>
+      </el-form-item>
       <el-form-item>
         <el-button type="primary" native-type="submit">保存</el-button>
       </el-form-item>

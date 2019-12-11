@@ -18,6 +18,10 @@
         <el-input v-model="model.user_headimg"></el-input>
       </el-form-item>
 
+      <el-form-item label="视频类别">
+        <el-input v-model="model.video_type"></el-input>
+      </el-form-item>
+
       <el-form-item label="点赞">
         <el-input v-model="model.up"></el-input>
       </el-form-item>

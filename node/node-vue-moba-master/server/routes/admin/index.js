@@ -197,7 +197,6 @@ app.post('/admin/api/app_update_user', async(req, res) =>{
   await user.findByIdAndUpdate(user_id, userqq);
   await user.findByIdAndUpdate(user_id, userweixin);
   const userback = await user.findByIdAndUpdate(user_id, useremail, {new : true});
-  
   res.status(200).json(userback);
 
 })
@@ -206,17 +205,25 @@ app.post('/admin/api/app_update_user', async(req, res) =>{
 //添加获取maintitle接口
 app.get('/admin/api/app_categories', async(req, res) =>{
   const category = require('../../modles/Category')
-  const categories = await category.find() // 限制5条数据
+  const categories = await category.find({parent : req.params.id}) // 限制5条数据
   res.status(200).json({
       categories
   });
 })
 
+//获取二级分类  
+app.get('/admin/api/app_categories/:id', async(req, res) =>{
+  const category = require('../../modles/Category')
+  const categories = await category.find({parent : req.params.id}) // 限制5条数据
+  res.status(200).json({
+      categories
+  });
+})
 
-app.get('/admin/api/app_video_list', async(req, res) =>{
+app.get('/admin/api/app_video_list/:id', async(req, res) =>{
   const video = require('../../modles/Video')
   //const videos = await video.find().limit(5) // 限制10条数据                           根据时间降序查询   
-  const videos = await video.find().skip((parseInt(req.query.page)-1) * 10).limit(10).sort({'create_time' : -1})// 限制5条数据
+  const videos = await video.find({video_type : req.params.id}).skip((parseInt(req.query.page)-1) * 10).limit(10).sort({'create_time' : -1})// 限制5条数据
   res.status(200).json({
       videos
   });
