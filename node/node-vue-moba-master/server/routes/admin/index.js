@@ -564,7 +564,6 @@ app.post("/admin/api/app_xiuxiu_share", async(req, res)=>{
 })
 
 
-
 //多表关联查询 
 //通过视频id获取视频的评论和回复二级列表
 app.post("/admin/api/app_aggregate_xcomments/:id", async(req, res)=>{
@@ -663,6 +662,20 @@ app.post("/admin/api/app_video_looknum", async(req, res)=>{
   //res.send(req.params.id)
 })
 
+//更新视频评论数
+app.post("/admin/api/app_video_comments", async(req, res)=>{
+  
+  const{video_id, commentnum, user_id } = req.body
+  const video = require('../../modles/Video')
+  var video_commetnum = {commentnum: commentnum}
+  
+  //通过comment_id查询
+  const changeVideo = await video.findByIdAndUpdate(video_id, video_commetnum) 
+  res.status(200).json(
+    "统计评论数成功"
+  );
+  //res.send(req.params.id)
+})
 
 //统计视频弹幕数
 app.post("/admin/api/app_video_danmunum", async(req, res)=>{
