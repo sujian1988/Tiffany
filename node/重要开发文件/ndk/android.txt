@@ -84,8 +84,7 @@ http://svga.io/svga-preview.html
   
   
 8 重点研究的两个demo
-  1  AndroidCamera-master
-  2  Android-video-editor-master
+  1  caincamera-master
   
 明日修复的问题 
   我的界面再次登录时。无法获取数据，添加刷新数据接口  
