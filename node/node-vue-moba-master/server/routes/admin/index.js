@@ -263,6 +263,15 @@ app.post('/admin/api/app_find_userown_video/:id', async (req, res) => {
 
 })
 
+//删除视频
+app.post('/admin/api/app_delete_video/:id', async(req, res) =>{
+  const videos = require('../../modles/Video')
+  await videos.findByIdAndDelete(req.params.id)  
+  res.status(200).json({
+    success: true
+  });
+})
+
 
 //通过视频id获取视频的评论列表
 app.post("/admin/api/app_comments/:id", async(req, res)=>{
