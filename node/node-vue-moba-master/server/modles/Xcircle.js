@@ -20,6 +20,7 @@ const schema = new mongoose.Schema({
   forward: {type: Number},
   image: {type: String},
   video : {type : String},
+  video_ratio : {type : Number},
   share_status: {type: String},
   thumbnail: {type: String},
   duration_Time: {type: Number},

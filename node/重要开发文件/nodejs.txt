@@ -358,61 +358,6 @@ SSH TunnelPort: 22
 SSH Username: root
 SSH Password: Zl86624932
 
-将数据备份到阿里云上
-1	  
-在本地
-导出mongodb数据文件 
-                    数据库名
-$ mongodump -d node-vue-moba
-
-如果在vscode下不识别mongodump命令，则需要配置环境变量
-我的电脑-》属性-》高级系统设置-》环境变量-》系统变量--》Path，添加
-D:\mongDB\Server\4.2\bin  
-即可
-
-2
-在阿里云
-mongorestore
-dump文件夹在哪个目录就在那个目录执行mongorestore命令
-如果导入失败，就把.bson文件删除，就剩下.json文件即可
-
-
-将mongod路径添加到系统路径中，方便随处执行mongod命令
-首先进入编辑页面
-[root@iz2ze1nmsp5lb40y72gwdpz /]# vim /etc/profile
-然后添加 wq保持退出
-export PATH=$PATH:/usr/local/mongodb/bin
-刷新文件
-[root@iz2ze1nmsp5lb40y72gwdpz /]# source /etc/profile
-
-进入mongodb数据库
-mongo
-
-删除数据库，删除当前所在的数据库
-db.dropDatabase();
-
-db.serverStatus()
-
-mongodb有啥连不上UnhandledPromiseRejectionWarning: MongoNetworkError:
-这种问题就是没开数据库服务，谢谢
-电脑左下角搜索服务，开启mongodb服务即可
-
-linux下查看软件安装列表
-yum list installed
-
-
-http://39.96.18.249:3000/admin/#/login
-
-连接线上数据库的软件
-https://robomongo.org/download	  
-	  
-http://39.96.18.249:3000/#/
-
-线下启动项目
-PS D:\GitCode\Tiffany\node\node-vue-moba-master\server> npm run serve   
-线上启动项目
-1 先启动mongod数据库否则无法显示数据 pm2 start mongod
-2 PS D:\GitCode\Tiffany\node\node-vue-moba-master\server> pm2 start index.js   
 
 
 ffmpeg 压缩命令      压缩视频  压缩到多大    输出目录
@@ -607,3 +552,4 @@ require('./models/User')在一个文件中，然后在另一个文件中，我�
 
 总结，这类问题，基本都是modle类文件名大小写的问题。。。命名规则进来全部小写保持和数据库一致，，不要驼峰式命名。。
 
+npm run build

@@ -4,7 +4,9 @@
     <el-table :data="items">
       <el-table-column prop="_id" label="ID" width="240"></el-table-column>
       <el-table-column prop="nickName" label="昵称"></el-table-column>
-       <el-table-column prop="mliveId" label="直播live——id"></el-table-column>
+      <el-table-column prop="mliveId" label="直播live——id"></el-table-column>
+      <el-table-column prop="mliveTitle" label="直播标题"></el-table-column>
+      <el-table-column prop="bgImageUrl" label="直播背景图"></el-table-column>
       <el-table-column fixed="right" label="操作" width="180">
         <template slot-scope="scope">
           <el-button
