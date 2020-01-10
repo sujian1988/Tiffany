@@ -6,6 +6,7 @@ const schema = new mongoose.Schema({
   circle_id: {type: String},
   user_name: { type: String },
   user_headimg:{type: String},
+  bg_img : {type: String}, 
   user_id: {type: String},
   title:{type: String},
   comment: {type: String},
