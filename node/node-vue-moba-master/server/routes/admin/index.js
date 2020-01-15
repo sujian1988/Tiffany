@@ -272,6 +272,13 @@ app.post('/admin/api/app_delete_video/:id', async(req, res) =>{
   });
 })
 
+//记录删除视频的名称
+app.post('/admin/api/app_video_delete_log', async (req, res) => {
+  const log = require('../../modles/Log')
+  const newlog = await log.create(req.body)
+  res.status(200).json("删除视频日志添加成功");
+})
+
 
 //通过视频id获取视频的评论列表
 app.post("/admin/api/app_comments/:id", async(req, res)=>{
