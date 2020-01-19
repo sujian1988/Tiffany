@@ -2,7 +2,7 @@
   <div class="about">
     <h1>{{id ? '编辑' : '新建'}}视频</h1>
     <el-form label-width="120px" @submit.native.prevent="save">
-      <el-form-item label="标题">
+      <el-form-item label="电视剧名">
         <el-input v-model="model.title"></el-input>
       </el-form-item>
 
@@ -18,8 +18,8 @@
         <el-input v-model="model.user_headimg"></el-input>
       </el-form-item>
 
-      <el-form-item label="视频类别">
-        <el-input v-model="model.video_type"></el-input>
+      <el-form-item label="电视剧集">
+        <el-input v-model="model.video_num"></el-input>
       </el-form-item>
 
       <el-form-item label="点赞">
@@ -70,7 +70,7 @@ export default {
       } else {
         res = await this.$http.post("rest/videotvs", this.model);
       }
-      this.$router.push("/videoTVs/list");
+      this.$router.push("/videotvs/list");
       this.$message({
         type: "success",
         message: "保存成功"

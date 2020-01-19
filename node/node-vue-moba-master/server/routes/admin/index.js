@@ -234,7 +234,7 @@ app.get('/admin/api/app_video_list/:id', async(req, res) =>{
 app.get('/admin/api/app_videotv_list/:id', async(req, res) =>{
   const videotv = require('../../modles/Videotv')
   //const videos = await video.find().limit(5) // 限制10条数据                           根据时间降序查询   
-  const videos = await videotv.find({video_type : req.params.id}).skip((parseInt(req.query.page)-1) * 10).limit(10).sort({'create_time' : -1})// 限制5条数据
+  const videos = await videotv.find({title : req.params.id}).sort({'create_time' : -1})// 限制5条数据
   res.status(200).json({
       videos
   });
