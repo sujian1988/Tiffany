@@ -91,6 +91,12 @@
             <el-menu-item index="/videos/list">视频列表</el-menu-item>
           </el-menu-item-group>
           
+          <el-menu-item-group>
+            <template slot="title">电视剧</template>
+            <el-menu-item index="/videoTVs/create">新建视频</el-menu-item>
+            <el-menu-item index="/videoTVs/list">视频列表</el-menu-item>
+          </el-menu-item-group>
+
            <el-menu-item-group>
             <template slot="title">评论</template>
             <el-menu-item index="/comments/create">新建评论</el-menu-item>

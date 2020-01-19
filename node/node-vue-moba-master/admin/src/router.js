@@ -26,6 +26,9 @@ import UserList from './views/UserList.vue'
 import VideoEdit from './views/VideoEdit.vue'
 import VideoList from './views/VideoList.vue'
 
+import VideoTVEdit from './views/VideoTVEdit.vue'
+import VideoTVList from './views/VideoTVList.vue'
+
 import CommentEdit from './views/CommentEdit.vue'
 import CommentList from './views/CommentList.vue'
 
@@ -93,6 +96,10 @@ const router = new Router({
         { path: '/videos/create', component: VideoEdit },
         { path: '/videos/edit/:id', component: VideoEdit, props: true },
         { path: '/videos/list', component: VideoList },
+
+        { path: '/videoTVs/create', component: VideoTVEdit },
+        { path: '/videoTVs/edit/:id', component: VideoTVEdit, props: true },
+        { path: '/videoTVs/list', component: VideoTVList },
 
         { path: '/comments/create', component: CommentEdit },
         { path: '/comments/edit/:id', component: CommentEdit, props: true },

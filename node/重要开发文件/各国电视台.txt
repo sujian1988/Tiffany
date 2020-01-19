@@ -83,7 +83,7 @@ https://tinypng.com/
 韩国KBS1,http://ebsonair.ebs.co.kr/groundwavefamilypc/familypc1m/chunklist_w1960240276.m3u8
 
 韩国EBSeHD,http://ebsonair.ebs.co.kr/plus3familypc/familypc1m/playlist.m3u8
-
+可用
 韩国Chosun,http://live.chosun.gscdn.com/live/tvchosun1.stream/playlist.m3u8
 
 韩国CBS,http://cbs-live.gscdn.com/cbs-live/cbs-live.stream/playlist.m3u8
@@ -144,8 +144,10 @@ https://tinypng.com/
 
 番薯,http://210.209.3.1/live/C02DD98E-593E-47A8-905C-3B101183A555?fmt=x264_500K_ts&cpid=admin&size=720X480&toflv=1&start=0
 
+
 法国NRJ,http://energytv.vedge.infomaniak.com/livecast/energytv/playlist.m3u8
 
+可用
 俄罗斯电影台,http://v1.proofix.ru/live-tv8-2/europe/chunklist.m3u8
 
 俄罗斯Mirtv.,http://hls.mirtv.cdnvideo.ru/mirtv-parampublish/hd/playlist.m3u8
@@ -293,3 +295,28 @@ http://ws4.streamhls.huya.com/huyalive/29106097-2689448236-11551092217904889856-
 
 
 888
+优酷 爱奇艺 
+https://api.78sy.cn/?url=https://www.iqiyi.com/v_19rw59xni8.html
+https://api.78sy.cn/?url=https://v.youku.com/v_show/id_XNDQ5NjA0MTkwOA==.html?spm=a2hcb.12675304.m_15319_c_54078.d_1&s=ecef33670f3044059de9&scm=20140719.manual.15319.show_ecef33670f3044059de9
+
+http://api.bbbbbb.me/ipsign/player.php?v=https://v.sports.qq.com/#/page/k08733p92qt
+https://jx.hezeshi.net/ce/jlexi.php?url=https://v.sports.qq.com/#/page/k08733p92qt
+http://www.sfsft.com/video.php?url=https://v.sports.qq.com/#/page/k08733p92qt
+https://cdn.yangju.vip/k/?url=https://v.sports.qq.com/#/page/k08733p92qt
+
+https://vip.mpos.ren/v/?url=https://www.iqiyi.com/v_19rw59xni8.html
+
+https://cdn.yangju.vip/k/?url=
+https://jx.lache.me/cc/?url=
+https://api.653520.top/vip/?url=
+https://jx.ab33.top/vip/?url=
+https://vip.mpos.ren/v/?url=
+https://jx.000180.top/jx/?url=
+https://jx.km58.top/jx/?url=
+ 
+————————————————
+版权声明：本文为CSDN博主「adjuh2343」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/adjuh2343/article/details/80337110
+
+http://v.youku.com/player/getPlayList/VideoIDS/v_show/id_XNDQ5NjA0MTk1Ng
+http://v.youku.com/player/getPlayList/VideoIDS/v_show/id_XNDQ5NjA0MTkwOA
