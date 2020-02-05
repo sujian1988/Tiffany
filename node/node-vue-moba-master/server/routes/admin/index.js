@@ -984,6 +984,12 @@ app.post("/admin/api/app_aggregate_total_messages/:id", async(req, res)=>{
        }
     },
     {
+      $sort : 
+      {
+        'create_time' : 1
+      }
+    },
+    {
       $lookup:
         {
           from: "messages",
