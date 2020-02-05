@@ -295,12 +295,19 @@ http://ws4.streamhls.huya.com/huyalive/29106097-2689448236-11551092217904889856-
 
 
 888
-优酷 爱奇艺 
-https://api.78sy.cn/?url=https://www.iqiyi.com/v_19rw59xni8.html
+优酷 
+http://beaacc.com/api.php?url=
+默认3可以播放
+http://jx.598110.com/v/x3.php?url=https://www.iqiyi.com/v_19rrmk9ro0.html?spm=a2h0k.11417342.soresults.dposter
+
+http://jx.598110.com/?url=https://v.youku.com/v_show/id_XNjI4OTIxMTEy.html?spm=a2h0k.11417342.soresults.dposter
+
+https://api.78sy.cn/?url=https://www.iqiyi.com/v_19rrg30k44.html?vfrm=pcw_home&vfrmblk=CW&vfrmrst=812211_wdljxk_image4
+
 https://api.78sy.cn/?url=https://v.youku.com/v_show/id_XNDQ5NjA0MTkwOA==.html?spm=a2hcb.12675304.m_15319_c_54078.d_1&s=ecef33670f3044059de9&scm=20140719.manual.15319.show_ecef33670f3044059de9
 
 http://api.bbbbbb.me/ipsign/player.php?v=https://v.sports.qq.com/#/page/k08733p92qt
-https://jx.hezeshi.net/ce/jlexi.php?url=https://v.sports.qq.com/#/page/k08733p92qt
+//https://jx.hezeshi.net/ce/jlexi.php?url=https://v.sports.qq.com/#/page/k08733p92qt
 http://www.sfsft.com/video.php?url=https://v.sports.qq.com/#/page/k08733p92qt
 https://cdn.yangju.vip/k/?url=https://v.sports.qq.com/#/page/k08733p92qt
 
@@ -320,3 +327,10 @@ https://jx.km58.top/jx/?url=
 
 http://v.youku.com/player/getPlayList/VideoIDS/v_show/id_XNDQ5NjA0MTk1Ng
 http://v.youku.com/player/getPlayList/VideoIDS/v_show/id_XNDQ5NjA0MTkwOA
+
+http://v.youku.com/player/getPlayList/VideoIDS/id_XNDc4Mjk2OTQw
+
+美女图片接口
+https://www.easy-mock.com/mock/5c36b5d2be0a1c39bfd57589/img/beauty/page=1
+免费视频接口
+https://api.apiopen.top/getJoke?page=1&count=20&type=video
