@@ -3,10 +3,7 @@ const mongoose = require('mongoose')
 //	@AutoIncKey 
 const schema = new mongoose.Schema({
   message_id: {type: String},
-  user_id: {
-    type: String,
-    index: true,
-  },
+  user_id: {type: String},
   user_name: { type: String },
   user_mobile: {type: String},
   user_headimg: {type: String},
