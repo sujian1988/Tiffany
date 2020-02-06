@@ -13,6 +13,7 @@ const schema = new mongoose.Schema({
   send_user_headimg: {type: String},
   message: {type: String},
   audio : {type: String},
+  audio_seconds : {type: Number},
   message_type: {type: String},
   message_room_id : {type: String},
   create_time: { type: Date, default: Date.now },
