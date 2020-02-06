@@ -983,12 +983,7 @@ app.post("/admin/api/app_aggregate_total_messages/:id", async(req, res)=>{
        'message_room_id' : {"$regex": message_room_id},   
        }
     },
-    {
-      $sort : 
-      {
-        'create_time' : 1
-      }
-    },
+ 
     {
       $lookup:
         {
@@ -998,6 +993,14 @@ app.post("/admin/api/app_aggregate_total_messages/:id", async(req, res)=>{
           as: "msgs"
         }
    },
+
+   {
+    $sort : 
+    {
+      'create_time' : 1
+    }
+  },
+
  ]);
   res.status(200).json({
       messageRooms
