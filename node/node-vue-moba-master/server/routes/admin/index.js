@@ -1009,10 +1009,20 @@ app.post("/admin/api/app_aggregate_total_messages/:id", async(req, res)=>{
 })
 
 
-//获取消息列表 2019-11-15 废弃
+//通过user_id模糊查询获取房间号 再通过房间号获取消息列表
+app.post('/admin/api/app_messageroom_list/:id', async(req, res) =>{
+  const messageRoom = require('../../modles/MessageRoom')
+  var message_room_id = req.params.id;
+  const messageRooms = await messageRoom.find({message_room_id : {$regex : message_room_id}}).sort({"create_time" : 1}) // 限制5条数据
+  res.status(200).json({
+    messageRooms
+  });
+})
+
 app.post('/admin/api/app_message_list/:id', async(req, res) =>{
   const message = require('../../modles/Message')
-  const messages = await message.find({user_id: req.params.id}).limit(100) // 限制5条数据
+  var message_room_id = req.params.id;
+  const messages = await message.find({message_room_id : message_room_id}).sort({"create_time" : 1}) // 限制5条数据
   res.status(200).json({
     messages
   });
