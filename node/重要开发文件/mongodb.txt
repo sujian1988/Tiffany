@@ -128,4 +128,4 @@ Module
 [root@iz2ze1nmsp5lb40y72gwdpz server]# pm2 delete 0
 
 
-
+findByIdAndUpdate只能使用带下标(index)的字段查询 普通字段会报错

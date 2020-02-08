@@ -12,8 +12,11 @@ const schema = new mongoose.Schema({
   send_user_name: { type: String },
   send_user_id: {type: String},
   send_user_headimg: {type: String},
+  message : {type : String},
   message_room_id : {type: String},
   create_time: { type: Date, default: Date.now },
+  chat_type : {type: String},
+  last_chat_time : {type : Date},
 
 })
 

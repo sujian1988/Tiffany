@@ -970,7 +970,29 @@ app.post('/admin/api/app_create_message_room', async(req, res) =>{
   res.status(200).json(changeMessageRoom);
 })
 
-//消息列表 多表关联查询   2019-11-15 
+//更新room表最后一次聊天信息
+app.post("/admin/api/app_update_room", async(req, res) =>{
+
+
+  const{room_id, chat_type, last_chat_time, message} = req.body;
+  const messageroom = require('../../modles/MessageRoom');
+  const messagetext = {message : message};
+  const chatType = {chat_type : chat_type};
+  const lastchattime = {last_chat_time : last_chat_time};
+ 
+  await messageroom.findByIdAndUpdate(room_id, messagetext);
+  await messageroom.findByIdAndUpdate(room_id, chatType);
+  const messageroomback = await messageroom.findByIdAndUpdate(room_id, lastchattime, {new : true});
+  res.status(200).json(messageroomback);
+
+  //res.status(200).json(message_room_id);
+
+})
+
+
+
+
+//消息列表 多表关联查询   2019-11-15   20200208 废弃
 //通过user_id获取房间号 再通过房间号获取消息列表
 app.post("/admin/api/app_aggregate_total_messages/:id", async(req, res)=>{
   const meesageRoom = require('../../modles/MessageRoom')
