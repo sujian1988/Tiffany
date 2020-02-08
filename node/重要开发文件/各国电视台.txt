@@ -302,7 +302,7 @@ http://jx.598110.com/v/x3.php?url=https://www.iqiyi.com/v_19rrmk9ro0.html?spm=a2
 
 http://jx.598110.com/?url=https://v.youku.com/v_show/id_XNjI4OTIxMTEy.html?spm=a2h0k.11417342.soresults.dposter
 
-https://api.78sy.cn/?url=https://www.iqiyi.com/v_19rrg30k44.html?vfrm=pcw_home&vfrmblk=CW&vfrmrst=812211_wdljxk_image4
+https://api.78sy.cn/?url=https://www.iqiyi.com/v_19rrho3cxc.html
 
 https://api.78sy.cn/?url=https://v.youku.com/v_show/id_XNDQ5NjA0MTkwOA==.html?spm=a2hcb.12675304.m_15319_c_54078.d_1&s=ecef33670f3044059de9&scm=20140719.manual.15319.show_ecef33670f3044059de9
 
@@ -334,3 +334,12 @@ http://v.youku.com/player/getPlayList/VideoIDS/id_XNDc4Mjk2OTQw
 https://www.easy-mock.com/mock/5c36b5d2be0a1c39bfd57589/img/beauty/page=1
 免费视频接口
 https://api.apiopen.top/getJoke?page=1&count=20&type=video
+
+
+http://39.96.18.249:3000/admin/api/app_add_message
+
+http://www.xunleipu.com/vod/m/haPrYUEmSHbATx.html
+这网页按F12键  进入debug模式选择Elements ctrl+F 搜索 http，或者movie 或m3u8 即可搜索到电影原声链接  （会过期）
+http://vip.66parse.club/?url=http://v.qq.com/x/cover/h4f14pcuhisqvzk.html?ptag=360kan.movie.pay  
+
+https://api.78sy.cn/?url=https://v.qq.com/x/cover/h4f14pcuhisqvzk/q00269gmn4j.html

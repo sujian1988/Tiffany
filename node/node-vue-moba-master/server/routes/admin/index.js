@@ -1019,6 +1019,7 @@ app.post('/admin/api/app_messageroom_list/:id', async(req, res) =>{
   });
 })
 
+//获取房间的消息
 app.post('/admin/api/app_message_list/:id', async(req, res) =>{
   const message = require('../../modles/Message')
   var message_room_id = req.params.id;
