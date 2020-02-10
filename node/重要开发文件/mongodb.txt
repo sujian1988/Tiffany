@@ -129,3 +129,6 @@ Module
 
 
 findByIdAndUpdate只能使用带下标(index)的字段查询 普通字段会报错
+
+
+D:\mongDB\Server\4.2\data 删除lock文件，，这个lock文件是由于上次mongdb没有正确关闭产生的。导入远程数据库无法正常连接。删除后重启数据库服务即可
