@@ -265,7 +265,7 @@ app.get('/admin/api/app_small_video_list/:id', async(req, res) =>{
 app.post('/admin/api/app_find_userown_video/:id', async (req, res) => {
    const video = require('../../modles/Video')
     //通过user_id查询
-   const videos = await video.find({user_id: req.params.id}).skip((parseInt(req.query.page)-1) * 5).limit(5)
+   const videos = await video.find({user_id: req.params.id}).skip((parseInt(req.query.page)-1) * 20).limit(20).sort({'create_time' : -1})
    res.status(200).json({
       videos
    });
