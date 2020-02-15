@@ -261,7 +261,7 @@ app.get('/admin/api/app_small_video_list/:id', async(req, res) =>{
 
 })
 
-//查找该用户下的视频
+//查找该用户下的视频 添加排序
 app.post('/admin/api/app_find_userown_video/:id', async (req, res) => {
    const video = require('../../modles/Video')
     //通过user_id查询
