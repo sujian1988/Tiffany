@@ -1,3 +1,14 @@
+软件发布平台聚丰
+https://www.huocai.com/login
+597201889@qq.com
+sj86624932
+
+//小米审核平台
+https://dev.mi.com/console/
+小米ID：
+13019336754
+sj86624932
+
 马云
 https://gitee.com/fyfeng/JCameraView
 sujian
@@ -110,11 +121,7 @@ appkey 5d611fa03fc19553c60006df
 Umeng Message Secret 855b1abce2b0d7d627d39647230fd3e0
 App Master Secret imcfkuzw6p7zxghspniv5txbtgnfuiji
 
-//小米审核平台
-https://dev.mi.com/console/
-小米ID：1477294751
-13052302493
-RQZ@123456R
+
 
 
 信鸽推送
