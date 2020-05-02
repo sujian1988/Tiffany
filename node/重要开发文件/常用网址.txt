@@ -1,3 +1,8 @@
+阿里分发平台
+http://aliapp.open.uc.cn/notice/detail?id=2691068
+kelishidiyano
+Sujian86624932
+
 软件发布平台聚丰
 https://www.huocai.com/login
 597201889@qq.com
@@ -41,7 +46,7 @@ http://39.96.18.249:8081/stat
 线上后台
 http://39.96.18.249:3000/admin/#/lives/list
 jiangyuting
-123456w
+123456
 sujian
 123456
 
@@ -312,7 +317,7 @@ http://bbs.mob.com/thread-30-1-1.html
 
 淘宝
 kelishidiyano
-sujian86624932
+Sujian86624932
 
 
 应用宝
@@ -336,8 +341,9 @@ sujian86624932
 360软件发放平台
 http://open.soft.360.cn/
 http://dev.360.cn/mod/developer/index/submittype/0
-账号：13003293164
-密码：L506!841h
+sujian181@gmail.com
+账号：13019336754
+密码：sj86624932
 
 
 蒲公英app内侧
@@ -375,14 +381,6 @@ blender
 http://bbs.blendercn.org/forum.php
 用户名 kelishidiyano
 
-//任务流程
-https://shimo.im/doc/rwq6yGeUIUU2MUjv
-
-https://shimo.im/doc/U5wODxwDPK89e0bl
-
-https://shimo.im/doc/fucpN3Ia2IMIopAe	
-
-https://shimo.im/doc/5TaK6Y5CsvAKY4D8
 
 淘宝买号
 15702455532
@@ -649,3 +647,6 @@ https://www.tubeoffline.com/download-BiliBili-videos.php
 叮噜噜噜
 网盘资源
 第五个：https://jidanso.com/
+
+设计网站
+https://dribbble.com/

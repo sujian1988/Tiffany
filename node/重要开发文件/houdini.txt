@@ -1,0 +1,76 @@
+1 空格+G 物体快速聚焦
+2 切换选择工具 y
+3 选中物体后，按回车键，直接变成移动工具
+4 s键取消所有选择
+5 空格 + h 将所有的物体在视图中全部显示
+6 在网络视图（代码视图）按住鼠标中键，可以拖拽
+7 在网络视图，双击可以进入一个节点
+8 ctrl + z 撤销操作
+9 查看文档 help --》 content --》 在搜索区域输入hotkey --》--renfrence（http://127.0.0.1:48626/start/hotkeys）
+10 在view视图和网络视图，可以按D 弹出不一样的视图
+11 视图最大化，ctrl + b
+12 空格键，+ 1 2 3 4 5 切换视图方向。。
+13 在网络视图选中节点  点击右上角问好，可以直接查看该节点的帮助文档
+14 如果你先看参数视图可以把鼠标悬停在单词上，会有提示弹窗
+15 在网络视图中按tab键可以弹窗tabmenu
+
+20190306
+16 在视图窗口按c键，会弹出快捷导航栏
+17 选中物体点后，按快捷键t，可以移动
+18 polygonMesh 细分
+19 空格键加5 切换到uv视图
+
+如何创建uv ？
+1 默认是不会创建uv， 在网络视图按tab 输入uvp --》uvproject
+2 如何检查uv的布局，在网络视图按tab 输入uvq --》uv quick shade
+3 添加uvqucikshade后再上个节点再右击输入uvunwrap
+
+4 ctrl+ shift 加点击，可以去除表达式关系。。。
+5 快捷键s进入选择模式，空格键 + G 
+6 选择想要的边，双击，就可以循环选中相应的边
+7 选中节点按住alt键拖拽，可以复制节点
+8 切换点，按t 移动点
+9 fuse封口，避免点重复
+10 polyextrude 挤出节点
+11 output back 封闭几何体（勾选）
+12 reverse 纠正法线
+13 uvunwrap 展开uv （可用于查看uv是否正常）
+14 按住ctrl 点击物体模型表，，会创建到世界中心点
+15 houdini学编写表达式 在帮助文档中搜索expression_cookbook 
+
+20200307
+1 voronoifractrue 分解物体破碎
+2 如何让参数联动，在impactRadius， 不要选中右击copyparameter 再到另一个框中右击选择paste relative References
+3 空格键 + 5 切换uv视图
+4 uvedit 可以编辑uv
+5 添加地面 collisions --》GroundPlane
+6 facet 可以创建硬边
+7 ctrl + shift 去除关联。
+8 alt 加点击设置关键帧
+
+20200308
+1 创建材质球 先创建geo 进入geo 再tab 输入shaderball
+2 view视图左边的renderRegion 区域渲染，可以渲染一小部分
+3 在renderview 可以按住鼠标拖拽想渲染的区域
+4 渲染不够好，可以设置细分， 参数视图中选择render 勾选Render Polygom Geometry Output
+5 参数视图中 * 表示所有
+6 instance 创建重复的对象更加节省资源
+
+20200309
+1 tail 推动烟火向上运动
+2 mountain 增加动火跟部随机燃烧形状
+3 scatter 是在表面分布 isooffset 分布的更加随机，（不仅只在面上分布）
+4 
+
+
+
+
+
+
+
+
+
+
+
+
+张鹏的sop教程

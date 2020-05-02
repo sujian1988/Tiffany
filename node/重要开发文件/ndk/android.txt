@@ -88,5 +88,24 @@ http://svga.io/svga-preview.html
   
 明日修复的问题 
   我的界面再次登录时。无法获取数据，添加刷新数据接口  
+  
+  
+  :
+密码：louhongyu7755123
+:
+244700900@163.com
+:
+邮箱是账号
+:
+https://modao.cc/
 
+适配10
+android:requestLegacyExternalStorage="true"
+
+D:\GitCode\AndroidDB\GankApp-master>adb shell
+dreamqltechn:/ $ cat /proc/3855/oom_adj
+cat /proc/3855/oom_adj
+cat: /proc/3855/oom_adj: Permission denied
     
+	
+C:\Users\DELL\Documents\Tencent Files\597201889\FileRecv	

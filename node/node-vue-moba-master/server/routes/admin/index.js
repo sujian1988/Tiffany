@@ -430,17 +430,26 @@ app.post("/admin/api/app_comments_unlike", async(req, res)=>{
 })
 
 
-
 //创建直播
 app.post('/admin/api/app_create_live', async (req, res) => {
   const live = require('../../modles/Live')
   const newLive = await live.create(req.body)
   var liveidapp = {mliveId: newLive._id} 
   //将_id赋值给mliveId
-  const changeLive= await live.findByIdAndUpdate(newLive._id,liveidapp)
+  const changeLive= await live.findByIdAndUpdate(newLive._id,liveidapp,{new : true})//,{new : true} 表示返回的是最新的数据
   res.status(200).json(changeLive);
 
 })
+
+//删除直播
+app.post('/admin/api/app_delete_live', async(req, res) =>{
+  const lives = require('../../modles/Live')
+  await lives.findByIdAndDelete(req.query.mliveId)  
+  res.status(200).json({
+    success: true
+  });
+})
+
 
 //获取个人直播列表
 app.post('/admin/api/app_user_live_list/:id', async (req, res) => {
@@ -457,7 +466,7 @@ app.post('/admin/api/app_user_live_list/:id', async (req, res) => {
 //获取直播列表
 app.get('/admin/api/app_live_list', async(req, res) =>{
   const live = require('../../modles/Live')
-  const lives = await live.find().skip((parseInt(req.query.page)-1) * 10).limit(10) // 限制5条数据
+  const lives = await live.find().skip((parseInt(req.query.page)-1) * 10).limit(10).sort({'create_time' : -1}) // 限制5条数据
   res.status(200).json({
       lives
   });
