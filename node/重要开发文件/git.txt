@@ -127,5 +127,15 @@ git log --graph --decorate --oneline --simplify-by-decoration --all
  
 1 apk下载地址
 https://github.com/sujian1988/testDB/blob/master/www/bestshow151.apk?raw=true 
+
+查看分支名 
+git branch
  
+拉代码前保持一下本地代码 
+git stash 
+ 
+git log 查看日志
+
+git pull 从git拉最新代码
+
  
