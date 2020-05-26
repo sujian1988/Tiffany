@@ -60,8 +60,8 @@ module.exports = app => {
     storage: MAO({
       config: {
         region: 'oss-cn-beijing',
-        accessKeyId: 'LTAI4FfRR6Xz2a47oEMLfC6q',
-        accessKeySecret: 'kwdRE9uyURBr2JmOTkt77WNYLLY1p6',
+        accessKeyId: '',
+        accessKeySecret: '',
         bucket: 'node-vue-moba-sj'
       }
     })
