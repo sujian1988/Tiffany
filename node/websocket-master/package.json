@@ -4,7 +4,7 @@
   "description": "",
   "main": "node.js",
   "dependencies": {
-    "socket.io": "^2.3.0",
+    "socket.io": "^2.4.0",
     "express": "^4.17.1",
     "heroku": "^7.30.1",
     "ws": "^7.1.2"
